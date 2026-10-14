@@ -1,0 +1,27 @@
+.registration-page{max-width:940px!important}
+.registration-heading,.registration-subheading{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}
+.registration-heading h2,.registration-subheading h3{margin:7px 0;color:var(--maroon2)}
+.registration-heading p{margin:0}
+.registration-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0}
+.registration-card{position:relative;display:flex;min-height:112px;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:15px;background:#fff;border:1px solid var(--line);border-radius:12px;color:#382b30;font-weight:800;transition:border-color .16s ease,background .16s ease,transform .16s ease}
+.registration-card:hover{border-color:var(--maroon);background:#fff8fa;transform:translateY(-2px)}
+.registration-card.selected{border-color:var(--maroon);box-shadow:inset 0 0 0 1px var(--maroon);background:#fff5f8}
+.registration-card-mark{display:grid;width:34px;height:34px;place-items:center;border-radius:8px;background:#f6e8ed;color:var(--maroon2);font-size:11px}
+.registration-card-arrow{position:absolute;right:14px;bottom:13px;color:var(--maroon);font-size:18px}
+.registration-form-card{border-radius:12px;padding:22px}
+.registration-subheading{align-items:center;margin-bottom:16px}
+.registration-subheading h3{font-size:20px}
+.registration-subheading .badge{display:inline-block}
+.permit-question{border:0;border-top:1px solid var(--line);padding:17px 0 0;margin:0 0 16px}
+.permit-question legend{font-weight:800;font-size:15px;padding:0 0 10px}
+.permit-question .choice-options{gap:24px}
+.permit-search-row{display:flex;gap:10px;align-items:center}
+.permit-search-row input{flex:1;min-width:0}
+.permit-search-row .secondary-btn{white-space:nowrap}
+#lookupMessage{min-height:18px;margin:8px 0 14px}
+.registration-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 18px}
+.registration-fields>div{min-width:0}
+.registration-fields .muted{margin:6px 0}
+.registration-actions{margin-top:18px}
+@media(max-width:760px){.registration-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.registration-heading,.registration-subheading{align-items:stretch;flex-direction:column}.registration-heading>.secondary-btn,.registration-subheading>.secondary-btn{align-self:flex-start}.registration-cards{gap:8px}.registration-card{min-height:100px;padding:12px;font-size:14px}.registration-fields{grid-template-columns:1fr}.permit-search-row{align-items:stretch;flex-direction:column}.permit-search-row .secondary-btn{width:100%}.registration-form-card{padding:16px}}

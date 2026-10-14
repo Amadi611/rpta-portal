@@ -1,0 +1,1 @@
+<?php require_once __DIR__.'/../config.php'; require_login(); if(role()!=='super_admin') redirect('dashboard.php'); header('Location: data_entry.php?tab=faqs'); exit; ?>

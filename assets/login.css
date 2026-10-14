@@ -1,0 +1,30 @@
+body:has(.login-first) main {
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+}
+
+body:has(.login-first) main::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background-image:
+		repeating-linear-gradient(112deg, transparent 0 74px, rgba(143, 18, 59, .045) 75px 76px, transparent 77px 154px),
+		repeating-linear-gradient(22deg, transparent 0 116px, rgba(65, 115, 91, .04) 117px 118px, transparent 119px 232px);
+	background-size: 280px 280px, 360px 360px;
+	animation: login-route-drift 36s linear infinite;
+}
+
+@keyframes login-route-drift {
+	to {
+		background-position: 280px -280px, -360px 360px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	body:has(.login-first) main::before {
+		animation: none;
+	}
+}
