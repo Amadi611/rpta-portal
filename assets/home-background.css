@@ -1,0 +1,151 @@
+.home-shell {
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+	color: #35212a;
+	background:
+		radial-gradient(ellipse at 80% 18%, rgba(0, 190, 119, 0.18), transparent 38%),
+		radial-gradient(ellipse at 91% 55%, rgba(238, 29, 66, 0.2), transparent 44%),
+		linear-gradient(112deg, #fffdf9 0%, #fcf9f7 38%, #f8f3f8 69%, #f3f8fc 100%);
+}
+
+.home-shell h1,
+.home-shell h2,
+.home-shell h3,
+.home-shell h4 {
+	color: #57162d;
+	font-weight: 750;
+}
+
+.home-shell p,
+.home-shell li {
+	color: #49313a;
+	font-weight: 500;
+}
+
+.home-shell .home-eyebrow,
+.home-shell .home-service-title,
+.home-shell .home-event-copy time,
+.home-shell .home-service-kicker,
+.home-shell .home-service-action,
+.home-shell .home-next-step-item a {
+	color: #075e54;
+	font-weight: 750;
+}
+
+.home-shell .home-copy h1,
+.home-shell .home-event-copy h3,
+.home-shell .home-service h3 {
+	color: #65142f;
+	font-weight: 800;
+}
+
+.home-shell .home-sinhala,
+.home-shell .home-contact,
+.home-shell .home-slide-footer,
+.home-shell .home-services-header span {
+	color: #49313a;
+	font-weight: 600;
+}
+
+.home-shell .home-contact a {
+	color: #741333;
+	font-weight: 800;
+}
+
+.home-shell .home-info-panel,
+.home-shell .home-service-card,
+.home-shell .home-event-card {
+	color: #35212a;
+}
+
+.home-shell .home-next-step-inner {
+	border-color: rgba(116, 19, 51, .22);
+	background: linear-gradient(130deg, rgba(255, 242, 242, .96), rgba(255, 235, 238, .94) 56%, rgba(248, 237, 244, .96));
+}
+
+.home-shell .home-next-step-copy h2,
+.home-shell .home-next-step-steps h3,
+.home-shell .home-next-step-item h4 {
+	color: #57162d;
+	font-weight: 750;
+}
+
+.home-shell .home-next-step-description,
+.home-shell .home-next-step-item p {
+	color: #49313a;
+	font-weight: 500;
+}
+
+.home-shell .home-next-step-button-secondary {
+	border-color: #9e6878;
+	color: #57162d;
+	font-weight: 800;
+}
+
+.home-shell::before {
+	position: absolute;
+	z-index: 0;
+	inset: -18% -12%;
+	background:
+		radial-gradient(ellipse at 55% 24%, rgba(0, 190, 112, 0.29), transparent 35%),
+		radial-gradient(ellipse at 86% 17%, rgba(240, 16, 55, 0.38), transparent 37%),
+		radial-gradient(ellipse at 60% 77%, rgba(128, 72, 207, 0.28), transparent 39%),
+		radial-gradient(ellipse at 93% 74%, rgba(25, 104, 221, 0.3), transparent 36%),
+		radial-gradient(ellipse at 74% 43%, rgba(255, 112, 25, 0.34), transparent 41%),
+		radial-gradient(ellipse at 45% 82%, rgba(0, 170, 153, 0.25), transparent 37%);
+	background-size: 230% 215%, 225% 240%, 240% 225%, 225% 235%, 235% 220%, 240% 225%;
+	background-position: 0% 20%, 100% 0%, 15% 100%, 100% 100%, 50% 45%, 0% 80%;
+	animation: home-color-flow 22s ease-in-out infinite;
+	content: "";
+	pointer-events: none;
+}
+
+.home-shell > section {
+	position: relative;
+	z-index: 1;
+}
+
+.home-about,
+.home-help,
+.home-services,
+.home-next-step,
+.home-events {
+	background: transparent;
+}
+
+.home-services {
+	border-top-color: rgba(128, 57, 61, 0.12);
+}
+
+.home-events {
+	border-top-color: rgba(128, 57, 61, 0.12);
+}
+
+@keyframes home-color-flow {
+	0% {
+		background-position: 0% 20%, 100% 0%, 15% 100%, 100% 100%, 50% 45%, 0% 80%;
+	}
+
+	25% {
+		background-position: 42% 66%, 62% 34%, 52% 62%, 62% 70%, 68% 28%, 42% 65%;
+	}
+
+	50% {
+		background-position: 82% 90%, 28% 70%, 90% 24%, 24% 12%, 100% 82%, 82% 18%;
+	}
+
+	75% {
+		background-position: 94% 42%, 8% 94%, 58% 8%, 4% 78%, 28% 8%, 96% 86%;
+	}
+
+	100% {
+		background-position: 0% 20%, 100% 0%, 15% 100%, 100% 100%, 50% 45%, 0% 80%;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.home-shell::before {
+		animation: none;
+	}
+}

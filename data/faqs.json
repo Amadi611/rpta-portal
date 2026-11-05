@@ -1,0 +1,2402 @@
+[
+  {
+    "intent": "general_contact",
+    "question": "How can I contact the authority?",
+    "answer": "For general inquiries, please call the Road Passenger Transport Authority on the official contact number published on this website. / සාමාන්‍ය විමසීම් සඳහා මෙම වෙබ් අඩවියේ දක්වා ඇති නිල දුරකථන අංකයට අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "general_contact",
+    "question": "What is the contact number?",
+    "answer": "For general inquiries, please call the Road Passenger Transport Authority on the official contact number published on this website. / සාමාන්‍ය විමසීම් සඳහා මෙම වෙබ් අඩවියේ දක්වා ඇති නිල දුරකථන අංකයට අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "general_contact",
+    "question": "Who can I call for help?",
+    "answer": "For general inquiries, please call the Road Passenger Transport Authority on the official contact number published on this website. / සාමාන්‍ය විමසීම් සඳහා මෙම වෙබ් අඩවියේ දක්වා ඇති නිල දුරකථන අංකයට අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "general_contact",
+    "question": "Where can I get general assistance?",
+    "answer": "For general inquiries, please call the Road Passenger Transport Authority on the official contact number published on this website. / සාමාන්‍ය විමසීම් සඳහා මෙම වෙබ් අඩවියේ දක්වා ඇති නිල දුරකථන අංකයට අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "general_contact",
+    "question": "How do I contact RPTA?",
+    "answer": "For general inquiries, please call the Road Passenger Transport Authority on the official contact number published on this website. / සාමාන්‍ය විමසීම් සඳහා මෙම වෙබ් අඩවියේ දක්වා ඇති නිල දුරකථන අංකයට අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "general_contact",
+    "question": "මට අධිකාරිය සම්බන්ධ කරගන්නේ කොහොමද?",
+    "answer": "For general inquiries, please call the Road Passenger Transport Authority on the official contact number published on this website. / සාමාන්‍ය විමසීම් සඳහා මෙම වෙබ් අඩවියේ දක්වා ඇති නිල දුරකථන අංකයට අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "general_contact",
+    "question": "අධිකාරියේ දුරකථන අංකය කුමක්ද?",
+    "answer": "For general inquiries, please call the Road Passenger Transport Authority on the official contact number published on this website. / සාමාන්‍ය විමසීම් සඳහා මෙම වෙබ් අඩවියේ දක්වා ඇති නිල දුරකථන අංකයට අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "general_contact",
+    "question": "උදව් සඳහා අමතන්නේ කාටද?",
+    "answer": "For general inquiries, please call the Road Passenger Transport Authority on the official contact number published on this website. / සාමාන්‍ය විමසීම් සඳහා මෙම වෙබ් අඩවියේ දක්වා ඇති නිල දුරකථන අංකයට අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "general_contact",
+    "question": "සාමාන්‍ය විමසීම් සඳහා කාටද කතා කරන්නේ?",
+    "answer": "For general inquiries, please call the Road Passenger Transport Authority on the official contact number published on this website. / සාමාන්‍ය විමසීම් සඳහා මෙම වෙබ් අඩවියේ දක්වා ඇති නිල දුරකථන අංකයට අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "general_contact",
+    "question": "RPTA එක අමතන්නේ කොහොමද?",
+    "answer": "For general inquiries, please call the Road Passenger Transport Authority on the official contact number published on this website. / සාමාන්‍ය විමසීම් සඳහා මෙම වෙබ් අඩවියේ දක්වා ඇති නිල දුරකථන අංකයට අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "office_hours",
+    "question": "What are your office hours?",
+    "answer": "Office hours and service availability may vary by division. Please check the contact information or confirm by phone before visiting. / අංශය අනුව කාර්යාල වේලාවන් වෙනස් විය හැකි බැවින් පැමිණීමට පෙර දුරකථනයෙන් තහවුරු කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "office_hours",
+    "question": "When is the authority open?",
+    "answer": "Office hours and service availability may vary by division. Please check the contact information or confirm by phone before visiting. / අංශය අනුව කාර්යාල වේලාවන් වෙනස් විය හැකි බැවින් පැමිණීමට පෙර දුරකථනයෙන් තහවුරු කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "office_hours",
+    "question": "What time can I visit the office?",
+    "answer": "Office hours and service availability may vary by division. Please check the contact information or confirm by phone before visiting. / අංශය අනුව කාර්යාල වේලාවන් වෙනස් විය හැකි බැවින් පැමිණීමට පෙර දුරකථනයෙන් තහවුරු කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "office_hours",
+    "question": "Are you open on weekdays?",
+    "answer": "Office hours and service availability may vary by division. Please check the contact information or confirm by phone before visiting. / අංශය අනුව කාර්යාල වේලාවන් වෙනස් විය හැකි බැවින් පැමිණීමට පෙර දුරකථනයෙන් තහවුරු කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "office_hours",
+    "question": "When can I submit an inquiry?",
+    "answer": "Office hours and service availability may vary by division. Please check the contact information or confirm by phone before visiting. / අංශය අනුව කාර්යාල වේලාවන් වෙනස් විය හැකි බැවින් පැමිණීමට පෙර දුරකථනයෙන් තහවුරු කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "office_hours",
+    "question": "කාර්යාල වේලාවන් මොනවාද?",
+    "answer": "Office hours and service availability may vary by division. Please check the contact information or confirm by phone before visiting. / අංශය අනුව කාර්යාල වේලාවන් වෙනස් විය හැකි බැවින් පැමිණීමට පෙර දුරකථනයෙන් තහවුරු කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "office_hours",
+    "question": "අධිකාරිය විවෘත වන්නේ කවදාද?",
+    "answer": "Office hours and service availability may vary by division. Please check the contact information or confirm by phone before visiting. / අංශය අනුව කාර්යාල වේලාවන් වෙනස් විය හැකි බැවින් පැමිණීමට පෙර දුරකථනයෙන් තහවුරු කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "office_hours",
+    "question": "කාර්යාලයට එන්න පුළුවන් වේලාව කීයද?",
+    "answer": "Office hours and service availability may vary by division. Please check the contact information or confirm by phone before visiting. / අංශය අනුව කාර්යාල වේලාවන් වෙනස් විය හැකි බැවින් පැමිණීමට පෙර දුරකථනයෙන් තහවුරු කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "office_hours",
+    "question": "සතියේ දිනවල විවෘතද?",
+    "answer": "Office hours and service availability may vary by division. Please check the contact information or confirm by phone before visiting. / අංශය අනුව කාර්යාල වේලාවන් වෙනස් විය හැකි බැවින් පැමිණීමට පෙර දුරකථනයෙන් තහවුරු කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "office_hours",
+    "question": "විමසීමක් ඉදිරිපත් කළ හැක්කේ කවදාද?",
+    "answer": "Office hours and service availability may vary by division. Please check the contact information or confirm by phone before visiting. / අංශය අනුව කාර්යාල වේලාවන් වෙනස් විය හැකි බැවින් පැමිණීමට පෙර දුරකථනයෙන් තහවුරු කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_routes",
+    "question": "How can I find a bus route?",
+    "answer": "Use the route information section or contact the authority if the required route is not listed. / අවශ්‍ය මාර්ගය ලැයිස්තුගත කර නොමැති නම් මාර්ග තොරතුරු අංශය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_routes",
+    "question": "Where can I check bus routes?",
+    "answer": "Use the route information section or contact the authority if the required route is not listed. / අවශ්‍ය මාර්ගය ලැයිස්තුගත කර නොමැති නම් මාර්ග තොරතුරු අංශය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_routes",
+    "question": "How do I know which bus to take?",
+    "answer": "Use the route information section or contact the authority if the required route is not listed. / අවශ්‍ය මාර්ගය ලැයිස්තුගත කර නොමැති නම් මාර්ග තොරතුරු අංශය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_routes",
+    "question": "Can you help with route information?",
+    "answer": "Use the route information section or contact the authority if the required route is not listed. / අවශ්‍ය මාර්ගය ලැයිස්තුගත කර නොමැති නම් මාර්ග තොරතුරු අංශය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_routes",
+    "question": "Where are route details available?",
+    "answer": "Use the route information section or contact the authority if the required route is not listed. / අවශ්‍ය මාර්ගය ලැයිස්තුගත කර නොමැති නම් මාර්ග තොරතුරු අංශය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_routes",
+    "question": "බස් මාර්ගයක් සොයා ගන්නේ කොහොමද?",
+    "answer": "Use the route information section or contact the authority if the required route is not listed. / අවශ්‍ය මාර්ගය ලැයිස්තුගත කර නොමැති නම් මාර්ග තොරතුරු අංශය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_routes",
+    "question": "බස් මාර්ග තොරතුරු බලන්නේ කොහෙන්ද?",
+    "answer": "Use the route information section or contact the authority if the required route is not listed. / අවශ්‍ය මාර්ගය ලැයිස්තුගත කර නොමැති නම් මාර්ග තොරතුරු අංශය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_routes",
+    "question": "මට යන්න ඕන තැනට ගන්න බස් එක දැනගන්නේ කොහොමද?",
+    "answer": "Use the route information section or contact the authority if the required route is not listed. / අවශ්‍ය මාර්ගය ලැයිස්තුගත කර නොමැති නම් මාර්ග තොරතුරු අංශය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_routes",
+    "question": "මාර්ග තොරතුරු ලබාගන්න පුළුවන්ද?",
+    "answer": "Use the route information section or contact the authority if the required route is not listed. / අවශ්‍ය මාර්ගය ලැයිස්තුගත කර නොමැති නම් මාර්ග තොරතුරු අංශය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_routes",
+    "question": "මාර්ග විස්තර කොහෙන්ද?",
+    "answer": "Use the route information section or contact the authority if the required route is not listed. / අවශ්‍ය මාර්ගය ලැයිස්තුගත කර නොමැති නම් මාර්ග තොරතුරු අංශය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_fares",
+    "question": "How can I check bus fares?",
+    "answer": "Fare information should be confirmed against the latest official fare notice. / ගාස්තු තොරතුරු සඳහා නවතම නිල ගාස්තු නිවේදනය පරීක්ෂා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_fares",
+    "question": "Where can I find the current fare?",
+    "answer": "Fare information should be confirmed against the latest official fare notice. / ගාස්තු තොරතුරු සඳහා නවතම නිල ගාස්තු නිවේදනය පරීක්ෂා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_fares",
+    "question": "What is the bus ticket price?",
+    "answer": "Fare information should be confirmed against the latest official fare notice. / ගාස්තු තොරතුරු සඳහා නවතම නිල ගාස්තු නිවේදනය පරීක්ෂා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_fares",
+    "question": "How do I know the correct fare?",
+    "answer": "Fare information should be confirmed against the latest official fare notice. / ගාස්තු තොරතුරු සඳහා නවතම නිල ගාස්තු නිවේදනය පරීක්ෂා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_fares",
+    "question": "Can I ask about a bus fare?",
+    "answer": "Fare information should be confirmed against the latest official fare notice. / ගාස්තු තොරතුරු සඳහා නවතම නිල ගාස්තු නිවේදනය පරීක්ෂා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_fares",
+    "question": "බස් ගාස්තු බලන්නේ කොහොමද?",
+    "answer": "Fare information should be confirmed against the latest official fare notice. / ගාස්තු තොරතුරු සඳහා නවතම නිල ගාස්තු නිවේදනය පරීක්ෂා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_fares",
+    "question": "දැනට පවතින ගාස්තුව කොහෙන්ද බලන්නේ?",
+    "answer": "Fare information should be confirmed against the latest official fare notice. / ගාස්තු තොරතුරු සඳහා නවතම නිල ගාස්තු නිවේදනය පරීක්ෂා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_fares",
+    "question": "බස් ටිකට් එකේ මිල කීයද?",
+    "answer": "Fare information should be confirmed against the latest official fare notice. / ගාස්තු තොරතුරු සඳහා නවතම නිල ගාස්තු නිවේදනය පරීක්ෂා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_fares",
+    "question": "නිවැරදි බස් ගාස්තුව දැනගන්නේ කොහොමද?",
+    "answer": "Fare information should be confirmed against the latest official fare notice. / ගාස්තු තොරතුරු සඳහා නවතම නිල ගාස්තු නිවේදනය පරීක්ෂා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_fares",
+    "question": "බස් ගාස්තුවක් ගැන අහන්න පුළුවන්ද?",
+    "answer": "Fare information should be confirmed against the latest official fare notice. / ගාස්තු තොරතුරු සඳහා නවතම නිල ගාස්තු නිවේදනය පරීක්ෂා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "lost_property",
+    "question": "I lost an item on a bus",
+    "answer": "Record the bus number, route, date and approximate time, then contact the authority or relevant operator as soon as possible. / බස් අංකය, මාර්ගය, දිනය සහ ආසන්න වේලාව සටහන් කර ඉක්මනින් අධිකාරිය හෝ අදාළ සේවාකරු අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "lost_property",
+    "question": "How do I report lost property?",
+    "answer": "Record the bus number, route, date and approximate time, then contact the authority or relevant operator as soon as possible. / බස් අංකය, මාර්ගය, දිනය සහ ආසන්න වේලාව සටහන් කර ඉක්මනින් අධිකාරිය හෝ අදාළ සේවාකරු අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "lost_property",
+    "question": "Where should I report a lost bag?",
+    "answer": "Record the bus number, route, date and approximate time, then contact the authority or relevant operator as soon as possible. / බස් අංකය, මාර්ගය, දිනය සහ ආසන්න වේලාව සටහන් කර ඉක්මනින් අධිකාරිය හෝ අදාළ සේවාකරු අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "lost_property",
+    "question": "What should I do if I lose something on a bus?",
+    "answer": "Record the bus number, route, date and approximate time, then contact the authority or relevant operator as soon as possible. / බස් අංකය, මාර්ගය, දිනය සහ ආසන්න වේලාව සටහන් කර ඉක්මනින් අධිකාරිය හෝ අදාළ සේවාකරු අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "lost_property",
+    "question": "Can the authority help with lost items?",
+    "answer": "Record the bus number, route, date and approximate time, then contact the authority or relevant operator as soon as possible. / බස් අංකය, මාර්ගය, දිනය සහ ආසන්න වේලාව සටහන් කර ඉක්මනින් අධිකාරිය හෝ අදාළ සේවාකරු අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "lost_property",
+    "question": "බස් එකේ මගේ බඩුවක් නැතිවුණා",
+    "answer": "Record the bus number, route, date and approximate time, then contact the authority or relevant operator as soon as possible. / බස් අංකය, මාර්ගය, දිනය සහ ආසන්න වේලාව සටහන් කර ඉක්මනින් අධිකාරිය හෝ අදාළ සේවාකරු අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "lost_property",
+    "question": "නැතිවූ බඩුවක් ගැන පැමිණිලි කරන්නේ කොහොමද?",
+    "answer": "Record the bus number, route, date and approximate time, then contact the authority or relevant operator as soon as possible. / බස් අංකය, මාර්ගය, දිනය සහ ආසන්න වේලාව සටහන් කර ඉක්මනින් අධිකාරිය හෝ අදාළ සේවාකරු අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "lost_property",
+    "question": "බෑගයක් නැතිවුණාම කොහෙටද කියන්නේ?",
+    "answer": "Record the bus number, route, date and approximate time, then contact the authority or relevant operator as soon as possible. / බස් අංකය, මාර්ගය, දිනය සහ ආසන්න වේලාව සටහන් කර ඉක්මනින් අධිකාරිය හෝ අදාළ සේවාකරු අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "lost_property",
+    "question": "බස් එකේ දෙයක් නැතිවුණොත් මොකද කරන්නේ?",
+    "answer": "Record the bus number, route, date and approximate time, then contact the authority or relevant operator as soon as possible. / බස් අංකය, මාර්ගය, දිනය සහ ආසන්න වේලාව සටහන් කර ඉක්මනින් අධිකාරිය හෝ අදාළ සේවාකරු අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "lost_property",
+    "question": "නැතිවූ දේවල් ගැන අධිකාරිය උදව් කරනවාද?",
+    "answer": "Record the bus number, route, date and approximate time, then contact the authority or relevant operator as soon as possible. / බස් අංකය, මාර්ගය, දිනය සහ ආසන්න වේලාව සටහන් කර ඉක්මනින් අධිකාරිය හෝ අදාළ සේවාකරු අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "complaint",
+    "question": "How do I make a complaint?",
+    "answer": "Use the complaint/feedback section and provide the route, bus number, date, time and a clear description. / පැමිණිලි අංශය භාවිත කර මාර්ගය, බස් අංකය, දිනය, වේලාව සහ පැහැදිලි විස්තරයක් ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "complaint",
+    "question": "Where can I submit a passenger complaint?",
+    "answer": "Use the complaint/feedback section and provide the route, bus number, date, time and a clear description. / පැමිණිලි අංශය භාවිත කර මාර්ගය, බස් අංකය, දිනය, වේලාව සහ පැහැදිලි විස්තරයක් ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "complaint",
+    "question": "Can I complain about a bus service?",
+    "answer": "Use the complaint/feedback section and provide the route, bus number, date, time and a clear description. / පැමිණිලි අංශය භාවිත කර මාර්ගය, බස් අංකය, දිනය, වේලාව සහ පැහැදිලි විස්තරයක් ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "complaint",
+    "question": "How can I report a service problem?",
+    "answer": "Use the complaint/feedback section and provide the route, bus number, date, time and a clear description. / පැමිණිලි අංශය භාවිත කර මාර්ගය, බස් අංකය, දිනය, වේලාව සහ පැහැදිලි විස්තරයක් ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "complaint",
+    "question": "Where is the complaint form?",
+    "answer": "Use the complaint/feedback section and provide the route, bus number, date, time and a clear description. / පැමිණිලි අංශය භාවිත කර මාර්ගය, බස් අංකය, දිනය, වේලාව සහ පැහැදිලි විස්තරයක් ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "complaint",
+    "question": "පැමිණිල්ලක් දාන්නේ කොහොමද?",
+    "answer": "Use the complaint/feedback section and provide the route, bus number, date, time and a clear description. / පැමිණිලි අංශය භාවිත කර මාර්ගය, බස් අංකය, දිනය, වේලාව සහ පැහැදිලි විස්තරයක් ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "complaint",
+    "question": "මගී පැමිණිල්ලක් ඉදිරිපත් කරන්නේ කොහොමද?",
+    "answer": "Use the complaint/feedback section and provide the route, bus number, date, time and a clear description. / පැමිණිලි අංශය භාවිත කර මාර්ගය, බස් අංකය, දිනය, වේලාව සහ පැහැදිලි විස්තරයක් ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "complaint",
+    "question": "බස් සේවාවක් ගැන පැමිණිලි කරන්න පුළුවන්ද?",
+    "answer": "Use the complaint/feedback section and provide the route, bus number, date, time and a clear description. / පැමිණිලි අංශය භාවිත කර මාර්ගය, බස් අංකය, දිනය, වේලාව සහ පැහැදිලි විස්තරයක් ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "complaint",
+    "question": "සේවා ගැටලුවක් වාර්තා කරන්නේ කොහොමද?",
+    "answer": "Use the complaint/feedback section and provide the route, bus number, date, time and a clear description. / පැමිණිලි අංශය භාවිත කර මාර්ගය, බස් අංකය, දිනය, වේලාව සහ පැහැදිලි විස්තරයක් ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "complaint",
+    "question": "පැමිණිලි පෝරමය කොහෙද?",
+    "answer": "Use the complaint/feedback section and provide the route, bus number, date, time and a clear description. / පැමිණිලි අංශය භාවිත කර මාර්ගය, බස් අංකය, දිනය, වේලාව සහ පැහැදිලි විස්තරයක් ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "feedback",
+    "question": "How do I give feedback?",
+    "answer": "After a chat session, select a satisfaction icon and optionally enter a short note. Your feedback is saved for authorized staff. / Chat එක අවසානයේ තෘප්තිමත්භාවයේ icon එකක් තෝරා අවශ්‍ය නම් කෙටි සටහනක් දමන්න. Feedback එක බලන්න බලය ඇති නිලධාරීන්ට හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "feedback",
+    "question": "Can I rate the chatbot?",
+    "answer": "After a chat session, select a satisfaction icon and optionally enter a short note. Your feedback is saved for authorized staff. / Chat එක අවසානයේ තෘප්තිමත්භාවයේ icon එකක් තෝරා අවශ්‍ය නම් කෙටි සටහනක් දමන්න. Feedback එක බලන්න බලය ඇති නිලධාරීන්ට හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "feedback",
+    "question": "Where can I leave feedback?",
+    "answer": "After a chat session, select a satisfaction icon and optionally enter a short note. Your feedback is saved for authorized staff. / Chat එක අවසානයේ තෘප්තිමත්භාවයේ icon එකක් තෝරා අවශ්‍ය නම් කෙටි සටහනක් දමන්න. Feedback එක බලන්න බලය ඇති නිලධාරීන්ට හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "feedback",
+    "question": "How can I rate this service?",
+    "answer": "After a chat session, select a satisfaction icon and optionally enter a short note. Your feedback is saved for authorized staff. / Chat එක අවසානයේ තෘප්තිමත්භාවයේ icon එකක් තෝරා අවශ්‍ය නම් කෙටි සටහනක් දමන්න. Feedback එක බලන්න බලය ඇති නිලධාරීන්ට හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "feedback",
+    "question": "Can I write a short comment after chatting?",
+    "answer": "After a chat session, select a satisfaction icon and optionally enter a short note. Your feedback is saved for authorized staff. / Chat එක අවසානයේ තෘප්තිමත්භාවයේ icon එකක් තෝරා අවශ්‍ය නම් කෙටි සටහනක් දමන්න. Feedback එක බලන්න බලය ඇති නිලධාරීන්ට හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "feedback",
+    "question": "ප්‍රතිචාරයක් දෙන්නේ කොහොමද?",
+    "answer": "After a chat session, select a satisfaction icon and optionally enter a short note. Your feedback is saved for authorized staff. / Chat එක අවසානයේ තෘප්තිමත්භාවයේ icon එකක් තෝරා අවශ්‍ය නම් කෙටි සටහනක් දමන්න. Feedback එක බලන්න බලය ඇති නිලධාරීන්ට හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "feedback",
+    "question": "Chatbot එක rate කරන්න පුළුවන්ද?",
+    "answer": "After a chat session, select a satisfaction icon and optionally enter a short note. Your feedback is saved for authorized staff. / Chat එක අවසානයේ තෘප්තිමත්භාවයේ icon එකක් තෝරා අවශ්‍ය නම් කෙටි සටහනක් දමන්න. Feedback එක බලන්න බලය ඇති නිලධාරීන්ට හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "feedback",
+    "question": "Feedback දාන්නේ කොහෙද?",
+    "answer": "After a chat session, select a satisfaction icon and optionally enter a short note. Your feedback is saved for authorized staff. / Chat එක අවසානයේ තෘප්තිමත්භාවයේ icon එකක් තෝරා අවශ්‍ය නම් කෙටි සටහනක් දමන්න. Feedback එක බලන්න බලය ඇති නිලධාරීන්ට හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "feedback",
+    "question": "සේවාව rate කරන්නේ කොහොමද?",
+    "answer": "After a chat session, select a satisfaction icon and optionally enter a short note. Your feedback is saved for authorized staff. / Chat එක අවසානයේ තෘප්තිමත්භාවයේ icon එකක් තෝරා අවශ්‍ය නම් කෙටි සටහනක් දමන්න. Feedback එක බලන්න බලය ඇති නිලධාරීන්ට හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "feedback",
+    "question": "Chat එකෙන් පස්සේ කෙටි අදහසක් ලියන්න පුළුවන්ද?",
+    "answer": "After a chat session, select a satisfaction icon and optionally enter a short note. Your feedback is saved for authorized staff. / Chat එක අවසානයේ තෘප්තිමත්භාවයේ icon එකක් තෝරා අවශ්‍ය නම් කෙටි සටහනක් දමන්න. Feedback එක බලන්න බලය ඇති නිලධාරීන්ට හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "token",
+    "question": "How do I get a token?",
+    "answer": "Open the Token section, complete the required passenger details and submit the form. A token can then be downloaded. / Token අංශය විවෘත කර අවශ්‍ය මගී විස්තර පුරවා යවන්න. ඉන්පසු Token එක download කළ හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "token",
+    "question": "Where can I apply for a service token?",
+    "answer": "Open the Token section, complete the required passenger details and submit the form. A token can then be downloaded. / Token අංශය විවෘත කර අවශ්‍ය මගී විස්තර පුරවා යවන්න. ඉන්පසු Token එක download කළ හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "token",
+    "question": "Can I get a token online?",
+    "answer": "Open the Token section, complete the required passenger details and submit the form. A token can then be downloaded. / Token අංශය විවෘත කර අවශ්‍ය මගී විස්තර පුරවා යවන්න. ඉන්පසු Token එක download කළ හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "token",
+    "question": "How do I request a customer token?",
+    "answer": "Open the Token section, complete the required passenger details and submit the form. A token can then be downloaded. / Token අංශය විවෘත කර අවශ්‍ය මගී විස්තර පුරවා යවන්න. ඉන්පසු Token එක download කළ හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "token",
+    "question": "Where is the token application?",
+    "answer": "Open the Token section, complete the required passenger details and submit the form. A token can then be downloaded. / Token අංශය විවෘත කර අවශ්‍ය මගී විස්තර පුරවා යවන්න. ඉන්පසු Token එක download කළ හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "token",
+    "question": "Token එකක් ගන්නේ කොහොමද?",
+    "answer": "Open the Token section, complete the required passenger details and submit the form. A token can then be downloaded. / Token අංශය විවෘත කර අවශ්‍ය මගී විස්තර පුරවා යවන්න. ඉන්පසු Token එක download කළ හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "token",
+    "question": "සේවා Token එකකට අයදුම් කරන්නේ කොහොමද?",
+    "answer": "Open the Token section, complete the required passenger details and submit the form. A token can then be downloaded. / Token අංශය විවෘත කර අවශ්‍ය මගී විස්තර පුරවා යවන්න. ඉන්පසු Token එක download කළ හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "token",
+    "question": "Online Token එකක් ගන්න පුළුවන්ද?",
+    "answer": "Open the Token section, complete the required passenger details and submit the form. A token can then be downloaded. / Token අංශය විවෘත කර අවශ්‍ය මගී විස්තර පුරවා යවන්න. ඉන්පසු Token එක download කළ හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "token",
+    "question": "පාරිභෝගික Token එකක් ඉල්ලන්නේ කොහොමද?",
+    "answer": "Open the Token section, complete the required passenger details and submit the form. A token can then be downloaded. / Token අංශය විවෘත කර අවශ්‍ය මගී විස්තර පුරවා යවන්න. ඉන්පසු Token එක download කළ හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "token",
+    "question": "Token අයදුම්පත කොහෙද?",
+    "answer": "Open the Token section, complete the required passenger details and submit the form. A token can then be downloaded. / Token අංශය විවෘත කර අවශ්‍ය මගී විස්තර පුරවා යවන්න. ඉන්පසු Token එක download කළ හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "token_nic",
+    "question": "Why is NIC required for a token?",
+    "answer": "The organization may use identity details to verify the requester and maintain a service record. Provide only accurate information required by the form. / අයදුම්කරු තහවුරු කිරීමට සහ සේවා වාර්තාවක් පවත්වා ගැනීමට හැඳුනුම් තොරතුරු භාවිත කළ හැක. පෝරමය ඉල්ලන නිවැරදි තොරතුරු පමණක් ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "token_nic",
+    "question": "Do I need my NIC number?",
+    "answer": "The organization may use identity details to verify the requester and maintain a service record. Provide only accurate information required by the form. / අයදුම්කරු තහවුරු කිරීමට සහ සේවා වාර්තාවක් පවත්වා ගැනීමට හැඳුනුම් තොරතුරු භාවිත කළ හැක. පෝරමය ඉල්ලන නිවැරදි තොරතුරු පමණක් ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "token_nic",
+    "question": "Is NIC mandatory for token registration?",
+    "answer": "The organization may use identity details to verify the requester and maintain a service record. Provide only accurate information required by the form. / අයදුම්කරු තහවුරු කිරීමට සහ සේවා වාර්තාවක් පවත්වා ගැනීමට හැඳුනුම් තොරතුරු භාවිත කළ හැක. පෝරමය ඉල්ලන නිවැරදි තොරතුරු පමණක් ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "token_nic",
+    "question": "Why do you ask for identity details?",
+    "answer": "The organization may use identity details to verify the requester and maintain a service record. Provide only accurate information required by the form. / අයදුම්කරු තහවුරු කිරීමට සහ සේවා වාර්තාවක් පවත්වා ගැනීමට හැඳුනුම් තොරතුරු භාවිත කළ හැක. පෝරමය ඉල්ලන නිවැරදි තොරතුරු පමණක් ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "token_nic",
+    "question": "What identity information is needed for a token?",
+    "answer": "The organization may use identity details to verify the requester and maintain a service record. Provide only accurate information required by the form. / අයදුම්කරු තහවුරු කිරීමට සහ සේවා වාර්තාවක් පවත්වා ගැනීමට හැඳුනුම් තොරතුරු භාවිත කළ හැක. පෝරමය ඉල්ලන නිවැරදි තොරතුරු පමණක් ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "token_nic",
+    "question": "Token එකට NIC අංකය අවශ්‍ය ඇයි?",
+    "answer": "The organization may use identity details to verify the requester and maintain a service record. Provide only accurate information required by the form. / අයදුම්කරු තහවුරු කිරීමට සහ සේවා වාර්තාවක් පවත්වා ගැනීමට හැඳුනුම් තොරතුරු භාවිත කළ හැක. පෝරමය ඉල්ලන නිවැරදි තොරතුරු පමණක් ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "token_nic",
+    "question": "NIC අංකය දෙන්න ඕනද?",
+    "answer": "The organization may use identity details to verify the requester and maintain a service record. Provide only accurate information required by the form. / අයදුම්කරු තහවුරු කිරීමට සහ සේවා වාර්තාවක් පවත්වා ගැනීමට හැඳුනුම් තොරතුරු භාවිත කළ හැක. පෝරමය ඉල්ලන නිවැරදි තොරතුරු පමණක් ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "token_nic",
+    "question": "Token එකට NIC අනිවාර්යද?",
+    "answer": "The organization may use identity details to verify the requester and maintain a service record. Provide only accurate information required by the form. / අයදුම්කරු තහවුරු කිරීමට සහ සේවා වාර්තාවක් පවත්වා ගැනීමට හැඳුනුම් තොරතුරු භාවිත කළ හැක. පෝරමය ඉල්ලන නිවැරදි තොරතුරු පමණක් ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "token_nic",
+    "question": "හැඳුනුම් තොරතුරු ඉල්ලන්නේ ඇයි?",
+    "answer": "The organization may use identity details to verify the requester and maintain a service record. Provide only accurate information required by the form. / අයදුම්කරු තහවුරු කිරීමට සහ සේවා වාර්තාවක් පවත්වා ගැනීමට හැඳුනුම් තොරතුරු භාවිත කළ හැක. පෝරමය ඉල්ලන නිවැරදි තොරතුරු පමණක් ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "token_nic",
+    "question": "Token එකට අවශ්‍ය හැඳුනුම් තොරතුරු මොනවාද?",
+    "answer": "The organization may use identity details to verify the requester and maintain a service record. Provide only accurate information required by the form. / අයදුම්කරු තහවුරු කිරීමට සහ සේවා වාර්තාවක් පවත්වා ගැනීමට හැඳුනුම් තොරතුරු භාවිත කළ හැක. පෝරමය ඉල්ලන නිවැරදි තොරතුරු පමණක් ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "token_download",
+    "question": "How do I download my token?",
+    "answer": "After successful submission, use the Download Token button. Keep the downloaded PDF for your visit or reference. / සාර්ථකව submit කළ පසු Download Token බොත්තම භාවිත කරන්න. පැමිණීමේදී හෝ පසුව භාවිතයට PDF එක තබාගන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "token_download",
+    "question": "Where is my token after submission?",
+    "answer": "After successful submission, use the Download Token button. Keep the downloaded PDF for your visit or reference. / සාර්ථකව submit කළ පසු Download Token බොත්තම භාවිත කරන්න. පැමිණීමේදී හෝ පසුව භාවිතයට PDF එක තබාගන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "token_download",
+    "question": "Can I download the token again?",
+    "answer": "After successful submission, use the Download Token button. Keep the downloaded PDF for your visit or reference. / සාර්ථකව submit කළ පසු Download Token බොත්තම භාවිත කරන්න. පැමිණීමේදී හෝ පසුව භාවිතයට PDF එක තබාගන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "token_download",
+    "question": "What happens after I submit the token form?",
+    "answer": "After successful submission, use the Download Token button. Keep the downloaded PDF for your visit or reference. / සාර්ථකව submit කළ පසු Download Token බොත්තම භාවිත කරන්න. පැමිණීමේදී හෝ පසුව භාවිතයට PDF එක තබාගන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "token_download",
+    "question": "How do I save my token?",
+    "answer": "After successful submission, use the Download Token button. Keep the downloaded PDF for your visit or reference. / සාර්ථකව submit කළ පසු Download Token බොත්තම භාවිත කරන්න. පැමිණීමේදී හෝ පසුව භාවිතයට PDF එක තබාගන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "token_download",
+    "question": "Token එක download කරන්නේ කොහොමද?",
+    "answer": "After successful submission, use the Download Token button. Keep the downloaded PDF for your visit or reference. / සාර්ථකව submit කළ පසු Download Token බොත්තම භාවිත කරන්න. පැමිණීමේදී හෝ පසුව භාවිතයට PDF එක තබාගන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "token_download",
+    "question": "Submit කළාට පස්සේ Token එක කොහෙද?",
+    "answer": "After successful submission, use the Download Token button. Keep the downloaded PDF for your visit or reference. / සාර්ථකව submit කළ පසු Download Token බොත්තම භාවිත කරන්න. පැමිණීමේදී හෝ පසුව භාවිතයට PDF එක තබාගන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "token_download",
+    "question": "Token එක නැවත download කරන්න පුළුවන්ද?",
+    "answer": "After successful submission, use the Download Token button. Keep the downloaded PDF for your visit or reference. / සාර්ථකව submit කළ පසු Download Token බොත්තම භාවිත කරන්න. පැමිණීමේදී හෝ පසුව භාවිතයට PDF එක තබාගන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "token_download",
+    "question": "Token form එක submit කළාම මොකද වෙන්නේ?",
+    "answer": "After successful submission, use the Download Token button. Keep the downloaded PDF for your visit or reference. / සාර්ථකව submit කළ පසු Download Token බොත්තම භාවිත කරන්න. පැමිණීමේදී හෝ පසුව භාවිතයට PDF එක තබාගන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "token_download",
+    "question": "Token එක save කරගන්නේ කොහොමද?",
+    "answer": "After successful submission, use the Download Token button. Keep the downloaded PDF for your visit or reference. / සාර්ථකව submit කළ පසු Download Token බොත්තම භාවිත කරන්න. පැමිණීමේදී හෝ පසුව භාවිතයට PDF එක තබාගන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "documents",
+    "question": "Where can I download forms?",
+    "answer": "Open the Documents section. Official forms and notices will be listed there with clear file names. / Documents අංශය විවෘත කරන්න. නිල forms සහ notices පැහැදිලි file names සමඟ එහි පෙන්වනු ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "documents",
+    "question": "How can I download applications?",
+    "answer": "Open the Documents section. Official forms and notices will be listed there with clear file names. / Documents අංශය විවෘත කරන්න. නිල forms සහ notices පැහැදිලි file names සමඟ එහි පෙන්වනු ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "documents",
+    "question": "Where are official PDF documents?",
+    "answer": "Open the Documents section. Official forms and notices will be listed there with clear file names. / Documents අංශය විවෘත කරන්න. නිල forms සහ notices පැහැදිලි file names සමඟ එහි පෙන්වනු ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "documents",
+    "question": "Can I download forms online?",
+    "answer": "Open the Documents section. Official forms and notices will be listed there with clear file names. / Documents අංශය විවෘත කරන්න. නිල forms සහ notices පැහැදිලි file names සමඟ එහි පෙන්වනු ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "documents",
+    "question": "Where can I find application PDFs?",
+    "answer": "Open the Documents section. Official forms and notices will be listed there with clear file names. / Documents අංශය විවෘත කරන්න. නිල forms සහ notices පැහැදිලි file names සමඟ එහි පෙන්වනු ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "documents",
+    "question": "Form download කරන්නේ කොහෙන්ද?",
+    "answer": "Open the Documents section. Official forms and notices will be listed there with clear file names. / Documents අංශය විවෘත කරන්න. නිල forms සහ notices පැහැදිලි file names සමඟ එහි පෙන්වනු ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "documents",
+    "question": "අයදුම්පත් download කරන්නේ කොහොමද?",
+    "answer": "Open the Documents section. Official forms and notices will be listed there with clear file names. / Documents අංශය විවෘත කරන්න. නිල forms සහ notices පැහැදිලි file names සමඟ එහි පෙන්වනු ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "documents",
+    "question": "නිල PDF documents කොහෙද?",
+    "answer": "Open the Documents section. Official forms and notices will be listed there with clear file names. / Documents අංශය විවෘත කරන්න. නිල forms සහ notices පැහැදිලි file names සමඟ එහි පෙන්වනු ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "documents",
+    "question": "Online forms ගන්න පුළුවන්ද?",
+    "answer": "Open the Documents section. Official forms and notices will be listed there with clear file names. / Documents අංශය විවෘත කරන්න. නිල forms සහ notices පැහැදිලි file names සමඟ එහි පෙන්වනු ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "documents",
+    "question": "Application PDF කොහෙද තියෙන්නේ?",
+    "answer": "Open the Documents section. Official forms and notices will be listed there with clear file names. / Documents අංශය විවෘත කරන්න. නිල forms සහ notices පැහැදිලි file names සමඟ එහි පෙන්වනු ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_complaint_details",
+    "question": "What details should I include in a bus complaint?",
+    "answer": "Include bus number, route, date, time, location, issue description and supporting evidence when available. / බස් අංකය, මාර්ගය, දිනය, වේලාව, ස්ථානය, ගැටලුවේ විස්තර සහ තිබේ නම් සාක්ෂි ඇතුළත් කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_complaint_details",
+    "question": "What information is needed for a transport complaint?",
+    "answer": "Include bus number, route, date, time, location, issue description and supporting evidence when available. / බස් අංකය, මාර්ගය, දිනය, වේලාව, ස්ථානය, ගැටලුවේ විස්තර සහ තිබේ නම් සාක්ෂි ඇතුළත් කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_complaint_details",
+    "question": "What should I write in a complaint?",
+    "answer": "Include bus number, route, date, time, location, issue description and supporting evidence when available. / බස් අංකය, මාර්ගය, දිනය, වේලාව, ස්ථානය, ගැටලුවේ විස්තර සහ තිබේ නම් සාක්ෂි ඇතුළත් කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_complaint_details",
+    "question": "Which bus details are important?",
+    "answer": "Include bus number, route, date, time, location, issue description and supporting evidence when available. / බස් අංකය, මාර්ගය, දිනය, වේලාව, ස්ථානය, ගැටලුවේ විස්තර සහ තිබේ නම් සාක්ෂි ඇතුළත් කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_complaint_details",
+    "question": "බස් පැමිණිල්ලට මොන විස්තර දාන්නද?",
+    "answer": "Include bus number, route, date, time, location, issue description and supporting evidence when available. / බස් අංකය, මාර්ගය, දිනය, වේලාව, ස්ථානය, ගැටලුවේ විස්තර සහ තිබේ නම් සාක්ෂි ඇතුළත් කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_complaint_details",
+    "question": "ප්‍රවාහන පැමිණිල්ලකට අවශ්‍ය තොරතුරු මොනවාද?",
+    "answer": "Include bus number, route, date, time, location, issue description and supporting evidence when available. / බස් අංකය, මාර්ගය, දිනය, වේලාව, ස්ථානය, ගැටලුවේ විස්තර සහ තිබේ නම් සාක්ෂි ඇතුළත් කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_complaint_details",
+    "question": "පැමිණිල්ලේ මොනවා ලියන්නද?",
+    "answer": "Include bus number, route, date, time, location, issue description and supporting evidence when available. / බස් අංකය, මාර්ගය, දිනය, වේලාව, ස්ථානය, ගැටලුවේ විස්තර සහ තිබේ නම් සාක්ෂි ඇතුළත් කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_complaint_details",
+    "question": "බස් එකේ මොන විස්තර වැදගත්ද?",
+    "answer": "Include bus number, route, date, time, location, issue description and supporting evidence when available. / බස් අංකය, මාර්ගය, දිනය, වේලාව, ස්ථානය, ගැටලුවේ විස්තර සහ තිබේ නම් සාක්ෂි ඇතුළත් කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_complaint_details",
+    "question": "පැමිණිල්ලකට බස් අංකය අවශ්‍යද?",
+    "answer": "Include bus number, route, date, time, location, issue description and supporting evidence when available. / බස් අංකය, මාර්ගය, දිනය, වේලාව, ස්ථානය, ගැටලුවේ විස්තර සහ තිබේ නම් සාක්ෂි ඇතුළත් කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_complaint_details",
+    "question": "බස් පැමිණිල්ලකට දිනය සහ වේලාව දාන්න ඕනද?",
+    "answer": "Include bus number, route, date, time, location, issue description and supporting evidence when available. / බස් අංකය, මාර්ගය, දිනය, වේලාව, ස්ථානය, ගැටලුවේ විස්තර සහ තිබේ නම් සාක්ෂි ඇතුළත් කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "driver_conduct",
+    "question": "How do I report unsafe driver behavior?",
+    "answer": "For a non-emergency complaint, record the bus number, route, date and time and submit a complaint. For immediate danger, contact emergency services. / හදිසි නොවන පැමිණිල්ලක් සඳහා බස් අංකය, මාර්ගය, දිනය සහ වේලාව සටහන් කර පැමිණිල්ලක් යවන්න. ක්ෂණික අනතුරක් නම් හදිසි සේවා අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "driver_conduct",
+    "question": "Where can I report reckless driving?",
+    "answer": "For a non-emergency complaint, record the bus number, route, date and time and submit a complaint. For immediate danger, contact emergency services. / හදිසි නොවන පැමිණිල්ලක් සඳහා බස් අංකය, මාර්ගය, දිනය සහ වේලාව සටහන් කර පැමිණිල්ලක් යවන්න. ක්ෂණික අනතුරක් නම් හදිසි සේවා අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "driver_conduct",
+    "question": "Can I report a driver?",
+    "answer": "For a non-emergency complaint, record the bus number, route, date and time and submit a complaint. For immediate danger, contact emergency services. / හදිසි නොවන පැමිණිල්ලක් සඳහා බස් අංකය, මාර්ගය, දිනය සහ වේලාව සටහන් කර පැමිණිල්ලක් යවන්න. ක්ෂණික අනතුරක් නම් හදිසි සේවා අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "driver_conduct",
+    "question": "How do I complain about driver conduct?",
+    "answer": "For a non-emergency complaint, record the bus number, route, date and time and submit a complaint. For immediate danger, contact emergency services. / හදිසි නොවන පැමිණිල්ලක් සඳහා බස් අංකය, මාර්ගය, දිනය සහ වේලාව සටහන් කර පැමිණිල්ලක් යවන්න. ක්ෂණික අනතුරක් නම් හදිසි සේවා අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "driver_conduct",
+    "question": "What if a driver behaves dangerously?",
+    "answer": "For a non-emergency complaint, record the bus number, route, date and time and submit a complaint. For immediate danger, contact emergency services. / හදිසි නොවන පැමිණිල්ලක් සඳහා බස් අංකය, මාර්ගය, දිනය සහ වේලාව සටහන් කර පැමිණිල්ලක් යවන්න. ක්ෂණික අනතුරක් නම් හදිසි සේවා අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "driver_conduct",
+    "question": "අනාරක්ෂිත රිය පැදවීමක් වාර්තා කරන්නේ කොහොමද?",
+    "answer": "For a non-emergency complaint, record the bus number, route, date and time and submit a complaint. For immediate danger, contact emergency services. / හදිසි නොවන පැමිණිල්ලක් සඳහා බස් අංකය, මාර්ගය, දිනය සහ වේලාව සටහන් කර පැමිණිල්ලක් යවන්න. ක්ෂණික අනතුරක් නම් හදිසි සේවා අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "driver_conduct",
+    "question": "අවදානම් රිය පැදවීමක් ගැන කියන්නේ කොහොමද?",
+    "answer": "For a non-emergency complaint, record the bus number, route, date and time and submit a complaint. For immediate danger, contact emergency services. / හදිසි නොවන පැමිණිල්ලක් සඳහා බස් අංකය, මාර්ගය, දිනය සහ වේලාව සටහන් කර පැමිණිල්ලක් යවන්න. ක්ෂණික අනතුරක් නම් හදිසි සේවා අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "driver_conduct",
+    "question": "රියදුරෙකු ගැන පැමිණිලි කරන්න පුළුවන්ද?",
+    "answer": "For a non-emergency complaint, record the bus number, route, date and time and submit a complaint. For immediate danger, contact emergency services. / හදිසි නොවන පැමිණිල්ලක් සඳහා බස් අංකය, මාර්ගය, දිනය සහ වේලාව සටහන් කර පැමිණිල්ලක් යවන්න. ක්ෂණික අනතුරක් නම් හදිසි සේවා අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "driver_conduct",
+    "question": "රියදුරු හැසිරීම ගැන පැමිණිලි කරන්නේ කොහොමද?",
+    "answer": "For a non-emergency complaint, record the bus number, route, date and time and submit a complaint. For immediate danger, contact emergency services. / හදිසි නොවන පැමිණිල්ලක් සඳහා බස් අංකය, මාර්ගය, දිනය සහ වේලාව සටහන් කර පැමිණිල්ලක් යවන්න. ක්ෂණික අනතුරක් නම් හදිසි සේවා අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "driver_conduct",
+    "question": "රියදුරු අනාරක්ෂිත ලෙස හැසිරුණොත් මොකද කරන්නේ?",
+    "answer": "For a non-emergency complaint, record the bus number, route, date and time and submit a complaint. For immediate danger, contact emergency services. / හදිසි නොවන පැමිණිල්ලක් සඳහා බස් අංකය, මාර්ගය, දිනය සහ වේලාව සටහන් කර පැමිණිල්ලක් යවන්න. ක්ෂණික අනතුරක් නම් හදිසි සේවා අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "accessibility",
+    "question": "Are services available for disabled passengers?",
+    "answer": "Accessibility arrangements can vary by service. Contact the authority before travel to confirm available assistance. / ප්‍රවේශ පහසුකම් සේවාව අනුව වෙනස් විය හැක. ගමනට පෙර ලබාගත හැකි සහාය තහවුරු කරගැනීමට අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "accessibility",
+    "question": "What accessibility support is available?",
+    "answer": "Accessibility arrangements can vary by service. Contact the authority before travel to confirm available assistance. / ප්‍රවේශ පහසුකම් සේවාව අනුව වෙනස් විය හැක. ගමනට පෙර ලබාගත හැකි සහාය තහවුරු කරගැනීමට අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "accessibility",
+    "question": "Can wheelchair users get assistance?",
+    "answer": "Accessibility arrangements can vary by service. Contact the authority before travel to confirm available assistance. / ප්‍රවේශ පහසුකම් සේවාව අනුව වෙනස් විය හැක. ගමනට පෙර ලබාගත හැකි සහාය තහවුරු කරගැනීමට අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "accessibility",
+    "question": "How can a passenger request accessibility help?",
+    "answer": "Accessibility arrangements can vary by service. Contact the authority before travel to confirm available assistance. / ප්‍රවේශ පහසුකම් සේවාව අනුව වෙනස් විය හැක. ගමනට පෙර ලබාගත හැකි සහාය තහවුරු කරගැනීමට අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "accessibility",
+    "question": "Do buses have accessibility facilities?",
+    "answer": "Accessibility arrangements can vary by service. Contact the authority before travel to confirm available assistance. / ප්‍රවේශ පහසුකම් සේවාව අනුව වෙනස් විය හැක. ගමනට පෙර ලබාගත හැකි සහාය තහවුරු කරගැනීමට අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "accessibility",
+    "question": "ආබාධිත මගීන් සඳහා සේවා තියෙනවාද?",
+    "answer": "Accessibility arrangements can vary by service. Contact the authority before travel to confirm available assistance. / ප්‍රවේශ පහසුකම් සේවාව අනුව වෙනස් විය හැක. ගමනට පෙර ලබාගත හැකි සහාය තහවුරු කරගැනීමට අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "accessibility",
+    "question": "ප්‍රවේශ පහසුකම් මොනවාද?",
+    "answer": "Accessibility arrangements can vary by service. Contact the authority before travel to confirm available assistance. / ප්‍රවේශ පහසුකම් සේවාව අනුව වෙනස් විය හැක. ගමනට පෙර ලබාගත හැකි සහාය තහවුරු කරගැනීමට අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "accessibility",
+    "question": "Wheelchair භාවිතා කරන මගීන්ට උදව් ලැබෙනවාද?",
+    "answer": "Accessibility arrangements can vary by service. Contact the authority before travel to confirm available assistance. / ප්‍රවේශ පහසුකම් සේවාව අනුව වෙනස් විය හැක. ගමනට පෙර ලබාගත හැකි සහාය තහවුරු කරගැනීමට අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "accessibility",
+    "question": "ප්‍රවේශ සහාය ඉල්ලන්නේ කොහොමද?",
+    "answer": "Accessibility arrangements can vary by service. Contact the authority before travel to confirm available assistance. / ප්‍රවේශ පහසුකම් සේවාව අනුව වෙනස් විය හැක. ගමනට පෙර ලබාගත හැකි සහාය තහවුරු කරගැනීමට අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "accessibility",
+    "question": "බස්වල ප්‍රවේශ පහසුකම් තියෙනවාද?",
+    "answer": "Accessibility arrangements can vary by service. Contact the authority before travel to confirm available assistance. / ප්‍රවේශ පහසුකම් සේවාව අනුව වෙනස් විය හැක. ගමනට පෙර ලබාගත හැකි සහාය තහවුරු කරගැනීමට අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "student_concession",
+    "question": "Is there a student concession?",
+    "answer": "Concession eligibility and documents depend on the applicable official scheme. Check the latest notice or contact the authority. / සහන ගාස්තු සඳහා සුදුසුකම් සහ ලේඛන අදාළ නිල ක්‍රමවේදය අනුව වෙනස් වේ. නවතම නිවේදනය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "student_concession",
+    "question": "How can students get concession information?",
+    "answer": "Concession eligibility and documents depend on the applicable official scheme. Check the latest notice or contact the authority. / සහන ගාස්තු සඳහා සුදුසුකම් සහ ලේඛන අදාළ නිල ක්‍රමවේදය අනුව වෙනස් වේ. නවතම නිවේදනය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "student_concession",
+    "question": "Are student fares available?",
+    "answer": "Concession eligibility and documents depend on the applicable official scheme. Check the latest notice or contact the authority. / සහන ගාස්තු සඳහා සුදුසුකම් සහ ලේඛන අදාළ නිල ක්‍රමවේදය අනුව වෙනස් වේ. නවතම නිවේදනය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "student_concession",
+    "question": "Where can I ask about student transport concessions?",
+    "answer": "Concession eligibility and documents depend on the applicable official scheme. Check the latest notice or contact the authority. / සහන ගාස්තු සඳහා සුදුසුකම් සහ ලේඛන අදාළ නිල ක්‍රමවේදය අනුව වෙනස් වේ. නවතම නිවේදනය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "student_concession",
+    "question": "What documents are needed for student concessions?",
+    "answer": "Concession eligibility and documents depend on the applicable official scheme. Check the latest notice or contact the authority. / සහන ගාස්තු සඳහා සුදුසුකම් සහ ලේඛන අදාළ නිල ක්‍රමවේදය අනුව වෙනස් වේ. නවතම නිවේදනය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "student_concession",
+    "question": "සිසුන්ට සහන ගාස්තු තියෙනවාද?",
+    "answer": "Concession eligibility and documents depend on the applicable official scheme. Check the latest notice or contact the authority. / සහන ගාස්තු සඳහා සුදුසුකම් සහ ලේඛන අදාළ නිල ක්‍රමවේදය අනුව වෙනස් වේ. නවතම නිවේදනය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "student_concession",
+    "question": "සිසු සහන ගාස්තු ගැන තොරතුරු ගන්නේ කොහොමද?",
+    "answer": "Concession eligibility and documents depend on the applicable official scheme. Check the latest notice or contact the authority. / සහන ගාස්තු සඳහා සුදුසුකම් සහ ලේඛන අදාළ නිල ක්‍රමවේදය අනුව වෙනස් වේ. නවතම නිවේදනය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "student_concession",
+    "question": "ශිෂ්‍ය ගාස්තු සහන තියෙනවාද?",
+    "answer": "Concession eligibility and documents depend on the applicable official scheme. Check the latest notice or contact the authority. / සහන ගාස්තු සඳහා සුදුසුකම් සහ ලේඛන අදාළ නිල ක්‍රමවේදය අනුව වෙනස් වේ. නවතම නිවේදනය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "student_concession",
+    "question": "සිසු ප්‍රවාහන සහන ගැන අහන්නේ කොහෙන්ද?",
+    "answer": "Concession eligibility and documents depend on the applicable official scheme. Check the latest notice or contact the authority. / සහන ගාස්තු සඳහා සුදුසුකම් සහ ලේඛන අදාළ නිල ක්‍රමවේදය අනුව වෙනස් වේ. නවතම නිවේදනය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "student_concession",
+    "question": "සිසු සහනයට මොන documents ඕනද?",
+    "answer": "Concession eligibility and documents depend on the applicable official scheme. Check the latest notice or contact the authority. / සහන ගාස්තු සඳහා සුදුසුකම් සහ ලේඛන අදාළ නිල ක්‍රමවේදය අනුව වෙනස් වේ. නවතම නිවේදනය බලන්න හෝ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "senior_citizen",
+    "question": "Is there support for senior citizens?",
+    "answer": "Please contact the authority or operator to confirm assistance available for your journey. / ඔබගේ ගමන සඳහා ලබාගත හැකි සහාය තහවුරු කිරීමට අධිකාරිය හෝ සේවාකරු අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "senior_citizen",
+    "question": "What transport assistance is available for elderly passengers?",
+    "answer": "Please contact the authority or operator to confirm assistance available for your journey. / ඔබගේ ගමන සඳහා ලබාගත හැකි සහාය තහවුරු කිරීමට අධිකාරිය හෝ සේවාකරු අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "senior_citizen",
+    "question": "Can senior citizens request help?",
+    "answer": "Please contact the authority or operator to confirm assistance available for your journey. / ඔබගේ ගමන සඳහා ලබාගත හැකි සහාය තහවුරු කිරීමට අධිකාරිය හෝ සේවාකරු අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "senior_citizen",
+    "question": "Where can elderly passengers get information?",
+    "answer": "Please contact the authority or operator to confirm assistance available for your journey. / ඔබගේ ගමන සඳහා ලබාගත හැකි සහාය තහවුරු කිරීමට අධිකාරිය හෝ සේවාකරු අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "senior_citizen",
+    "question": "වැඩිහිටි මගීන්ට සහාය තියෙනවාද?",
+    "answer": "Please contact the authority or operator to confirm assistance available for your journey. / ඔබගේ ගමන සඳහා ලබාගත හැකි සහාය තහවුරු කිරීමට අධිකාරිය හෝ සේවාකරු අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "senior_citizen",
+    "question": "වයෝවෘද්ධ මගීන්ට ප්‍රවාහන පහසුකම් මොනවාද?",
+    "answer": "Please contact the authority or operator to confirm assistance available for your journey. / ඔබගේ ගමන සඳහා ලබාගත හැකි සහාය තහවුරු කිරීමට අධිකාරිය හෝ සේවාකරු අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "senior_citizen",
+    "question": "වැඩිහිටියන්ට උදව් ඉල්ලන්න පුළුවන්ද?",
+    "answer": "Please contact the authority or operator to confirm assistance available for your journey. / ඔබගේ ගමන සඳහා ලබාගත හැකි සහාය තහවුරු කිරීමට අධිකාරිය හෝ සේවාකරු අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "senior_citizen",
+    "question": "වැඩිහිටි මගීන්ට තොරතුරු ගන්නේ කොහෙන්ද?",
+    "answer": "Please contact the authority or operator to confirm assistance available for your journey. / ඔබගේ ගමන සඳහා ලබාගත හැකි සහාය තහවුරු කිරීමට අධිකාරිය හෝ සේවාකරු අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "senior_citizen",
+    "question": "වයෝවෘද්ධ මගීන් සඳහා සහාය කොහෙද?",
+    "answer": "Please contact the authority or operator to confirm assistance available for your journey. / ඔබගේ ගමන සඳහා ලබාගත හැකි සහාය තහවුරු කිරීමට අධිකාරිය හෝ සේවාකරු අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "senior_citizen",
+    "question": "Can elderly passengers ask for transport assistance?",
+    "answer": "Please contact the authority or operator to confirm assistance available for your journey. / ඔබගේ ගමන සඳහා ලබාගත හැකි සහාය තහවුරු කිරීමට අධිකාරිය හෝ සේවාකරු අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "permit",
+    "question": "How do I ask about a bus permit?",
+    "answer": "Permit requirements and application procedures should be confirmed with the relevant authority division and latest official forms. / බලපත්‍ර අවශ්‍යතා සහ අයදුම් ක්‍රමය අදාළ අධිකාරි අංශයෙන් සහ නවතම නිල forms මගින් තහවුරු කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "permit",
+    "question": "Where can I get permit information?",
+    "answer": "Permit requirements and application procedures should be confirmed with the relevant authority division and latest official forms. / බලපත්‍ර අවශ්‍යතා සහ අයදුම් ක්‍රමය අදාළ අධිකාරි අංශයෙන් සහ නවතම නිල forms මගින් තහවුරු කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "permit",
+    "question": "What is a route permit?",
+    "answer": "Permit requirements and application procedures should be confirmed with the relevant authority division and latest official forms. / බලපත්‍ර අවශ්‍යතා සහ අයදුම් ක්‍රමය අදාළ අධිකාරි අංශයෙන් සහ නවතම නිල forms මගින් තහවුරු කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "permit",
+    "question": "How can an operator inquire about a permit?",
+    "answer": "Permit requirements and application procedures should be confirmed with the relevant authority division and latest official forms. / බලපත්‍ර අවශ්‍යතා සහ අයදුම් ක්‍රමය අදාළ අධිකාරි අංශයෙන් සහ නවතම නිල forms මගින් තහවුරු කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "permit",
+    "question": "Where are permit applications?",
+    "answer": "Permit requirements and application procedures should be confirmed with the relevant authority division and latest official forms. / බලපත්‍ර අවශ්‍යතා සහ අයදුම් ක්‍රමය අදාළ අධිකාරි අංශයෙන් සහ නවතම නිල forms මගින් තහවුරු කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "permit",
+    "question": "බස් බලපත්‍රයක් ගැන අහන්නේ කොහොමද?",
+    "answer": "Permit requirements and application procedures should be confirmed with the relevant authority division and latest official forms. / බලපත්‍ර අවශ්‍යතා සහ අයදුම් ක්‍රමය අදාළ අධිකාරි අංශයෙන් සහ නවතම නිල forms මගින් තහවුරු කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "permit",
+    "question": "Permit තොරතුරු කොහෙන්ද?",
+    "answer": "Permit requirements and application procedures should be confirmed with the relevant authority division and latest official forms. / බලපත්‍ර අවශ්‍යතා සහ අයදුම් ක්‍රමය අදාළ අධිකාරි අංශයෙන් සහ නවතම නිල forms මගින් තහවුරු කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "permit",
+    "question": "මාර්ග බලපත්‍රය කියන්නේ මොකක්ද?",
+    "answer": "Permit requirements and application procedures should be confirmed with the relevant authority division and latest official forms. / බලපත්‍ර අවශ්‍යතා සහ අයදුම් ක්‍රමය අදාළ අධිකාරි අංශයෙන් සහ නවතම නිල forms මගින් තහවුරු කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "permit",
+    "question": "සේවාකරුවෙකු permit ගැන අහන්නේ කොහොමද?",
+    "answer": "Permit requirements and application procedures should be confirmed with the relevant authority division and latest official forms. / බලපත්‍ර අවශ්‍යතා සහ අයදුම් ක්‍රමය අදාළ අධිකාරි අංශයෙන් සහ නවතම නිල forms මගින් තහවුරු කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "permit",
+    "question": "Permit application කොහෙද?",
+    "answer": "Permit requirements and application procedures should be confirmed with the relevant authority division and latest official forms. / බලපත්‍ර අවශ්‍යතා සහ අයදුම් ක්‍රමය අදාළ අධිකාරි අංශයෙන් සහ නවතම නිල forms මගින් තහවුරු කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "operator",
+    "question": "How can a bus operator contact the authority?",
+    "answer": "Operators should use the relevant service section or contact the authority for permit, compliance and document-submission information. / බලපත්‍ර, අනුකූලතා සහ ලේඛන ඉදිරිපත් කිරීමේ තොරතුරු සඳහා අදාළ service section එක හෝ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "operator",
+    "question": "Where can operators get information?",
+    "answer": "Operators should use the relevant service section or contact the authority for permit, compliance and document-submission information. / බලපත්‍ර, අනුකූලතා සහ ලේඛන ඉදිරිපත් කිරීමේ තොරතුරු සඳහා අදාළ service section එක හෝ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "operator",
+    "question": "I am a transport operator; what services are available?",
+    "answer": "Operators should use the relevant service section or contact the authority for permit, compliance and document-submission information. / බලපත්‍ර, අනුකූලතා සහ ලේඛන ඉදිරිපත් කිරීමේ තොරතුරු සඳහා අදාළ service section එක හෝ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "operator",
+    "question": "How do operators submit documents?",
+    "answer": "Operators should use the relevant service section or contact the authority for permit, compliance and document-submission information. / බලපත්‍ර, අනුකූලතා සහ ලේඛන ඉදිරිපත් කිරීමේ තොරතුරු සඳහා අදාළ service section එක හෝ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "operator",
+    "question": "Where are operator services?",
+    "answer": "Operators should use the relevant service section or contact the authority for permit, compliance and document-submission information. / බලපත්‍ර, අනුකූලතා සහ ලේඛන ඉදිරිපත් කිරීමේ තොරතුරු සඳහා අදාළ service section එක හෝ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "operator",
+    "question": "බස් සේවාකරුවෙකු අධිකාරිය අමතන්නේ කොහොමද?",
+    "answer": "Operators should use the relevant service section or contact the authority for permit, compliance and document-submission information. / බලපත්‍ර, අනුකූලතා සහ ලේඛන ඉදිරිපත් කිරීමේ තොරතුරු සඳහා අදාළ service section එක හෝ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "operator",
+    "question": "සේවාකරුවන්ට තොරතුරු කොහෙන්ද?",
+    "answer": "Operators should use the relevant service section or contact the authority for permit, compliance and document-submission information. / බලපත්‍ර, අනුකූලතා සහ ලේඛන ඉදිරිපත් කිරීමේ තොරතුරු සඳහා අදාළ service section එක හෝ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "operator",
+    "question": "මම ප්‍රවාහන සේවාකරුවෙක්; මොන සේවා තියෙනවාද?",
+    "answer": "Operators should use the relevant service section or contact the authority for permit, compliance and document-submission information. / බලපත්‍ර, අනුකූලතා සහ ලේඛන ඉදිරිපත් කිරීමේ තොරතුරු සඳහා අදාළ service section එක හෝ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "operator",
+    "question": "සේවාකරුවන් documents submit කරන්නේ කොහොමද?",
+    "answer": "Operators should use the relevant service section or contact the authority for permit, compliance and document-submission information. / බලපත්‍ර, අනුකූලතා සහ ලේඛන ඉදිරිපත් කිරීමේ තොරතුරු සඳහා අදාළ service section එක හෝ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "operator",
+    "question": "Operator services කොහෙද?",
+    "answer": "Operators should use the relevant service section or contact the authority for permit, compliance and document-submission information. / බලපත්‍ර, අනුකූලතා සහ ලේඛන ඉදිරිපත් කිරීමේ තොරතුරු සඳහා අදාළ service section එක හෝ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "emergency",
+    "question": "What should I do in a transport emergency?",
+    "answer": "For immediate danger or an accident, contact the appropriate emergency service first. Then notify the authority when safe to do so. / ක්ෂණික අනතුරක් හෝ අනතුරක් සිදුවූ විට පළමුව අදාළ හදිසි සේවාව අමතන්න. ආරක්ෂිත වූ පසු අධිකාරියට දැනුම් දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "emergency",
+    "question": "Who do I call in an emergency?",
+    "answer": "For immediate danger or an accident, contact the appropriate emergency service first. Then notify the authority when safe to do so. / ක්ෂණික අනතුරක් හෝ අනතුරක් සිදුවූ විට පළමුව අදාළ හදිසි සේවාව අමතන්න. ආරක්ෂිත වූ පසු අධිකාරියට දැනුම් දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "emergency",
+    "question": "What if there is an accident?",
+    "answer": "For immediate danger or an accident, contact the appropriate emergency service first. Then notify the authority when safe to do so. / ක්ෂණික අනතුරක් හෝ අනතුරක් සිදුවූ විට පළමුව අදාළ හදිසි සේවාව අමතන්න. ආරක්ෂිත වූ පසු අධිකාරියට දැනුම් දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "emergency",
+    "question": "How should I report an urgent safety issue?",
+    "answer": "For immediate danger or an accident, contact the appropriate emergency service first. Then notify the authority when safe to do so. / ක්ෂණික අනතුරක් හෝ අනතුරක් සිදුවූ විට පළමුව අදාළ හදිසි සේවාව අමතන්න. ආරක්ෂිත වූ පසු අධිකාරියට දැනුම් දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "emergency",
+    "question": "Where do I get emergency help?",
+    "answer": "For immediate danger or an accident, contact the appropriate emergency service first. Then notify the authority when safe to do so. / ක්ෂණික අනතුරක් හෝ අනතුරක් සිදුවූ විට පළමුව අදාළ හදිසි සේවාව අමතන්න. ආරක්ෂිත වූ පසු අධිකාරියට දැනුම් දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "emergency",
+    "question": "ප්‍රවාහන හදිසි අවස්ථාවක මොකද කරන්නේ?",
+    "answer": "For immediate danger or an accident, contact the appropriate emergency service first. Then notify the authority when safe to do so. / ක්ෂණික අනතුරක් හෝ අනතුරක් සිදුවූ විට පළමුව අදාළ හදිසි සේවාව අමතන්න. ආරක්ෂිත වූ පසු අධිකාරියට දැනුම් දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "emergency",
+    "question": "හදිසි අවස්ථාවක කාටද කතා කරන්නේ?",
+    "answer": "For immediate danger or an accident, contact the appropriate emergency service first. Then notify the authority when safe to do so. / ක්ෂණික අනතුරක් හෝ අනතුරක් සිදුවූ විට පළමුව අදාළ හදිසි සේවාව අමතන්න. ආරක්ෂිත වූ පසු අධිකාරියට දැනුම් දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "emergency",
+    "question": "අනතුරක් වුණොත් මොකද කරන්නේ?",
+    "answer": "For immediate danger or an accident, contact the appropriate emergency service first. Then notify the authority when safe to do so. / ක්ෂණික අනතුරක් හෝ අනතුරක් සිදුවූ විට පළමුව අදාළ හදිසි සේවාව අමතන්න. ආරක්ෂිත වූ පසු අධිකාරියට දැනුම් දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "emergency",
+    "question": "හදිසි ආරක්ෂක ගැටලුවක් වාර්තා කරන්නේ කොහොමද?",
+    "answer": "For immediate danger or an accident, contact the appropriate emergency service first. Then notify the authority when safe to do so. / ක්ෂණික අනතුරක් හෝ අනතුරක් සිදුවූ විට පළමුව අදාළ හදිසි සේවාව අමතන්න. ආරක්ෂිත වූ පසු අධිකාරියට දැනුම් දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "emergency",
+    "question": "හදිසි උදව් ගන්නේ කොහෙන්ද?",
+    "answer": "For immediate danger or an accident, contact the appropriate emergency service first. Then notify the authority when safe to do so. / ක්ෂණික අනතුරක් හෝ අනතුරක් සිදුවූ විට පළමුව අදාළ හදිසි සේවාව අමතන්න. ආරක්ෂිත වූ පසු අධිකාරියට දැනුම් දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "website_help",
+    "question": "How do I use this website?",
+    "answer": "You can browse information, download documents, request a token, use the Assistant and submit feedback. / ඔබට තොරතුරු බලන්න, documents download කරන්න, Token ඉල්ලන්න, Assistant භාවිත කරන්න සහ feedback ලබාදෙන්න පුළුවන්.",
+    "language": "en"
+  },
+  {
+    "intent": "website_help",
+    "question": "What can I do on this portal?",
+    "answer": "You can browse information, download documents, request a token, use the Assistant and submit feedback. / ඔබට තොරතුරු බලන්න, documents download කරන්න, Token ඉල්ලන්න, Assistant භාවිත කරන්න සහ feedback ලබාදෙන්න පුළුවන්.",
+    "language": "en"
+  },
+  {
+    "intent": "website_help",
+    "question": "How does the passenger portal work?",
+    "answer": "You can browse information, download documents, request a token, use the Assistant and submit feedback. / ඔබට තොරතුරු බලන්න, documents download කරන්න, Token ඉල්ලන්න, Assistant භාවිත කරන්න සහ feedback ලබාදෙන්න පුළුවන්.",
+    "language": "en"
+  },
+  {
+    "intent": "website_help",
+    "question": "Where are the main services?",
+    "answer": "You can browse information, download documents, request a token, use the Assistant and submit feedback. / ඔබට තොරතුරු බලන්න, documents download කරන්න, Token ඉල්ලන්න, Assistant භාවිත කරන්න සහ feedback ලබාදෙන්න පුළුවන්.",
+    "language": "en"
+  },
+  {
+    "intent": "website_help",
+    "question": "What services are available online?",
+    "answer": "You can browse information, download documents, request a token, use the Assistant and submit feedback. / ඔබට තොරතුරු බලන්න, documents download කරන්න, Token ඉල්ලන්න, Assistant භාවිත කරන්න සහ feedback ලබාදෙන්න පුළුවන්.",
+    "language": "en"
+  },
+  {
+    "intent": "website_help",
+    "question": "මේ website එක භාවිතා කරන්නේ කොහොමද?",
+    "answer": "You can browse information, download documents, request a token, use the Assistant and submit feedback. / ඔබට තොරතුරු බලන්න, documents download කරන්න, Token ඉල්ලන්න, Assistant භාවිත කරන්න සහ feedback ලබාදෙන්න පුළුවන්.",
+    "language": "si"
+  },
+  {
+    "intent": "website_help",
+    "question": "මෙම portal එකෙන් මොනවා කරන්න පුළුවන්ද?",
+    "answer": "You can browse information, download documents, request a token, use the Assistant and submit feedback. / ඔබට තොරතුරු බලන්න, documents download කරන්න, Token ඉල්ලන්න, Assistant භාවිත කරන්න සහ feedback ලබාදෙන්න පුළුවන්.",
+    "language": "si"
+  },
+  {
+    "intent": "website_help",
+    "question": "Passenger portal එක වැඩ කරන්නේ කොහොමද?",
+    "answer": "You can browse information, download documents, request a token, use the Assistant and submit feedback. / ඔබට තොරතුරු බලන්න, documents download කරන්න, Token ඉල්ලන්න, Assistant භාවිත කරන්න සහ feedback ලබාදෙන්න පුළුවන්.",
+    "language": "si"
+  },
+  {
+    "intent": "website_help",
+    "question": "ප්‍රධාන සේවා කොහෙද?",
+    "answer": "You can browse information, download documents, request a token, use the Assistant and submit feedback. / ඔබට තොරතුරු බලන්න, documents download කරන්න, Token ඉල්ලන්න, Assistant භාවිත කරන්න සහ feedback ලබාදෙන්න පුළුවන්.",
+    "language": "si"
+  },
+  {
+    "intent": "website_help",
+    "question": "Online සේවා මොනවාද?",
+    "answer": "You can browse information, download documents, request a token, use the Assistant and submit feedback. / ඔබට තොරතුරු බලන්න, documents download කරන්න, Token ඉල්ලන්න, Assistant භාවිත කරන්න සහ feedback ලබාදෙන්න පුළුවන්.",
+    "language": "si"
+  },
+  {
+    "intent": "language",
+    "question": "Can I use the website in Sinhala?",
+    "answer": "Yes. Use the Sinhala/English language switcher. The main interface and Assistant are designed for both languages. / ඔව්. සිංහල/English language switcher එක භාවිත කරන්න. ප්‍රධාන interface එක සහ Assistant භාෂා දෙක සඳහා නිර්මාණය කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "language",
+    "question": "Is English available?",
+    "answer": "Yes. Use the Sinhala/English language switcher. The main interface and Assistant are designed for both languages. / ඔව්. සිංහල/English language switcher එක භාවිත කරන්න. ප්‍රධාන interface එක සහ Assistant භාෂා දෙක සඳහා නිර්මාණය කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "language",
+    "question": "How do I change the language?",
+    "answer": "Yes. Use the Sinhala/English language switcher. The main interface and Assistant are designed for both languages. / ඔව්. සිංහල/English language switcher එක භාවිත කරන්න. ප්‍රධාන interface එක සහ Assistant භාෂා දෙක සඳහා නිර්මාණය කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "language",
+    "question": "Is the chatbot bilingual?",
+    "answer": "Yes. Use the Sinhala/English language switcher. The main interface and Assistant are designed for both languages. / ඔව්. සිංහල/English language switcher එක භාවිත කරන්න. ප්‍රධාන interface එක සහ Assistant භාෂා දෙක සඳහා නිර්මාණය කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "language",
+    "question": "Can I chat in Sinhala?",
+    "answer": "Yes. Use the Sinhala/English language switcher. The main interface and Assistant are designed for both languages. / ඔව්. සිංහල/English language switcher එක භාවිත කරන්න. ප්‍රධාන interface එක සහ Assistant භාෂා දෙක සඳහා නිර්මාණය කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "language",
+    "question": "Website එක සිංහලෙන් භාවිතා කරන්න පුළුවන්ද?",
+    "answer": "Yes. Use the Sinhala/English language switcher. The main interface and Assistant are designed for both languages. / ඔව්. සිංහල/English language switcher එක භාවිත කරන්න. ප්‍රධාන interface එක සහ Assistant භාෂා දෙක සඳහා නිර්මාණය කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "language",
+    "question": "English තියෙනවාද?",
+    "answer": "Yes. Use the Sinhala/English language switcher. The main interface and Assistant are designed for both languages. / ඔව්. සිංහල/English language switcher එක භාවිත කරන්න. ප්‍රධාන interface එක සහ Assistant භාෂා දෙක සඳහා නිර්මාණය කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "language",
+    "question": "භාෂාව මාරු කරන්නේ කොහොමද?",
+    "answer": "Yes. Use the Sinhala/English language switcher. The main interface and Assistant are designed for both languages. / ඔව්. සිංහල/English language switcher එක භාවිත කරන්න. ප්‍රධාන interface එක සහ Assistant භාෂා දෙක සඳහා නිර්මාණය කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "language",
+    "question": "Chatbot එක භාෂා දෙකෙන්ම තියෙනවාද?",
+    "answer": "Yes. Use the Sinhala/English language switcher. The main interface and Assistant are designed for both languages. / ඔව්. සිංහල/English language switcher එක භාවිත කරන්න. ප්‍රධාන interface එක සහ Assistant භාෂා දෙක සඳහා නිර්මාණය කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "language",
+    "question": "සිංහලෙන් chat කරන්න පුළුවන්ද?",
+    "answer": "Yes. Use the Sinhala/English language switcher. The main interface and Assistant are designed for both languages. / ඔව්. සිංහල/English language switcher එක භාවිත කරන්න. ප්‍රධාන interface එක සහ Assistant භාෂා දෙක සඳහා නිර්මාණය කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "login",
+    "question": "How do I log in?",
+    "answer": "Select Login and enter your registered username and password. If access fails, contact an authorized administrator. / Login තෝරා ලියාපදිංචි username සහ password ඇතුළත් කරන්න. ප්‍රවේශය අසාර්ථක නම් බලය ඇති administrator අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "login",
+    "question": "Where is the login page?",
+    "answer": "Select Login and enter your registered username and password. If access fails, contact an authorized administrator. / Login තෝරා ලියාපදිංචි username සහ password ඇතුළත් කරන්න. ප්‍රවේශය අසාර්ථක නම් බලය ඇති administrator අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "login",
+    "question": "How do I access my account?",
+    "answer": "Select Login and enter your registered username and password. If access fails, contact an authorized administrator. / Login තෝරා ලියාපදිංචි username සහ password ඇතුළත් කරන්න. ප්‍රවේශය අසාර්ථක නම් බලය ඇති administrator අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "login",
+    "question": "What should I do if I cannot log in?",
+    "answer": "Select Login and enter your registered username and password. If access fails, contact an authorized administrator. / Login තෝරා ලියාපදිංචි username සහ password ඇතුළත් කරන්න. ප්‍රවේශය අසාර්ථක නම් බලය ඇති administrator අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "login",
+    "question": "How do I sign in?",
+    "answer": "Select Login and enter your registered username and password. If access fails, contact an authorized administrator. / Login තෝරා ලියාපදිංචි username සහ password ඇතුළත් කරන්න. ප්‍රවේශය අසාර්ථක නම් බලය ඇති administrator අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "login",
+    "question": "Login වෙන්නේ කොහොමද?",
+    "answer": "Select Login and enter your registered username and password. If access fails, contact an authorized administrator. / Login තෝරා ලියාපදිංචි username සහ password ඇතුළත් කරන්න. ප්‍රවේශය අසාර්ථක නම් බලය ඇති administrator අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "login",
+    "question": "Login page එක කොහෙද?",
+    "answer": "Select Login and enter your registered username and password. If access fails, contact an authorized administrator. / Login තෝරා ලියාපදිංචි username සහ password ඇතුළත් කරන්න. ප්‍රවේශය අසාර්ථක නම් බලය ඇති administrator අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "login",
+    "question": "මගේ account එකට ඇතුල් වෙන්නේ කොහොමද?",
+    "answer": "Select Login and enter your registered username and password. If access fails, contact an authorized administrator. / Login තෝරා ලියාපදිංචි username සහ password ඇතුළත් කරන්න. ප්‍රවේශය අසාර්ථක නම් බලය ඇති administrator අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "login",
+    "question": "Login වෙන්න බැරි නම් මොකද කරන්නේ?",
+    "answer": "Select Login and enter your registered username and password. If access fails, contact an authorized administrator. / Login තෝරා ලියාපදිංචි username සහ password ඇතුළත් කරන්න. ප්‍රවේශය අසාර්ථක නම් බලය ඇති administrator අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "login",
+    "question": "Sign in කරන්නේ කොහොමද?",
+    "answer": "Select Login and enter your registered username and password. If access fails, contact an authorized administrator. / Login තෝරා ලියාපදිංචි username සහ password ඇතුළත් කරන්න. ප්‍රවේශය අසාර්ථක නම් බලය ඇති administrator අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "roles",
+    "question": "What are the user roles?",
+    "answer": "The system supports Passenger, Data Entry, Admin and Super Admin roles. Access is restricted by role and least-privilege rules. / පද්ධතිය Passenger, Data Entry, Admin සහ Super Admin roles සඳහා සහාය දක්වයි. Role අනුව access සීමා කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "roles",
+    "question": "Who can access the administration area?",
+    "answer": "The system supports Passenger, Data Entry, Admin and Super Admin roles. Access is restricted by role and least-privilege rules. / පද්ධතිය Passenger, Data Entry, Admin සහ Super Admin roles සඳහා සහාය දක්වයි. Role අනුව access සීමා කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "roles",
+    "question": "What can a Super Admin do?",
+    "answer": "The system supports Passenger, Data Entry, Admin and Super Admin roles. Access is restricted by role and least-privilege rules. / පද්ධතිය Passenger, Data Entry, Admin සහ Super Admin roles සඳහා සහාය දක්වයි. Role අනුව access සීමා කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "roles",
+    "question": "What is the Data Entry role?",
+    "answer": "The system supports Passenger, Data Entry, Admin and Super Admin roles. Access is restricted by role and least-privilege rules. / පද්ධතිය Passenger, Data Entry, Admin සහ Super Admin roles සඳහා සහාය දක්වයි. Role අනුව access සීමා කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "roles",
+    "question": "What can a passenger account access?",
+    "answer": "The system supports Passenger, Data Entry, Admin and Super Admin roles. Access is restricted by role and least-privilege rules. / පද්ධතිය Passenger, Data Entry, Admin සහ Super Admin roles සඳහා සහාය දක්වයි. Role අනුව access සීමා කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "roles",
+    "question": "User roles මොනවාද?",
+    "answer": "The system supports Passenger, Data Entry, Admin and Super Admin roles. Access is restricted by role and least-privilege rules. / පද්ධතිය Passenger, Data Entry, Admin සහ Super Admin roles සඳහා සහාය දක්වයි. Role අනුව access සීමා කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "roles",
+    "question": "Admin area එකට කාටද access තියෙන්නේ?",
+    "answer": "The system supports Passenger, Data Entry, Admin and Super Admin roles. Access is restricted by role and least-privilege rules. / පද්ධතිය Passenger, Data Entry, Admin සහ Super Admin roles සඳහා සහාය දක්වයි. Role අනුව access සීමා කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "roles",
+    "question": "Super Admin ට මොනවා කරන්න පුළුවන්ද?",
+    "answer": "The system supports Passenger, Data Entry, Admin and Super Admin roles. Access is restricted by role and least-privilege rules. / පද්ධතිය Passenger, Data Entry, Admin සහ Super Admin roles සඳහා සහාය දක්වයි. Role අනුව access සීමා කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "roles",
+    "question": "Data Entry role එක මොකක්ද?",
+    "answer": "The system supports Passenger, Data Entry, Admin and Super Admin roles. Access is restricted by role and least-privilege rules. / පද්ධතිය Passenger, Data Entry, Admin සහ Super Admin roles සඳහා සහාය දක්වයි. Role අනුව access සීමා කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "roles",
+    "question": "Passenger account එකෙන් මොනවා කරන්න පුළුවන්ද?",
+    "answer": "The system supports Passenger, Data Entry, Admin and Super Admin roles. Access is restricted by role and least-privilege rules. / පද්ධතිය Passenger, Data Entry, Admin සහ Super Admin roles සඳහා සහාය දක්වයි. Role අනුව access සීමා කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "privacy",
+    "question": "How is my information used?",
+    "answer": "Only information needed for the service should be submitted. Access to stored records is restricted according to user roles. / සේවාව සඳහා අවශ්‍ය තොරතුරු පමණක් ලබා දෙන්න. සුරකින ලද records වෙත ප්‍රවේශය user role අනුව සීමා කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "privacy",
+    "question": "Is my token information stored?",
+    "answer": "Only information needed for the service should be submitted. Access to stored records is restricted according to user roles. / සේවාව සඳහා අවශ්‍ය තොරතුරු පමණක් ලබා දෙන්න. සුරකින ලද records වෙත ප්‍රවේශය user role අනුව සීමා කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "privacy",
+    "question": "How is personal data protected?",
+    "answer": "Only information needed for the service should be submitted. Access to stored records is restricted according to user roles. / සේවාව සඳහා අවශ්‍ය තොරතුරු පමණක් ලබා දෙන්න. සුරකින ලද records වෙත ප්‍රවේශය user role අනුව සීමා කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "privacy",
+    "question": "Why do you collect my NIC?",
+    "answer": "Only information needed for the service should be submitted. Access to stored records is restricted according to user roles. / සේවාව සඳහා අවශ්‍ය තොරතුරු පමණක් ලබා දෙන්න. සුරකින ලද records වෙත ප්‍රවේශය user role අනුව සීමා කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "privacy",
+    "question": "Who can see my submitted details?",
+    "answer": "Only information needed for the service should be submitted. Access to stored records is restricted according to user roles. / සේවාව සඳහා අවශ්‍ය තොරතුරු පමණක් ලබා දෙන්න. සුරකින ලද records වෙත ප්‍රවේශය user role අනුව සීමා කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "privacy",
+    "question": "මගේ තොරතුරු භාවිතා කරන්නේ කොහොමද?",
+    "answer": "Only information needed for the service should be submitted. Access to stored records is restricted according to user roles. / සේවාව සඳහා අවශ්‍ය තොරතුරු පමණක් ලබා දෙන්න. සුරකින ලද records වෙත ප්‍රවේශය user role අනුව සීමා කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "privacy",
+    "question": "මගේ Token තොරතුරු save වෙනවාද?",
+    "answer": "Only information needed for the service should be submitted. Access to stored records is restricted according to user roles. / සේවාව සඳහා අවශ්‍ය තොරතුරු පමණක් ලබා දෙන්න. සුරකින ලද records වෙත ප්‍රවේශය user role අනුව සීමා කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "privacy",
+    "question": "පුද්ගලික දත්ත ආරක්ෂා කරන්නේ කොහොමද?",
+    "answer": "Only information needed for the service should be submitted. Access to stored records is restricted according to user roles. / සේවාව සඳහා අවශ්‍ය තොරතුරු පමණක් ලබා දෙන්න. සුරකින ලද records වෙත ප්‍රවේශය user role අනුව සීමා කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "privacy",
+    "question": "NIC එක එකතු කරන්නේ ඇයි?",
+    "answer": "Only information needed for the service should be submitted. Access to stored records is restricted according to user roles. / සේවාව සඳහා අවශ්‍ය තොරතුරු පමණක් ලබා දෙන්න. සුරකින ලද records වෙත ප්‍රවේශය user role අනුව සීමා කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "privacy",
+    "question": "මගේ details බලන්න පුළුවන් කාටද?",
+    "answer": "Only information needed for the service should be submitted. Access to stored records is restricted according to user roles. / සේවාව සඳහා අවශ්‍ය තොරතුරු පමණක් ලබා දෙන්න. සුරකින ලද records වෙත ප්‍රවේශය user role අනුව සීමා කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "password",
+    "question": "I forgot my password",
+    "answer": "Use the available password reset process or contact an authorized administrator. Never share your password with another person. / ලබා දී ඇති password reset ක්‍රමය භාවිත කරන්න හෝ බලය ඇති administrator අමතන්න. Password එක කිසිවෙකුට share නොකරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "password",
+    "question": "How can I reset my password?",
+    "answer": "Use the available password reset process or contact an authorized administrator. Never share your password with another person. / ලබා දී ඇති password reset ක්‍රමය භාවිත කරන්න හෝ බලය ඇති administrator අමතන්න. Password එක කිසිවෙකුට share නොකරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "password",
+    "question": "What if my password does not work?",
+    "answer": "Use the available password reset process or contact an authorized administrator. Never share your password with another person. / ලබා දී ඇති password reset ක්‍රමය භාවිත කරන්න හෝ බලය ඇති administrator අමතන්න. Password එක කිසිවෙකුට share නොකරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "password",
+    "question": "Can an admin reset an account password?",
+    "answer": "Use the available password reset process or contact an authorized administrator. Never share your password with another person. / ලබා දී ඇති password reset ක්‍රමය භාවිත කරන්න හෝ බලය ඇති administrator අමතන්න. Password එක කිසිවෙකුට share නොකරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "password",
+    "question": "How do I change my password?",
+    "answer": "Use the available password reset process or contact an authorized administrator. Never share your password with another person. / ලබා දී ඇති password reset ක්‍රමය භාවිත කරන්න හෝ බලය ඇති administrator අමතන්න. Password එක කිසිවෙකුට share නොකරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "password",
+    "question": "Password එක අමතකයි",
+    "answer": "Use the available password reset process or contact an authorized administrator. Never share your password with another person. / ලබා දී ඇති password reset ක්‍රමය භාවිත කරන්න හෝ බලය ඇති administrator අමතන්න. Password එක කිසිවෙකුට share නොකරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "password",
+    "question": "Password reset කරන්නේ කොහොමද?",
+    "answer": "Use the available password reset process or contact an authorized administrator. Never share your password with another person. / ලබා දී ඇති password reset ක්‍රමය භාවිත කරන්න හෝ බලය ඇති administrator අමතන්න. Password එක කිසිවෙකුට share නොකරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "password",
+    "question": "Password එක වැඩ කරන්නේ නැත්නම් මොකද කරන්නේ?",
+    "answer": "Use the available password reset process or contact an authorized administrator. Never share your password with another person. / ලබා දී ඇති password reset ක්‍රමය භාවිත කරන්න හෝ බලය ඇති administrator අමතන්න. Password එක කිසිවෙකුට share නොකරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "password",
+    "question": "Admin ට password reset කරන්න පුළුවන්ද?",
+    "answer": "Use the available password reset process or contact an authorized administrator. Never share your password with another person. / ලබා දී ඇති password reset ක්‍රමය භාවිත කරන්න හෝ බලය ඇති administrator අමතන්න. Password එක කිසිවෙකුට share නොකරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "password",
+    "question": "Password එක වෙනස් කරන්නේ කොහොමද?",
+    "answer": "Use the available password reset process or contact an authorized administrator. Never share your password with another person. / ලබා දී ඇති password reset ක්‍රමය භාවිත කරන්න හෝ බලය ඇති administrator අමතන්න. Password එක කිසිවෙකුට share නොකරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "chatbot",
+    "question": "What can the Assistant do?",
+    "answer": "The Assistant can answer approved transport FAQs, guide you to services and documents, and collect a satisfaction rating after the chat. / Assistant එකට අනුමත ප්‍රවාහන FAQs වලට පිළිතුරු දෙන්න, services/documents වෙත මඟ පෙන්වන්න සහ chat අවසානයේ satisfaction feedback ගන්න පුළුවන්.",
+    "language": "en"
+  },
+  {
+    "intent": "chatbot",
+    "question": "How does the chatbot help passengers?",
+    "answer": "The Assistant can answer approved transport FAQs, guide you to services and documents, and collect a satisfaction rating after the chat. / Assistant එකට අනුමත ප්‍රවාහන FAQs වලට පිළිතුරු දෙන්න, services/documents වෙත මඟ පෙන්වන්න සහ chat අවසානයේ satisfaction feedback ගන්න පුළුවන්.",
+    "language": "en"
+  },
+  {
+    "intent": "chatbot",
+    "question": "What can I ask the chatbot?",
+    "answer": "The Assistant can answer approved transport FAQs, guide you to services and documents, and collect a satisfaction rating after the chat. / Assistant එකට අනුමත ප්‍රවාහන FAQs වලට පිළිතුරු දෙන්න, services/documents වෙත මඟ පෙන්වන්න සහ chat අවසානයේ satisfaction feedback ගන්න පුළුවන්.",
+    "language": "en"
+  },
+  {
+    "intent": "chatbot",
+    "question": "Can the Assistant answer transport questions?",
+    "answer": "The Assistant can answer approved transport FAQs, guide you to services and documents, and collect a satisfaction rating after the chat. / Assistant එකට අනුමත ප්‍රවාහන FAQs වලට පිළිතුරු දෙන්න, services/documents වෙත මඟ පෙන්වන්න සහ chat අවසානයේ satisfaction feedback ගන්න පුළුවන්.",
+    "language": "en"
+  },
+  {
+    "intent": "chatbot",
+    "question": "Where is Chat with Assistant?",
+    "answer": "The Assistant can answer approved transport FAQs, guide you to services and documents, and collect a satisfaction rating after the chat. / Assistant එකට අනුමත ප්‍රවාහන FAQs වලට පිළිතුරු දෙන්න, services/documents වෙත මඟ පෙන්වන්න සහ chat අවසානයේ satisfaction feedback ගන්න පුළුවන්.",
+    "language": "en"
+  },
+  {
+    "intent": "chatbot",
+    "question": "Assistant එකෙන් මොනවා කරන්න පුළුවන්ද?",
+    "answer": "The Assistant can answer approved transport FAQs, guide you to services and documents, and collect a satisfaction rating after the chat. / Assistant එකට අනුමත ප්‍රවාහන FAQs වලට පිළිතුරු දෙන්න, services/documents වෙත මඟ පෙන්වන්න සහ chat අවසානයේ satisfaction feedback ගන්න පුළුවන්.",
+    "language": "si"
+  },
+  {
+    "intent": "chatbot",
+    "question": "Chatbot එක මගීන්ට උදව් කරන්නේ කොහොමද?",
+    "answer": "The Assistant can answer approved transport FAQs, guide you to services and documents, and collect a satisfaction rating after the chat. / Assistant එකට අනුමත ප්‍රවාහන FAQs වලට පිළිතුරු දෙන්න, services/documents වෙත මඟ පෙන්වන්න සහ chat අවසානයේ satisfaction feedback ගන්න පුළුවන්.",
+    "language": "si"
+  },
+  {
+    "intent": "chatbot",
+    "question": "Chatbot එකෙන් මොනවා අහන්නද?",
+    "answer": "The Assistant can answer approved transport FAQs, guide you to services and documents, and collect a satisfaction rating after the chat. / Assistant එකට අනුමත ප්‍රවාහන FAQs වලට පිළිතුරු දෙන්න, services/documents වෙත මඟ පෙන්වන්න සහ chat අවසානයේ satisfaction feedback ගන්න පුළුවන්.",
+    "language": "si"
+  },
+  {
+    "intent": "chatbot",
+    "question": "Assistant එකට ප්‍රවාහන ප්‍රශ්නවලට උත්තර දෙන්න පුළුවන්ද?",
+    "answer": "The Assistant can answer approved transport FAQs, guide you to services and documents, and collect a satisfaction rating after the chat. / Assistant එකට අනුමත ප්‍රවාහන FAQs වලට පිළිතුරු දෙන්න, services/documents වෙත මඟ පෙන්වන්න සහ chat අවසානයේ satisfaction feedback ගන්න පුළුවන්.",
+    "language": "si"
+  },
+  {
+    "intent": "chatbot",
+    "question": "Chat with Assistant කොහෙද?",
+    "answer": "The Assistant can answer approved transport FAQs, guide you to services and documents, and collect a satisfaction rating after the chat. / Assistant එකට අනුමත ප්‍රවාහන FAQs වලට පිළිතුරු දෙන්න, services/documents වෙත මඟ පෙන්වන්න සහ chat අවසානයේ satisfaction feedback ගන්න පුළුවන්.",
+    "language": "si"
+  },
+  {
+    "intent": "chatbot_limits",
+    "question": "Can the chatbot make official decisions?",
+    "answer": "The Assistant provides information from approved content; it does not replace an authorized officer or emergency service. / Assistant එක අනුමත content මත තොරතුරු ලබා දෙයි; එය නිලධාරියෙකු හෝ හදිසි සේවාවක් වෙනුවට නොවේ.",
+    "language": "en"
+  },
+  {
+    "intent": "chatbot_limits",
+    "question": "Can the Assistant approve a permit?",
+    "answer": "The Assistant provides information from approved content; it does not replace an authorized officer or emergency service. / Assistant එක අනුමත content මත තොරතුරු ලබා දෙයි; එය නිලධාරියෙකු හෝ හදිසි සේවාවක් වෙනුවට නොවේ.",
+    "language": "en"
+  },
+  {
+    "intent": "chatbot_limits",
+    "question": "Can the chatbot replace an officer?",
+    "answer": "The Assistant provides information from approved content; it does not replace an authorized officer or emergency service. / Assistant එක අනුමත content මත තොරතුරු ලබා දෙයි; එය නිලධාරියෙකු හෝ හදිසි සේවාවක් වෙනුවට නොවේ.",
+    "language": "en"
+  },
+  {
+    "intent": "chatbot_limits",
+    "question": "Can I rely on the chatbot for emergencies?",
+    "answer": "The Assistant provides information from approved content; it does not replace an authorized officer or emergency service. / Assistant එක අනුමත content මත තොරතුරු ලබා දෙයි; එය නිලධාරියෙකු හෝ හදිසි සේවාවක් වෙනුවට නොවේ.",
+    "language": "en"
+  },
+  {
+    "intent": "chatbot_limits",
+    "question": "Does the chatbot know every route?",
+    "answer": "The Assistant provides information from approved content; it does not replace an authorized officer or emergency service. / Assistant එක අනුමත content මත තොරතුරු ලබා දෙයි; එය නිලධාරියෙකු හෝ හදිසි සේවාවක් වෙනුවට නොවේ.",
+    "language": "en"
+  },
+  {
+    "intent": "chatbot_limits",
+    "question": "Chatbot එකට නිල තීරණ ගන්න පුළුවන්ද?",
+    "answer": "The Assistant provides information from approved content; it does not replace an authorized officer or emergency service. / Assistant එක අනුමත content මත තොරතුරු ලබා දෙයි; එය නිලධාරියෙකු හෝ හදිසි සේවාවක් වෙනුවට නොවේ.",
+    "language": "si"
+  },
+  {
+    "intent": "chatbot_limits",
+    "question": "Assistant එකට permit approve කරන්න පුළුවන්ද?",
+    "answer": "The Assistant provides information from approved content; it does not replace an authorized officer or emergency service. / Assistant එක අනුමත content මත තොරතුරු ලබා දෙයි; එය නිලධාරියෙකු හෝ හදිසි සේවාවක් වෙනුවට නොවේ.",
+    "language": "si"
+  },
+  {
+    "intent": "chatbot_limits",
+    "question": "Chatbot එක නිලධාරියෙකු වෙනුවට භාවිතා කරන්න පුළුවන්ද?",
+    "answer": "The Assistant provides information from approved content; it does not replace an authorized officer or emergency service. / Assistant එක අනුමත content මත තොරතුරු ලබා දෙයි; එය නිලධාරියෙකු හෝ හදිසි සේවාවක් වෙනුවට නොවේ.",
+    "language": "si"
+  },
+  {
+    "intent": "chatbot_limits",
+    "question": "හදිසි අවස්ථාවකට chatbot එක මත විශ්වාස කරන්න පුළුවන්ද?",
+    "answer": "The Assistant provides information from approved content; it does not replace an authorized officer or emergency service. / Assistant එක අනුමත content මත තොරතුරු ලබා දෙයි; එය නිලධාරියෙකු හෝ හදිසි සේවාවක් වෙනුවට නොවේ.",
+    "language": "si"
+  },
+  {
+    "intent": "chatbot_limits",
+    "question": "Chatbot එක හැම route එකක්ම දන්නවාද?",
+    "answer": "The Assistant provides information from approved content; it does not replace an authorized officer or emergency service. / Assistant එක අනුමත content මත තොරතුරු ලබා දෙයි; එය නිලධාරියෙකු හෝ හදිසි සේවාවක් වෙනුවට නොවේ.",
+    "language": "si"
+  },
+  {
+    "intent": "pdf",
+    "question": "Can I download documents as PDF?",
+    "answer": "Available official documents can be downloaded from the Documents section. The Assistant can guide you to the relevant file. / ලබා දී ඇති නිල documents Documents අංශයෙන් download කළ හැක. Assistant එකට අදාළ file එක වෙත මඟ පෙන්විය හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "pdf",
+    "question": "Are forms available in PDF?",
+    "answer": "Available official documents can be downloaded from the Documents section. The Assistant can guide you to the relevant file. / ලබා දී ඇති නිල documents Documents අංශයෙන් download කළ හැක. Assistant එකට අදාළ file එක වෙත මඟ පෙන්විය හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "pdf",
+    "question": "How do I open a downloaded PDF?",
+    "answer": "Available official documents can be downloaded from the Documents section. The Assistant can guide you to the relevant file. / ලබා දී ඇති නිල documents Documents අංශයෙන් download කළ හැක. Assistant එකට අදාළ file එක වෙත මඟ පෙන්විය හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "pdf",
+    "question": "Where are PDF applications?",
+    "answer": "Available official documents can be downloaded from the Documents section. The Assistant can guide you to the relevant file. / ලබා දී ඇති නිල documents Documents අංශයෙන් download කළ හැක. Assistant එකට අදාළ file එක වෙත මඟ පෙන්විය හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "pdf",
+    "question": "Can the chatbot provide a PDF?",
+    "answer": "Available official documents can be downloaded from the Documents section. The Assistant can guide you to the relevant file. / ලබා දී ඇති නිල documents Documents අංශයෙන් download කළ හැක. Assistant එකට අදාළ file එක වෙත මඟ පෙන්විය හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "pdf",
+    "question": "PDF ලෙස documents download කරන්න පුළුවන්ද?",
+    "answer": "Available official documents can be downloaded from the Documents section. The Assistant can guide you to the relevant file. / ලබා දී ඇති නිල documents Documents අංශයෙන් download කළ හැක. Assistant එකට අදාළ file එක වෙත මඟ පෙන්විය හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "pdf",
+    "question": "Forms PDF වලින් තියෙනවාද?",
+    "answer": "Available official documents can be downloaded from the Documents section. The Assistant can guide you to the relevant file. / ලබා දී ඇති නිල documents Documents අංශයෙන් download කළ හැක. Assistant එකට අදාළ file එක වෙත මඟ පෙන්විය හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "pdf",
+    "question": "Download කළ PDF එක open කරන්නේ කොහොමද?",
+    "answer": "Available official documents can be downloaded from the Documents section. The Assistant can guide you to the relevant file. / ලබා දී ඇති නිල documents Documents අංශයෙන් download කළ හැක. Assistant එකට අදාළ file එක වෙත මඟ පෙන්විය හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "pdf",
+    "question": "PDF applications කොහෙද?",
+    "answer": "Available official documents can be downloaded from the Documents section. The Assistant can guide you to the relevant file. / ලබා දී ඇති නිල documents Documents අංශයෙන් download කළ හැක. Assistant එකට අදාළ file එක වෙත මඟ පෙන්විය හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "pdf",
+    "question": "Chatbot එකෙන් PDF එකක් ගන්න පුළුවන්ද?",
+    "answer": "Available official documents can be downloaded from the Documents section. The Assistant can guide you to the relevant file. / ලබා දී ඇති නිල documents Documents අංශයෙන් download කළ හැක. Assistant එකට අදාළ file එක වෙත මඟ පෙන්විය හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "three_wheeler",
+    "question": "Does the authority cover three-wheelers?",
+    "answer": "If the issue falls within the authority's jurisdiction, submit the relevant details through the complaint/service channel. / ගැටලුව අධිකාරියේ බලප්‍රදේශයට අයත් නම් අදාළ විස්තර complaint/service channel එකෙන් ඉදිරිපත් කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "three_wheeler",
+    "question": "Can I report a three-wheeler issue?",
+    "answer": "If the issue falls within the authority's jurisdiction, submit the relevant details through the complaint/service channel. / ගැටලුව අධිකාරියේ බලප්‍රදේශයට අයත් නම් අදාළ විස්තර complaint/service channel එකෙන් ඉදිරිපත් කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "three_wheeler",
+    "question": "Where can I ask about three-wheeler services?",
+    "answer": "If the issue falls within the authority's jurisdiction, submit the relevant details through the complaint/service channel. / ගැටලුව අධිකාරියේ බලප්‍රදේශයට අයත් නම් අදාළ විස්තර complaint/service channel එකෙන් ඉදිරිපත් කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "three_wheeler",
+    "question": "Can I complain about a three-wheeler?",
+    "answer": "If the issue falls within the authority's jurisdiction, submit the relevant details through the complaint/service channel. / ගැටලුව අධිකාරියේ බලප්‍රදේශයට අයත් නම් අදාළ විස්තර complaint/service channel එකෙන් ඉදිරිපත් කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "three_wheeler",
+    "question": "Are three-wheelers included in public transport information?",
+    "answer": "If the issue falls within the authority's jurisdiction, submit the relevant details through the complaint/service channel. / ගැටලුව අධිකාරියේ බලප්‍රදේශයට අයත් නම් අදාළ විස්තර complaint/service channel එකෙන් ඉදිරිපත් කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "three_wheeler",
+    "question": "ත්‍රීවිල් ගැන තොරතුරු තියෙනවාද?",
+    "answer": "If the issue falls within the authority's jurisdiction, submit the relevant details through the complaint/service channel. / ගැටලුව අධිකාරියේ බලප්‍රදේශයට අයත් නම් අදාළ විස්තර complaint/service channel එකෙන් ඉදිරිපත් කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "three_wheeler",
+    "question": "ත්‍රීවිල් ගැටලුවක් වාර්තා කරන්න පුළුවන්ද?",
+    "answer": "If the issue falls within the authority's jurisdiction, submit the relevant details through the complaint/service channel. / ගැටලුව අධිකාරියේ බලප්‍රදේශයට අයත් නම් අදාළ විස්තර complaint/service channel එකෙන් ඉදිරිපත් කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "three_wheeler",
+    "question": "ත්‍රීවිල් සේවා ගැන අහන්නේ කොහෙන්ද?",
+    "answer": "If the issue falls within the authority's jurisdiction, submit the relevant details through the complaint/service channel. / ගැටලුව අධිකාරියේ බලප්‍රදේශයට අයත් නම් අදාළ විස්තර complaint/service channel එකෙන් ඉදිරිපත් කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "three_wheeler",
+    "question": "ත්‍රීවිල් එකක් ගැන පැමිණිලි කරන්න පුළුවන්ද?",
+    "answer": "If the issue falls within the authority's jurisdiction, submit the relevant details through the complaint/service channel. / ගැටලුව අධිකාරියේ බලප්‍රදේශයට අයත් නම් අදාළ විස්තර complaint/service channel එකෙන් ඉදිරිපත් කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "three_wheeler",
+    "question": "Public transport information වලට ත්‍රීවිල් ඇතුළත්ද?",
+    "answer": "If the issue falls within the authority's jurisdiction, submit the relevant details through the complaint/service channel. / ගැටලුව අධිකාරියේ බලප්‍රදේශයට අයත් නම් අදාළ විස්තර complaint/service channel එකෙන් ඉදිරිපත් කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "service_delay",
+    "question": "How do I report a delayed bus?",
+    "answer": "Provide the route, bus number, scheduled/observed time and location when reporting a delay. / ප්‍රමාදයක් වාර්තා කරන විට මාර්ගය, බස් අංකය, නියමිත/සැබෑ වේලාව සහ ස්ථානය ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "service_delay",
+    "question": "What if my bus is late?",
+    "answer": "Provide the route, bus number, scheduled/observed time and location when reporting a delay. / ප්‍රමාදයක් වාර්තා කරන විට මාර්ගය, බස් අංකය, නියමිත/සැබෑ වේලාව සහ ස්ථානය ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "service_delay",
+    "question": "Where can I report service delays?",
+    "answer": "Provide the route, bus number, scheduled/observed time and location when reporting a delay. / ප්‍රමාදයක් වාර්තා කරන විට මාර්ගය, බස් අංකය, නියමිත/සැබෑ වේලාව සහ ස්ථානය ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "service_delay",
+    "question": "Can I complain about a long delay?",
+    "answer": "Provide the route, bus number, scheduled/observed time and location when reporting a delay. / ප්‍රමාදයක් වාර්තා කරන විට මාර්ගය, බස් අංකය, නියමිත/සැබෑ වේලාව සහ ස්ථානය ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "service_delay",
+    "question": "What details should I give about a delay?",
+    "answer": "Provide the route, bus number, scheduled/observed time and location when reporting a delay. / ප්‍රමාදයක් වාර්තා කරන විට මාර්ගය, බස් අංකය, නියමිත/සැබෑ වේලාව සහ ස්ථානය ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "service_delay",
+    "question": "බස් එක පරක්කු වුණොත් වාර්තා කරන්නේ කොහොමද?",
+    "answer": "Provide the route, bus number, scheduled/observed time and location when reporting a delay. / ප්‍රමාදයක් වාර්තා කරන විට මාර්ගය, බස් අංකය, නියමිත/සැබෑ වේලාව සහ ස්ථානය ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "service_delay",
+    "question": "බස් එක පරක්කු නම් මොකද කරන්නේ?",
+    "answer": "Provide the route, bus number, scheduled/observed time and location when reporting a delay. / ප්‍රමාදයක් වාර්තා කරන විට මාර්ගය, බස් අංකය, නියමිත/සැබෑ වේලාව සහ ස්ථානය ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "service_delay",
+    "question": "Service delay එකක් වාර්තා කරන්නේ කොහොමද?",
+    "answer": "Provide the route, bus number, scheduled/observed time and location when reporting a delay. / ප්‍රමාදයක් වාර්තා කරන විට මාර්ගය, බස් අංකය, නියමිත/සැබෑ වේලාව සහ ස්ථානය ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "service_delay",
+    "question": "දිගු ප්‍රමාදයක් ගැන පැමිණිලි කරන්න පුළුවන්ද?",
+    "answer": "Provide the route, bus number, scheduled/observed time and location when reporting a delay. / ප්‍රමාදයක් වාර්තා කරන විට මාර්ගය, බස් අංකය, නියමිත/සැබෑ වේලාව සහ ස්ථානය ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "service_delay",
+    "question": "ප්‍රමාදයක් ගැන මොන details දෙන්නද?",
+    "answer": "Provide the route, bus number, scheduled/observed time and location when reporting a delay. / ප්‍රමාදයක් වාර්තා කරන විට මාර්ගය, බස් අංකය, නියමිත/සැබෑ වේලාව සහ ස්ථානය ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "overcharging",
+    "question": "What if I am charged too much?",
+    "answer": "Keep the ticket or other evidence if available and report the route, bus number, date, time and amount charged. / හැකි නම් ticket හෝ වෙනත් සාක්ෂි තබාගෙන මාර්ගය, බස් අංකය, දිනය, වේලාව සහ අය කළ මුදල වාර්තා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "overcharging",
+    "question": "How do I report overcharging?",
+    "answer": "Keep the ticket or other evidence if available and report the route, bus number, date, time and amount charged. / හැකි නම් ticket හෝ වෙනත් සාක්ෂි තබාගෙන මාර්ගය, බස් අංකය, දිනය, වේලාව සහ අය කළ මුදල වාර්තා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "overcharging",
+    "question": "Where can I complain about an incorrect fare?",
+    "answer": "Keep the ticket or other evidence if available and report the route, bus number, date, time and amount charged. / හැකි නම් ticket හෝ වෙනත් සාක්ෂි තබාගෙන මාර්ගය, බස් අංකය, දිනය, වේලාව සහ අය කළ මුදල වාර්තා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "overcharging",
+    "question": "What should I do if the fare is higher than expected?",
+    "answer": "Keep the ticket or other evidence if available and report the route, bus number, date, time and amount charged. / හැකි නම් ticket හෝ වෙනත් සාක්ෂි තබාගෙන මාර්ගය, බස් අංකය, දිනය, වේලාව සහ අය කළ මුදල වාර්තා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "overcharging",
+    "question": "Can I report fare overcharging?",
+    "answer": "Keep the ticket or other evidence if available and report the route, bus number, date, time and amount charged. / හැකි නම් ticket හෝ වෙනත් සාක්ෂි තබාගෙන මාර්ගය, බස් අංකය, දිනය, වේලාව සහ අය කළ මුදල වාර්තා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "overcharging",
+    "question": "වැඩිපුර ගාස්තුවක් ගත්තොත් මොකද කරන්නේ?",
+    "answer": "Keep the ticket or other evidence if available and report the route, bus number, date, time and amount charged. / හැකි නම් ticket හෝ වෙනත් සාක්ෂි තබාගෙන මාර්ගය, බස් අංකය, දිනය, වේලාව සහ අය කළ මුදල වාර්තා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "overcharging",
+    "question": "Overcharging එකක් වාර්තා කරන්නේ කොහොමද?",
+    "answer": "Keep the ticket or other evidence if available and report the route, bus number, date, time and amount charged. / හැකි නම් ticket හෝ වෙනත් සාක්ෂි තබාගෙන මාර්ගය, බස් අංකය, දිනය, වේලාව සහ අය කළ මුදල වාර්තා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "overcharging",
+    "question": "වැරදි ගාස්තුවක් ගැන පැමිණිලි කරන්නේ කොහොමද?",
+    "answer": "Keep the ticket or other evidence if available and report the route, bus number, date, time and amount charged. / හැකි නම් ticket හෝ වෙනත් සාක්ෂි තබාගෙන මාර්ගය, බස් අංකය, දිනය, වේලාව සහ අය කළ මුදල වාර්තා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "overcharging",
+    "question": "බලාපොරොත්තු වූ ගාස්තුවට වඩා වැඩි නම් මොකද කරන්නේ?",
+    "answer": "Keep the ticket or other evidence if available and report the route, bus number, date, time and amount charged. / හැකි නම් ticket හෝ වෙනත් සාක්ෂි තබාගෙන මාර්ගය, බස් අංකය, දිනය, වේලාව සහ අය කළ මුදල වාර්තා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "overcharging",
+    "question": "වැඩිපුර ගාස්තු ගැන පැමිණිලි කරන්න පුළුවන්ද?",
+    "answer": "Keep the ticket or other evidence if available and report the route, bus number, date, time and amount charged. / හැකි නම් ticket හෝ වෙනත් සාක්ෂි තබාගෙන මාර්ගය, බස් අංකය, දිනය, වේලාව සහ අය කළ මුදල වාර්තා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "ticket",
+    "question": "Do I need a ticket?",
+    "answer": "Keep your ticket or proof of payment where provided. For a ticketing complaint, record the bus and journey details. / ලබා දෙන විට ticket හෝ ගෙවීමේ සාක්ෂිය තබාගන්න. Ticket පැමිණිල්ලක් සඳහා බස් සහ ගමන් විස්තර සටහන් කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "ticket",
+    "question": "Can I get a ticket receipt?",
+    "answer": "Keep your ticket or proof of payment where provided. For a ticketing complaint, record the bus and journey details. / ලබා දෙන විට ticket හෝ ගෙවීමේ සාක්ෂිය තබාගන්න. Ticket පැමිණිල්ලක් සඳහා බස් සහ ගමන් විස්තර සටහන් කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "ticket",
+    "question": "What should I do if I did not receive a ticket?",
+    "answer": "Keep your ticket or proof of payment where provided. For a ticketing complaint, record the bus and journey details. / ලබා දෙන විට ticket හෝ ගෙවීමේ සාක්ෂිය තබාගන්න. Ticket පැමිණිල්ලක් සඳහා බස් සහ ගමන් විස්තර සටහන් කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "ticket",
+    "question": "Where can I report ticket issues?",
+    "answer": "Keep your ticket or proof of payment where provided. For a ticketing complaint, record the bus and journey details. / ලබා දෙන විට ticket හෝ ගෙවීමේ සාක්ෂිය තබාගන්න. Ticket පැමිණිල්ලක් සඳහා බස් සහ ගමන් විස්තර සටහන් කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "ticket",
+    "question": "Why should I keep my ticket?",
+    "answer": "Keep your ticket or proof of payment where provided. For a ticketing complaint, record the bus and journey details. / ලබා දෙන විට ticket හෝ ගෙවීමේ සාක්ෂිය තබාගන්න. Ticket පැමිණිල්ලක් සඳහා බස් සහ ගමන් විස්තර සටහන් කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "ticket",
+    "question": "ටිකට් එකක් ගන්න ඕනද?",
+    "answer": "Keep your ticket or proof of payment where provided. For a ticketing complaint, record the bus and journey details. / ලබා දෙන විට ticket හෝ ගෙවීමේ සාක්ෂිය තබාගන්න. Ticket පැමිණිල්ලක් සඳහා බස් සහ ගමන් විස්තර සටහන් කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "ticket",
+    "question": "Ticket receipt එකක් ගන්න පුළුවන්ද?",
+    "answer": "Keep your ticket or proof of payment where provided. For a ticketing complaint, record the bus and journey details. / ලබා දෙන විට ticket හෝ ගෙවීමේ සාක්ෂිය තබාගන්න. Ticket පැමිණිල්ලක් සඳහා බස් සහ ගමන් විස්තර සටහන් කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "ticket",
+    "question": "Ticket එකක් නොලැබුණොත් මොකද කරන්නේ?",
+    "answer": "Keep your ticket or proof of payment where provided. For a ticketing complaint, record the bus and journey details. / ලබා දෙන විට ticket හෝ ගෙවීමේ සාක්ෂිය තබාගන්න. Ticket පැමිණිල්ලක් සඳහා බස් සහ ගමන් විස්තර සටහන් කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "ticket",
+    "question": "Ticket ගැටලු වාර්තා කරන්නේ කොහොමද?",
+    "answer": "Keep your ticket or proof of payment where provided. For a ticketing complaint, record the bus and journey details. / ලබා දෙන විට ticket හෝ ගෙවීමේ සාක්ෂිය තබාගන්න. Ticket පැමිණිල්ලක් සඳහා බස් සහ ගමන් විස්තර සටහන් කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "ticket",
+    "question": "Ticket එක තියාගන්න ඕන ඇයි?",
+    "answer": "Keep your ticket or proof of payment where provided. For a ticketing complaint, record the bus and journey details. / ලබා දෙන විට ticket හෝ ගෙවීමේ සාක්ෂිය තබාගන්න. Ticket පැමිණිල්ලක් සඳහා බස් සහ ගමන් විස්තර සටහන් කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_number",
+    "question": "Where can I find the bus number?",
+    "answer": "The bus number helps identify the vehicle. If you do not know it, provide the route, time, location and other identifying details. / බස් අංකය වාහනය හඳුනා ගැනීමට උපකාරී වේ. එය නොදන්නේ නම් මාර්ගය, වේලාව, ස්ථානය සහ වෙනත් විස්තර ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_number",
+    "question": "Why is the bus number important?",
+    "answer": "The bus number helps identify the vehicle. If you do not know it, provide the route, time, location and other identifying details. / බස් අංකය වාහනය හඳුනා ගැනීමට උපකාරී වේ. එය නොදන්නේ නම් මාර්ගය, වේලාව, ස්ථානය සහ වෙනත් විස්තර ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_number",
+    "question": "What is the vehicle number used for?",
+    "answer": "The bus number helps identify the vehicle. If you do not know it, provide the route, time, location and other identifying details. / බස් අංකය වාහනය හඳුනා ගැනීමට උපකාරී වේ. එය නොදන්නේ නම් මාර්ගය, වේලාව, ස්ථානය සහ වෙනත් විස්තර ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_number",
+    "question": "Where should I enter the bus number in a complaint?",
+    "answer": "The bus number helps identify the vehicle. If you do not know it, provide the route, time, location and other identifying details. / බස් අංකය වාහනය හඳුනා ගැනීමට උපකාරී වේ. එය නොදන්නේ නම් මාර්ගය, වේලාව, ස්ථානය සහ වෙනත් විස්තර ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_number",
+    "question": "Can I submit a complaint without a bus number?",
+    "answer": "The bus number helps identify the vehicle. If you do not know it, provide the route, time, location and other identifying details. / බස් අංකය වාහනය හඳුනා ගැනීමට උපකාරී වේ. එය නොදන්නේ නම් මාර්ගය, වේලාව, ස්ථානය සහ වෙනත් විස්තර ලබා දෙන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "bus_number",
+    "question": "බස් අංකය කොහෙන්ද බලන්නේ?",
+    "answer": "The bus number helps identify the vehicle. If you do not know it, provide the route, time, location and other identifying details. / බස් අංකය වාහනය හඳුනා ගැනීමට උපකාරී වේ. එය නොදන්නේ නම් මාර්ගය, වේලාව, ස්ථානය සහ වෙනත් විස්තර ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_number",
+    "question": "බස් අංකය වැදගත් ඇයි?",
+    "answer": "The bus number helps identify the vehicle. If you do not know it, provide the route, time, location and other identifying details. / බස් අංකය වාහනය හඳුනා ගැනීමට උපකාරී වේ. එය නොදන්නේ නම් මාර්ගය, වේලාව, ස්ථානය සහ වෙනත් විස්තර ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_number",
+    "question": "Vehicle number එක භාවිතා කරන්නේ මොකටද?",
+    "answer": "The bus number helps identify the vehicle. If you do not know it, provide the route, time, location and other identifying details. / බස් අංකය වාහනය හඳුනා ගැනීමට උපකාරී වේ. එය නොදන්නේ නම් මාර්ගය, වේලාව, ස්ථානය සහ වෙනත් විස්තර ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_number",
+    "question": "Complaint එකේ bus number දාන්නේ කොහෙද?",
+    "answer": "The bus number helps identify the vehicle. If you do not know it, provide the route, time, location and other identifying details. / බස් අංකය වාහනය හඳුනා ගැනීමට උපකාරී වේ. එය නොදන්නේ නම් මාර්ගය, වේලාව, ස්ථානය සහ වෙනත් විස්තර ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "bus_number",
+    "question": "බස් අංකය නැතුව පැමිණිල්ලක් දාන්න පුළුවන්ද?",
+    "answer": "The bus number helps identify the vehicle. If you do not know it, provide the route, time, location and other identifying details. / බස් අංකය වාහනය හඳුනා ගැනීමට උපකාරී වේ. එය නොදන්නේ නම් මාර්ගය, වේලාව, ස්ථානය සහ වෙනත් විස්තර ලබා දෙන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "route_change",
+    "question": "How can I report a route change?",
+    "answer": "Check the latest official route notice and report a service issue with the bus number, route, date and time if necessary. / නවතම නිල route notice එක බලන්න. අවශ්‍ය නම් බස් අංකය, මාර්ගය, දිනය සහ වේලාව සමඟ සේවා ගැටලුව වාර්තා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "route_change",
+    "question": "Where can I ask about a changed route?",
+    "answer": "Check the latest official route notice and report a service issue with the bus number, route, date and time if necessary. / නවතම නිල route notice එක බලන්න. අවශ්‍ය නම් බස් අංකය, මාර්ගය, දිනය සහ වේලාව සමඟ සේවා ගැටලුව වාර්තා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "route_change",
+    "question": "How do I find updated route information?",
+    "answer": "Check the latest official route notice and report a service issue with the bus number, route, date and time if necessary. / නවතම නිල route notice එක බලන්න. අවශ්‍ය නම් බස් අංකය, මාර්ගය, දිනය සහ වේලාව සමඟ සේවා ගැටලුව වාර්තා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "route_change",
+    "question": "What if a bus does not follow its route?",
+    "answer": "Check the latest official route notice and report a service issue with the bus number, route, date and time if necessary. / නවතම නිල route notice එක බලන්න. අවශ්‍ය නම් බස් අංකය, මාර්ගය, දිනය සහ වේලාව සමඟ සේවා ගැටලුව වාර්තා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "route_change",
+    "question": "Can route changes be reported?",
+    "answer": "Check the latest official route notice and report a service issue with the bus number, route, date and time if necessary. / නවතම නිල route notice එක බලන්න. අවශ්‍ය නම් බස් අංකය, මාර්ගය, දිනය සහ වේලාව සමඟ සේවා ගැටලුව වාර්තා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "route_change",
+    "question": "මාර්ගය වෙනස් කරලා නම් වාර්තා කරන්නේ කොහොමද?",
+    "answer": "Check the latest official route notice and report a service issue with the bus number, route, date and time if necessary. / නවතම නිල route notice එක බලන්න. අවශ්‍ය නම් බස් අංකය, මාර්ගය, දිනය සහ වේලාව සමඟ සේවා ගැටලුව වාර්තා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "route_change",
+    "question": "වෙනස් කළ route එක ගැන අහන්නේ කොහෙන්ද?",
+    "answer": "Check the latest official route notice and report a service issue with the bus number, route, date and time if necessary. / නවතම නිල route notice එක බලන්න. අවශ්‍ය නම් බස් අංකය, මාර්ගය, දිනය සහ වේලාව සමඟ සේවා ගැටලුව වාර්තා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "route_change",
+    "question": "Update කළ route information ගන්නේ කොහොමද?",
+    "answer": "Check the latest official route notice and report a service issue with the bus number, route, date and time if necessary. / නවතම නිල route notice එක බලන්න. අවශ්‍ය නම් බස් අංකය, මාර්ගය, දිනය සහ වේලාව සමඟ සේවා ගැටලුව වාර්තා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "route_change",
+    "question": "බස් එක route එකේ නොගියොත් මොකද කරන්නේ?",
+    "answer": "Check the latest official route notice and report a service issue with the bus number, route, date and time if necessary. / නවතම නිල route notice එක බලන්න. අවශ්‍ය නම් බස් අංකය, මාර්ගය, දිනය සහ වේලාව සමඟ සේවා ගැටලුව වාර්තා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "route_change",
+    "question": "Route changes report කරන්න පුළුවන්ද?",
+    "answer": "Check the latest official route notice and report a service issue with the bus number, route, date and time if necessary. / නවතම නිල route notice එක බලන්න. අවශ්‍ය නම් බස් අංකය, මාර්ගය, දිනය සහ වේලාව සමඟ සේවා ගැටලුව වාර්තා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "safety",
+    "question": "What passenger safety rules should I follow?",
+    "answer": "Follow operator instructions, remain seated or hold secure supports when appropriate, keep belongings safe and report dangerous conditions. / සේවාකරුගේ උපදෙස් පිළිපදින්න, සුදුසු විට ආරක්ෂිතව වාඩිවී හෝ support අල්ලා සිටින්න, බඩු ආරක්ෂිතව තබා අනාරක්ෂිත තත්ත්ව වාර්තා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "safety",
+    "question": "How can I travel safely by bus?",
+    "answer": "Follow operator instructions, remain seated or hold secure supports when appropriate, keep belongings safe and report dangerous conditions. / සේවාකරුගේ උපදෙස් පිළිපදින්න, සුදුසු විට ආරක්ෂිතව වාඩිවී හෝ support අල්ලා සිටින්න, බඩු ආරක්ෂිතව තබා අනාරක්ෂිත තත්ත්ව වාර්තා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "safety",
+    "question": "What are basic bus safety tips?",
+    "answer": "Follow operator instructions, remain seated or hold secure supports when appropriate, keep belongings safe and report dangerous conditions. / සේවාකරුගේ උපදෙස් පිළිපදින්න, සුදුසු විට ආරක්ෂිතව වාඩිවී හෝ support අල්ලා සිටින්න, බඩු ආරක්ෂිතව තබා අනාරක්ෂිත තත්ත්ව වාර්තා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "safety",
+    "question": "What should passengers do for safety?",
+    "answer": "Follow operator instructions, remain seated or hold secure supports when appropriate, keep belongings safe and report dangerous conditions. / සේවාකරුගේ උපදෙස් පිළිපදින්න, සුදුසු විට ආරක්ෂිතව වාඩිවී හෝ support අල්ලා සිටින්න, බඩු ආරක්ෂිතව තබා අනාරක්ෂිත තත්ත්ව වාර්තා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "safety",
+    "question": "Can the website provide safety guidance?",
+    "answer": "Follow operator instructions, remain seated or hold secure supports when appropriate, keep belongings safe and report dangerous conditions. / සේවාකරුගේ උපදෙස් පිළිපදින්න, සුදුසු විට ආරක්ෂිතව වාඩිවී හෝ support අල්ලා සිටින්න, බඩු ආරක්ෂිතව තබා අනාරක්ෂිත තත්ත්ව වාර්තා කරන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "safety",
+    "question": "මගී ආරක්ෂක නීති මොනවාද?",
+    "answer": "Follow operator instructions, remain seated or hold secure supports when appropriate, keep belongings safe and report dangerous conditions. / සේවාකරුගේ උපදෙස් පිළිපදින්න, සුදුසු විට ආරක්ෂිතව වාඩිවී හෝ support අල්ලා සිටින්න, බඩු ආරක්ෂිතව තබා අනාරක්ෂිත තත්ත්ව වාර්තා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "safety",
+    "question": "බස් එකේ ආරක්ෂිතව ගමන් කරන්නේ කොහොමද?",
+    "answer": "Follow operator instructions, remain seated or hold secure supports when appropriate, keep belongings safe and report dangerous conditions. / සේවාකරුගේ උපදෙස් පිළිපදින්න, සුදුසු විට ආරක්ෂිතව වාඩිවී හෝ support අල්ලා සිටින්න, බඩු ආරක්ෂිතව තබා අනාරක්ෂිත තත්ත්ව වාර්තා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "safety",
+    "question": "මූලික bus safety tips මොනවාද?",
+    "answer": "Follow operator instructions, remain seated or hold secure supports when appropriate, keep belongings safe and report dangerous conditions. / සේවාකරුගේ උපදෙස් පිළිපදින්න, සුදුසු විට ආරක්ෂිතව වාඩිවී හෝ support අල්ලා සිටින්න, බඩු ආරක්ෂිතව තබා අනාරක්ෂිත තත්ත්ව වාර්තා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "safety",
+    "question": "මගීන් ආරක්ෂාව සඳහා මොනවා කරන්නද?",
+    "answer": "Follow operator instructions, remain seated or hold secure supports when appropriate, keep belongings safe and report dangerous conditions. / සේවාකරුගේ උපදෙස් පිළිපදින්න, සුදුසු විට ආරක්ෂිතව වාඩිවී හෝ support අල්ලා සිටින්න, බඩු ආරක්ෂිතව තබා අනාරක්ෂිත තත්ත්ව වාර්තා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "safety",
+    "question": "Website එකෙන් safety guidance තියෙනවාද?",
+    "answer": "Follow operator instructions, remain seated or hold secure supports when appropriate, keep belongings safe and report dangerous conditions. / සේවාකරුගේ උපදෙස් පිළිපදින්න, සුදුසු විට ආරක්ෂිතව වාඩිවී හෝ support අල්ලා සිටින්න, බඩු ආරක්ෂිතව තබා අනාරක්ෂිත තත්ත්ව වාර්තා කරන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "complaint_status",
+    "question": "How can I check my complaint status?",
+    "answer": "Where tracking is enabled, use your reference number. Otherwise contact the authority with the complaint reference. / Tracking පහසුකම ඇති විට reference number භාවිත කරන්න. නැතිනම් complaint reference එක සමඟ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "complaint_status",
+    "question": "Where can I see my complaint progress?",
+    "answer": "Where tracking is enabled, use your reference number. Otherwise contact the authority with the complaint reference. / Tracking පහසුකම ඇති විට reference number භාවිත කරන්න. නැතිනම් complaint reference එක සමඟ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "complaint_status",
+    "question": "Can I track a complaint?",
+    "answer": "Where tracking is enabled, use your reference number. Otherwise contact the authority with the complaint reference. / Tracking පහසුකම ඇති විට reference number භාවිත කරන්න. නැතිනම් complaint reference එක සමඟ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "complaint_status",
+    "question": "How do I know if my complaint was received?",
+    "answer": "Where tracking is enabled, use your reference number. Otherwise contact the authority with the complaint reference. / Tracking පහසුකම ඇති විට reference number භාවිත කරන්න. නැතිනම් complaint reference එක සමඟ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "complaint_status",
+    "question": "Can an admin update complaint status?",
+    "answer": "Where tracking is enabled, use your reference number. Otherwise contact the authority with the complaint reference. / Tracking පහසුකම ඇති විට reference number භාවිත කරන්න. නැතිනම් complaint reference එක සමඟ අධිකාරිය අමතන්න.",
+    "language": "en"
+  },
+  {
+    "intent": "complaint_status",
+    "question": "මගේ පැමිණිල්ලේ තත්ත්වය බලන්නේ කොහොමද?",
+    "answer": "Where tracking is enabled, use your reference number. Otherwise contact the authority with the complaint reference. / Tracking පහසුකම ඇති විට reference number භාවිත කරන්න. නැතිනම් complaint reference එක සමඟ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "complaint_status",
+    "question": "Complaint progress එක බලන්න පුළුවන්ද?",
+    "answer": "Where tracking is enabled, use your reference number. Otherwise contact the authority with the complaint reference. / Tracking පහසුකම ඇති විට reference number භාවිත කරන්න. නැතිනම් complaint reference එක සමඟ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "complaint_status",
+    "question": "Complaint එක track කරන්න පුළුවන්ද?",
+    "answer": "Where tracking is enabled, use your reference number. Otherwise contact the authority with the complaint reference. / Tracking පහසුකම ඇති විට reference number භාවිත කරන්න. නැතිනම් complaint reference එක සමඟ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "complaint_status",
+    "question": "මගේ complaint එක ලැබුණාද දැනගන්නේ කොහොමද?",
+    "answer": "Where tracking is enabled, use your reference number. Otherwise contact the authority with the complaint reference. / Tracking පහසුකම ඇති විට reference number භාවිත කරන්න. නැතිනම් complaint reference එක සමඟ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "complaint_status",
+    "question": "Admin ට complaint status update කරන්න පුළුවන්ද?",
+    "answer": "Where tracking is enabled, use your reference number. Otherwise contact the authority with the complaint reference. / Tracking පහසුකම ඇති විට reference number භාවිත කරන්න. නැතිනම් complaint reference එක සමඟ අධිකාරිය අමතන්න.",
+    "language": "si"
+  },
+  {
+    "intent": "account_registration",
+    "question": "How do I create a passenger account?",
+    "answer": "Use the registration option if enabled. The public Assistant and general information can be available without an account. / Registration option එක enabled නම් එය භාවිත කරන්න. Public Assistant සහ සාමාන්‍ය තොරතුරු account එකක් නැතිවද ලබාගත හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "account_registration",
+    "question": "Can passengers register online?",
+    "answer": "Use the registration option if enabled. The public Assistant and general information can be available without an account. / Registration option එක enabled නම් එය භාවිත කරන්න. Public Assistant සහ සාමාන්‍ය තොරතුරු account එකක් නැතිවද ලබාගත හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "account_registration",
+    "question": "Where is registration?",
+    "answer": "Use the registration option if enabled. The public Assistant and general information can be available without an account. / Registration option එක enabled නම් එය භාවිත කරන්න. Public Assistant සහ සාමාන්‍ය තොරතුරු account එකක් නැතිවද ලබාගත හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "account_registration",
+    "question": "What information is needed to register?",
+    "answer": "Use the registration option if enabled. The public Assistant and general information can be available without an account. / Registration option එක enabled නම් එය භාවිත කරන්න. Public Assistant සහ සාමාන්‍ය තොරතුරු account එකක් නැතිවද ලබාගත හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "account_registration",
+    "question": "Do I need an account to use the chatbot?",
+    "answer": "Use the registration option if enabled. The public Assistant and general information can be available without an account. / Registration option එක enabled නම් එය භාවිත කරන්න. Public Assistant සහ සාමාන්‍ය තොරතුරු account එකක් නැතිවද ලබාගත හැක.",
+    "language": "en"
+  },
+  {
+    "intent": "account_registration",
+    "question": "Passenger account එකක් හදන්නේ කොහොමද?",
+    "answer": "Use the registration option if enabled. The public Assistant and general information can be available without an account. / Registration option එක enabled නම් එය භාවිත කරන්න. Public Assistant සහ සාමාන්‍ය තොරතුරු account එකක් නැතිවද ලබාගත හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "account_registration",
+    "question": "Online register වෙන්න පුළුවන්ද?",
+    "answer": "Use the registration option if enabled. The public Assistant and general information can be available without an account. / Registration option එක enabled නම් එය භාවිත කරන්න. Public Assistant සහ සාමාන්‍ය තොරතුරු account එකක් නැතිවද ලබාගත හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "account_registration",
+    "question": "Registration කොහෙද?",
+    "answer": "Use the registration option if enabled. The public Assistant and general information can be available without an account. / Registration option එක enabled නම් එය භාවිත කරන්න. Public Assistant සහ සාමාන්‍ය තොරතුරු account එකක් නැතිවද ලබාගත හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "account_registration",
+    "question": "Register වෙන්න මොන තොරතුරු ඕනද?",
+    "answer": "Use the registration option if enabled. The public Assistant and general information can be available without an account. / Registration option එක enabled නම් එය භාවිත කරන්න. Public Assistant සහ සාමාන්‍ය තොරතුරු account එකක් නැතිවද ලබාගත හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "account_registration",
+    "question": "Chatbot එක භාවිතා කරන්න account එකක් ඕනද?",
+    "answer": "Use the registration option if enabled. The public Assistant and general information can be available without an account. / Registration option එක enabled නම් එය භාවිත කරන්න. Public Assistant සහ සාමාන්‍ය තොරතුරු account එකක් නැතිවද ලබාගත හැක.",
+    "language": "si"
+  },
+  {
+    "intent": "data_entry",
+    "question": "What can a Data Entry user do?",
+    "answer": "Data Entry access should be limited to approved content/data maintenance tasks. Administrative and security settings remain restricted. / Data Entry access එක අනුමත content/data maintenance කාර්යයන්ට සීමා කළ යුතුය. Administrative සහ security settings සීමා කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "data_entry",
+    "question": "What is the Data Entry dashboard for?",
+    "answer": "Data Entry access should be limited to approved content/data maintenance tasks. Administrative and security settings remain restricted. / Data Entry access එක අනුමත content/data maintenance කාර්යයන්ට සීමා කළ යුතුය. Administrative සහ security settings සීමා කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "data_entry",
+    "question": "Can Data Entry users edit FAQs?",
+    "answer": "Data Entry access should be limited to approved content/data maintenance tasks. Administrative and security settings remain restricted. / Data Entry access එක අනුමත content/data maintenance කාර්යයන්ට සීමා කළ යුතුය. Administrative සහ security settings සීමා කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "data_entry",
+    "question": "Can Data Entry users upload documents?",
+    "answer": "Data Entry access should be limited to approved content/data maintenance tasks. Administrative and security settings remain restricted. / Data Entry access එක අනුමත content/data maintenance කාර්යයන්ට සීමා කළ යුතුය. Administrative සහ security settings සීමා කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "data_entry",
+    "question": "What access does Data Entry have?",
+    "answer": "Data Entry access should be limited to approved content/data maintenance tasks. Administrative and security settings remain restricted. / Data Entry access එක අනුමත content/data maintenance කාර්යයන්ට සීමා කළ යුතුය. Administrative සහ security settings සීමා කර ඇත.",
+    "language": "en"
+  },
+  {
+    "intent": "data_entry",
+    "question": "Data Entry user කෙනෙකුට මොනවා කරන්න පුළුවන්ද?",
+    "answer": "Data Entry access should be limited to approved content/data maintenance tasks. Administrative and security settings remain restricted. / Data Entry access එක අනුමත content/data maintenance කාර්යයන්ට සීමා කළ යුතුය. Administrative සහ security settings සීමා කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "data_entry",
+    "question": "Data Entry dashboard එක මොකටද?",
+    "answer": "Data Entry access should be limited to approved content/data maintenance tasks. Administrative and security settings remain restricted. / Data Entry access එක අනුමත content/data maintenance කාර්යයන්ට සීමා කළ යුතුය. Administrative සහ security settings සීමා කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "data_entry",
+    "question": "Data Entry user ට FAQs edit කරන්න පුළුවන්ද?",
+    "answer": "Data Entry access should be limited to approved content/data maintenance tasks. Administrative and security settings remain restricted. / Data Entry access එක අනුමත content/data maintenance කාර්යයන්ට සීමා කළ යුතුය. Administrative සහ security settings සීමා කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "data_entry",
+    "question": "Documents upload කරන්න පුළුවන්ද?",
+    "answer": "Data Entry access should be limited to approved content/data maintenance tasks. Administrative and security settings remain restricted. / Data Entry access එක අනුමත content/data maintenance කාර්යයන්ට සීමා කළ යුතුය. Administrative සහ security settings සීමා කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "data_entry",
+    "question": "Data Entry access එක මොනවාද?",
+    "answer": "Data Entry access should be limited to approved content/data maintenance tasks. Administrative and security settings remain restricted. / Data Entry access එක අනුමත content/data maintenance කාර්යයන්ට සීමා කළ යුතුය. Administrative සහ security settings සීමා කර ඇත.",
+    "language": "si"
+  },
+  {
+    "intent": "admin",
+    "question": "What can an Admin do?",
+    "answer": "Admins can manage operational content and review passenger feedback according to their permissions. Super Admin controls security and full system administration. / Admins ට තම permissions අනුව operational content සහ passenger feedback manage කළ හැක. Full administration Super Admin සතුය.",
+    "language": "en"
+  },
+  {
+    "intent": "admin",
+    "question": "What does the Admin dashboard show?",
+    "answer": "Admins can manage operational content and review passenger feedback according to their permissions. Super Admin controls security and full system administration. / Admins ට තම permissions අනුව operational content සහ passenger feedback manage කළ හැක. Full administration Super Admin සතුය.",
+    "language": "en"
+  },
+  {
+    "intent": "admin",
+    "question": "Can Admin view feedback?",
+    "answer": "Admins can manage operational content and review passenger feedback according to their permissions. Super Admin controls security and full system administration. / Admins ට තම permissions අනුව operational content සහ passenger feedback manage කළ හැක. Full administration Super Admin සතුය.",
+    "language": "en"
+  },
+  {
+    "intent": "admin",
+    "question": "Can Admin manage chatbot content?",
+    "answer": "Admins can manage operational content and review passenger feedback according to their permissions. Super Admin controls security and full system administration. / Admins ට තම permissions අනුව operational content සහ passenger feedback manage කළ හැක. Full administration Super Admin සතුය.",
+    "language": "en"
+  },
+  {
+    "intent": "admin",
+    "question": "Can Admin view tokens?",
+    "answer": "Admins can manage operational content and review passenger feedback according to their permissions. Super Admin controls security and full system administration. / Admins ට තම permissions අනුව operational content සහ passenger feedback manage කළ හැක. Full administration Super Admin සතුය.",
+    "language": "en"
+  },
+  {
+    "intent": "admin",
+    "question": "Admin ට මොනවා කරන්න පුළුවන්ද?",
+    "answer": "Admins can manage operational content and review passenger feedback according to their permissions. Super Admin controls security and full system administration. / Admins ට තම permissions අනුව operational content සහ passenger feedback manage කළ හැක. Full administration Super Admin සතුය.",
+    "language": "si"
+  },
+  {
+    "intent": "admin",
+    "question": "Admin dashboard එකේ මොනවා පෙන්වනවාද?",
+    "answer": "Admins can manage operational content and review passenger feedback according to their permissions. Super Admin controls security and full system administration. / Admins ට තම permissions අනුව operational content සහ passenger feedback manage කළ හැක. Full administration Super Admin සතුය.",
+    "language": "si"
+  },
+  {
+    "intent": "admin",
+    "question": "Admin ට feedback බලන්න පුළුවන්ද?",
+    "answer": "Admins can manage operational content and review passenger feedback according to their permissions. Super Admin controls security and full system administration. / Admins ට තම permissions අනුව operational content සහ passenger feedback manage කළ හැක. Full administration Super Admin සතුය.",
+    "language": "si"
+  },
+  {
+    "intent": "admin",
+    "question": "Admin ට chatbot content manage කරන්න පුළුවන්ද?",
+    "answer": "Admins can manage operational content and review passenger feedback according to their permissions. Super Admin controls security and full system administration. / Admins ට තම permissions අනුව operational content සහ passenger feedback manage කළ හැක. Full administration Super Admin සතුය.",
+    "language": "si"
+  },
+  {
+    "intent": "admin",
+    "question": "Admin ට tokens බලන්න පුළුවන්ද?",
+    "answer": "Admins can manage operational content and review passenger feedback according to their permissions. Super Admin controls security and full system administration. / Admins ට තම permissions අනුව operational content සහ passenger feedback manage කළ හැක. Full administration Super Admin සතුය.",
+    "language": "si"
+  },
+  {
+    "intent": "super_admin",
+    "question": "What can a Super Admin do?",
+    "answer": "The Super Admin role is intended for full system administration, including user/role management, settings, content, tokens and feedback. / Super Admin role එක user/role management, settings, content, tokens සහ feedback ඇතුළු සම්පූර්ණ system administration සඳහාය.",
+    "language": "en"
+  },
+  {
+    "intent": "super_admin",
+    "question": "What is full access?",
+    "answer": "The Super Admin role is intended for full system administration, including user/role management, settings, content, tokens and feedback. / Super Admin role එක user/role management, settings, content, tokens සහ feedback ඇතුළු සම්පූර්ණ system administration සඳහාය.",
+    "language": "en"
+  },
+  {
+    "intent": "super_admin",
+    "question": "Can Super Admin manage users?",
+    "answer": "The Super Admin role is intended for full system administration, including user/role management, settings, content, tokens and feedback. / Super Admin role එක user/role management, settings, content, tokens සහ feedback ඇතුළු සම්පූර්ණ system administration සඳහාය.",
+    "language": "en"
+  },
+  {
+    "intent": "super_admin",
+    "question": "Can Super Admin change roles?",
+    "answer": "The Super Admin role is intended for full system administration, including user/role management, settings, content, tokens and feedback. / Super Admin role එක user/role management, settings, content, tokens සහ feedback ඇතුළු සම්පූර්ණ system administration සඳහාය.",
+    "language": "en"
+  },
+  {
+    "intent": "super_admin",
+    "question": "Who has full system access?",
+    "answer": "The Super Admin role is intended for full system administration, including user/role management, settings, content, tokens and feedback. / Super Admin role එක user/role management, settings, content, tokens සහ feedback ඇතුළු සම්පූර්ණ system administration සඳහාය.",
+    "language": "en"
+  },
+  {
+    "intent": "super_admin",
+    "question": "Super Admin ට මොනවා කරන්න පුළුවන්ද?",
+    "answer": "The Super Admin role is intended for full system administration, including user/role management, settings, content, tokens and feedback. / Super Admin role එක user/role management, settings, content, tokens සහ feedback ඇතුළු සම්පූර්ණ system administration සඳහාය.",
+    "language": "si"
+  },
+  {
+    "intent": "super_admin",
+    "question": "Full access කියන්නේ මොකක්ද?",
+    "answer": "The Super Admin role is intended for full system administration, including user/role management, settings, content, tokens and feedback. / Super Admin role එක user/role management, settings, content, tokens සහ feedback ඇතුළු සම්පූර්ණ system administration සඳහාය.",
+    "language": "si"
+  },
+  {
+    "intent": "super_admin",
+    "question": "Super Admin ට users manage කරන්න පුළුවන්ද?",
+    "answer": "The Super Admin role is intended for full system administration, including user/role management, settings, content, tokens and feedback. / Super Admin role එක user/role management, settings, content, tokens සහ feedback ඇතුළු සම්පූර්ණ system administration සඳහාය.",
+    "language": "si"
+  },
+  {
+    "intent": "super_admin",
+    "question": "Roles වෙනස් කරන්න පුළුවන්ද?",
+    "answer": "The Super Admin role is intended for full system administration, including user/role management, settings, content, tokens and feedback. / Super Admin role එක user/role management, settings, content, tokens සහ feedback ඇතුළු සම්පූර්ණ system administration සඳහාය.",
+    "language": "si"
+  },
+  {
+    "intent": "super_admin",
+    "question": "සම්පූර්ණ system access තියෙන්නේ කාටද?",
+    "answer": "The Super Admin role is intended for full system administration, including user/role management, settings, content, tokens and feedback. / Super Admin role එක user/role management, settings, content, tokens සහ feedback ඇතුළු සම්පූර්ණ system administration සඳහාය.",
+    "language": "si"
+  }
+]

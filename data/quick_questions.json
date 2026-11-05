@@ -1,0 +1,82 @@
+[
+  {
+    "question": "How can I get a token?",
+    "answer": "Go to Get Token and complete the passenger details."
+  },
+  {
+    "question": "Token එකක් ගන්නේ කොහොමද?",
+    "answer": "Get Token page එකට ගොස් අවශ්‍ය තොරතුරු පුරවන්න."
+  },
+  {
+    "question": "What documents can I download?",
+    "answer": "Passenger Complaint Form, Passenger Service Application and Transport Information Guide are available."
+  },
+  {
+    "question": "ලේඛන download කරන්නේ කොහොමද?",
+    "answer": "Documents page එකෙන් PDF download කරන්න."
+  },
+  {
+    "question": "How do I make a complaint?",
+    "answer": "Download the Passenger Complaint Form or contact the authority."
+  },
+  {
+    "question": "පැමිණිල්ලක් දාන්නේ කොහොමද?",
+    "answer": "Passenger Complaint Form එක භාවිත කරන්න."
+  },
+  {
+    "question": "What is the contact number?",
+    "answer": "General contact: +94 41 000 0000"
+  },
+  {
+    "question": "බස් මාර්ග තොරතුරු කොහෙන්ද?",
+    "answer": "Route details should be confirmed with the authority."
+  },
+  {
+    "question": "What should I do if a bus is late?",
+    "answer": "Record the route, bus number, date and time and report it."
+  },
+  {
+    "question": "බස් ගාස්තු ගැන තොරතුරු?",
+    "answer": "Use the latest official fare notice or contact the authority."
+  },
+  {
+    "question": "Lost item on a bus?",
+    "answer": "Record the bus and route details and contact the operator/authority."
+  },
+  {
+    "question": "අනතුරක් වුණොත් මොකද කරන්නේ?",
+    "answer": "Call the appropriate emergency service first."
+  },
+  {
+    "question": "Can I use Sinhala?",
+    "answer": "Yes, the portal supports Sinhala and English."
+  },
+  {
+    "question": "How do I use this website?",
+    "answer": "Use Home, Documents, Get Token and the Assistant."
+  },
+  {
+    "question": "Token එක PDF එකක් විදිහට ගන්න පුළුවන්ද?",
+    "answer": "Yes, after submission use Download Token PDF."
+  },
+  {
+    "question": "Is there an application form?",
+    "answer": "Yes, the Passenger Service Application is available in Documents."
+  },
+  {
+    "question": "බස් නැවතුම් ස්ථානයක් ගැන අහන්නේ කොහොමද?",
+    "answer": "Provide the town, route or bus number to the authority."
+  },
+  {
+    "question": "What are office hours?",
+    "answer": "Office hours vary; confirm before visiting."
+  },
+  {
+    "question": "What information is needed for a token?",
+    "answer": "Name, NIC, phone, service, date and time are required."
+  },
+  {
+    "question": "Feedback දෙන්නේ කොහොමද?",
+    "answer": "Use End chat & feedback inside the Assistant."
+  }
+]

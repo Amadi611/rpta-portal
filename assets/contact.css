@@ -1,0 +1,20 @@
+.contact-page{max-width:1140px;margin:42px auto 60px;padding:0 20px}
+.contact-page-heading{margin-bottom:28px}
+.contact-eyebrow{margin:0 0 8px;color:var(--maroon);font-size:12px;font-weight:800;letter-spacing:.08em}
+.contact-page-heading h1{margin:0;color:var(--deep);font-family:Georgia,Times New Roman,serif;font-size:42px;font-weight:400}
+.contact-page-heading>p:last-child{margin:10px 0 0;color:var(--muted);font-size:16px;line-height:1.5}
+.contact-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:start}
+.contact-details,.contact-form-panel{padding:26px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(74,17,38,.06)}
+.contact-details h2,.contact-form-panel h2{margin:0;color:var(--maroon2);font-size:21px}
+.contact-details dl{margin:18px 0 0}
+.contact-detail{padding:14px 0;border-top:1px solid #f0e3e7}
+.contact-detail dt{margin-bottom:5px;color:var(--muted);font-size:12px;font-weight:700}
+.contact-detail dd{margin:0;color:#382b30;font-size:15px;line-height:1.5;overflow-wrap:anywhere}
+.contact-detail a{color:var(--maroon2);font-weight:700}
+.contact-detail a:hover{text-decoration:underline}
+.contact-detail a:focus-visible,.contact-form-panel button:focus-visible{outline:3px solid #c3a34a;outline-offset:3px}
+.contact-form-panel>p{margin:8px 0 16px;color:var(--muted);font-size:14px;line-height:1.5}
+.contact-form-panel form label{margin-top:14px}
+.contact-form-panel textarea{min-height:150px}
+.contact-form-panel button{margin-top:16px}
+@media(max-width:760px){.contact-page{margin:28px auto 42px}.contact-page-heading h1{font-size:36px}.contact-layout{grid-template-columns:1fr}.contact-details,.contact-form-panel{padding:21px}}

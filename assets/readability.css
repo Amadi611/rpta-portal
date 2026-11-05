@@ -1,0 +1,65 @@
+:root{--muted:#5e4d53}
+
+body{min-height:100vh;display:flex;flex-direction:column}
+.site-header{flex:0 0 auto}
+main{flex:0 0 auto;min-height:0}
+.footer{flex:0 0 auto}
+
+small,
+.muted,
+.badge,
+.notice,
+label,
+button,
+.primary-btn,
+.secondary-btn,
+.soft-btn,
+.danger-btn,
+.admin-nav a,
+.tabs a,
+.table th,
+.table td,
+.footer span,
+.footer p,
+.footer-links a{font-size:15px;font-weight:700}
+
+input,
+select,
+textarea{font-size:15px}
+
+.header-tagline,
+.language-strip .header-actions,
+.header-nav-row .nav a,
+.nav a,
+.header-actions{font-size:14px;font-weight:700}
+
+.header-account-button{font-size:15px;font-weight:700}
+
+.home-eyebrow,
+.home-eyebrow-alt,
+.home-service-kicker,
+.home-service-action,
+.home-event-copy time,
+.home-event-copy p,
+.home-events-empty span,
+.home-slide-footer,
+.home-contact{font-size:15px;font-weight:600}
+
+.table th,
+.table td{font-size:15px;font-weight:600}
+
+.footer-brand p,
+.footer-links a{font-size:15px;font-weight:700}
+
+@media(max-width:700px){
+  .header-tagline,
+  .language-strip .header-actions,
+  .header-nav-row .nav a{font-size:12px}
+
+  .header-account-button{font-size:14px}
+}
+
+@media(max-width:480px){
+  .header-tagline{font-size:12px}
+  .header-nav-row .nav a{font-size:12px}
+}
