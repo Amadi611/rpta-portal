@@ -52,6 +52,7 @@ $serviceHref=role()==='passenger'?'token.php':(logged_in()?'dashboard.php':'logi
     <button class="home-photo-close" id="closeHomePhoto" type="button" aria-label="Close photo">×</button>
     <img id="homePhotoDialogImage" src="<?=h($homeSlides[0]['src'])?>" alt="<?=h($homeSlides[0]['alt'])?>">
   </dialog>
+
   <script>
     const homeSlides=<?=json_encode($homeSlides,JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT)?>;
     const homeSlideshow=document.getElementById('homeSlideshow');
@@ -100,6 +101,7 @@ $serviceHref=role()==='passenger'?'token.php':(logged_in()?'dashboard.php':'logi
     homePhotoDialog.addEventListener('click',event=>{if(event.target===homePhotoDialog)homePhotoDialog.close()});
     homePhotoDialog.addEventListener('close',startHomeSlideshow);
     startHomeSlideshow();
+    //SCRIPT: HOME ASSISTANT
   </script>
   <section class="home-about" id="about" aria-labelledby="home-about-title">
     <div class="home-services-inner">
