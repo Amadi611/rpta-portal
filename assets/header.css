@@ -98,6 +98,21 @@
 	outline-offset: 3px;
 }
 
+.header-account-button.header-account-logout {
+	border-color: #795548;
+	background: #795548;
+}
+
+.header-account-button.header-account-logout:hover,
+.header-account-button.header-account-logout:focus-visible {
+	border-color: #5d4037;
+	background: #5d4037;
+}
+
+.header-account-button.header-account-logout:focus-visible {
+	outline-color: #795548;
+}
+
 .header-nav-row {
 	background: #e7e7e7;
 	border-top: 1px solid #dedede;
