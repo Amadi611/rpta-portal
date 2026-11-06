@@ -31,7 +31,7 @@ $pageStyles=['assets/login.css'];
 include __DIR__.'/includes/header.php';
 ?>
 //loging page
-
+//login
 <section class="login-first">
 	<div class="login-photo">
 		<img src="<?=h(BUS_PHOTO_URL)?>" alt="Sri Lanka public transport bus">
