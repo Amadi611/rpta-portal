@@ -57,6 +57,22 @@ body.site-soft-theme:has(.dashboard-page--client) {
 	background: #6f0e2b;
 }
 
+.site-soft-theme .header-account-button.header-account-logout {
+	border-color: #795548;
+	background: #795548;
+	box-shadow: 0 4px 10px rgba(93, 64, 55, .16);
+}
+
+.site-soft-theme .header-account-button.header-account-logout:hover,
+.site-soft-theme .header-account-button.header-account-logout:focus-visible {
+	border-color: #5d4037;
+	background: #5d4037;
+}
+
+.site-soft-theme .header-account-button.header-account-logout:focus-visible {
+	outline-color: #795548;
+}
+
 .site-soft-theme .header-nav-row {
 	background: #e9ecea;
 	border-color: #d8e5e0;
@@ -151,6 +167,19 @@ body.site-soft-theme:has(.dashboard-page--client) {
 	border: 1px solid #e7cbd4;
 	background: #f7e9ee;
 	color: #8b163b;
+}
+
+.site-soft-theme .page .section-title .logout-btn {
+	border: 1px solid #795548;
+	background: #795548;
+	color: #fff;
+}
+
+.site-soft-theme .page .section-title .logout-btn:hover,
+.site-soft-theme .page .section-title .logout-btn:focus-visible {
+	border-color: #5d4037;
+	background: #5d4037;
+	color: #fff;
 }
 
 .site-soft-theme .notice {
