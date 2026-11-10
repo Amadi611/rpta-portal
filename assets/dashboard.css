@@ -573,11 +573,13 @@
 	}
 
 	.dashboard-page .admin-dashboard-main .dashboard-grid {
-		flex-wrap: wrap;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		padding-bottom: 6px;
 	}
 
 	.dashboard-page .admin-dashboard-main .dashboard-grid > .dashboard-card-link {
-		flex: 1 1 120px;
+		flex: 0 0 120px;
 	}
 
 	.dashboard-page--client > .section-title {
