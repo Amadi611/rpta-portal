@@ -65,7 +65,7 @@ $pageStyles=['assets/tokens.css'];
 include '../includes/header.php';
 ?>
 <div class="page">
-	<div class="section-title"><div><h2><?=h($department?ucfirst($department).' Section Tasks':'Token Records')?><?= $statusLabel?' / '.h($statusLabel):'' ?> / Token වාර්තා</h2><p class="muted">Review client requests assigned to this section and update their progress.</p></div><a class="secondary-btn" href="../dashboard.php">← Dashboard</a></div>
+	<div class="section-title"><div><h2><?=h($department?ucfirst($department).' Section Tasks':"Client's Tokens")?><?= $statusLabel?' / '.h($statusLabel):'' ?> / සේවාලාභියාගේ ටෝකන</h2><p class="muted">Review client requests assigned to this section and update their progress.</p></div><a class="secondary-btn" href="../dashboard.php">← Dashboard</a></div>
 	<?php if($error):?><div class="notice danger"><?=h($error)?></div><?php endif;?>
 	<?php if($success):?><div class="notice success" role="status"><?=h($success)?></div><?php endif;?>
 	<div class="table-wrap"><table class="table"><thead><tr><th>Token</th><th>Client</th><th>NIC</th><th>Phone</th><th>Section</th><th>Task</th><th>Submitted at</th><th>Preferred date</th><th>Status</th><?php if($canUpdateStatus):?><th>Update</th><?php endif;?><th>PDF</th></tr></thead><tbody>

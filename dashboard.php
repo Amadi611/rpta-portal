@@ -126,7 +126,7 @@ if(completionPopup?.showModal)completionPopup.showModal();
 					<span class="officer-card-action">Register officer <b aria-hidden="true">→</b></span>
 				</a>
 			<?php else:?>
-			<a href="admin/tokens.php"><svg class="admin-sidebar-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H20v14H6.5A2.5 2.5 0 0 1 4 16.5z"/><path d="M4 8h16M8 5v3m0 11v-3m4-6h4"/></svg><span>Token Record</span></a>
+			<a href="admin/tokens.php"><svg class="admin-sidebar-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H20v14H6.5A2.5 2.5 0 0 1 4 16.5z"/><path d="M4 8h16M8 5v3m0 11v-3m4-6h4"/></svg><span>Client's Tokens</span></a>
 			<?php if(in_array($r,['admin','super_admin'],true)):?>
 				<a href="admin/feedback.php"><svg class="admin-sidebar-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H7l-4 2 1.5-4A7.5 7.5 0 1 1 20 11.5Z"/><path d="m12.5 7 .9 2.1 2.3.2-1.8 1.4.6 2.2-2-1.2-2 1.2.6-2.2-1.8-1.4 2.3-.2z"/></svg><span>Feedback</span></a>
 				<a href="admin/complaints.php"><svg class="admin-sidebar-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.8 19h18.4L12 3Z"/><path d="M12 9v4m0 3h.01"/></svg><span>Complaint</span></a>
