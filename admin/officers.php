@@ -14,7 +14,6 @@ $sectionNames=['control'=>'Control','accounts'=>'Account','driving'=>'Driving'];
 $title='Officer Records';
 include '../includes/header.php';
 ?>
-//officers 
 <div class="page">
     <div class="section-title"><div><h2><?=h($department?$sectionNames[$department].' Section Officers':'Officer Records')?> / Officer Registration</h2><p class="muted">Officer identities and account access for each service section.</p></div><a class="secondary-btn" href="../dashboard.php">← Dashboard</a></div>
     <?php if(isset($_GET['created'])):?><div class="notice success" role="status">Officer account created successfully.</div><?php endif;?>
