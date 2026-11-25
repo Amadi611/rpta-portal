@@ -167,3 +167,43 @@
 .data-entry-faqs .crud-grid .table td:last-child .inline-form {
 	margin-bottom: 4px;
 }
+
+.data-entry-services .crud-grid {
+	align-items: start;
+}
+
+.data-entry-services .crud-grid > .form-card {
+	padding: 18px;
+}
+
+.data-entry-services .crud-grid > .form-card h3 {
+	margin-bottom: 10px;
+}
+
+.data-entry-services .crud-grid > .form-card label {
+	margin: 6px 0 4px;
+}
+
+.data-entry-services .crud-grid > .form-card input {
+	padding: 8px 11px;
+	font-size: 14px;
+}
+
+.data-entry-services .crud-grid > .form-card .primary-btn {
+	margin-top: 8px;
+	padding: 9px 16px;
+}
+
+.data-entry-services .crud-grid .table td:last-child .table-link,
+.data-entry-services .crud-grid .table td:last-child .link-danger {
+	min-height: 32px;
+	padding: 6px 10px;
+}
+
+.data-entry-services .crud-grid .table td:last-child .table-link {
+	margin-bottom: 4px;
+}
+
+.data-entry-services .crud-grid .table td:last-child .inline-form {
+	margin-bottom: 4px;
+}
