@@ -207,3 +207,8 @@
 .data-entry-services .crud-grid .table td:last-child .inline-form {
 	margin-bottom: 4px;
 }
+
+.data-entry-stands .crud-grid > .form-card .primary-btn {
+	margin-top: 8px;
+	padding: 9px 16px;
+}
