@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
  }catch(Throwable $e){$err='Could not save this record. Please check the fields and try again.';}
 }
 $editId=(int)($_GET['edit']??0);$editRow=null;if($editId){$table=$tab==='services'?'services':($tab==='vehicles'?'vehicles':($tab==='stands'?'bus_stands':($tab==='documents'?'documents':'faqs')));$q=$conn->prepare('SELECT * FROM '.$table.' WHERE id=?'); if($q){$q->bind_param('i',$editId);$q->execute();$editRow=$q->get_result()->fetch_assoc();}}
-$pageStyles=['assets/data-entry.css'];$title='Data Entry Management';include '../includes/header.php';
+$pageStyles=['assets/data-entry.css'];$pageBodyClass=$tab==='documents'?'data-entry-documents':($tab==='faqs'?'data-entry-faqs':'');$title='Data Entry Management';include '../includes/header.php';
 ?>
 <div class="page"><div class="section-title"><div><span class="badge">DATA ENTRY</span><h2>Data Entry Management / දත්ත කළමනාකරණය</h2><p class="muted">Enter, edit and delete operational data.</p></div><a class="secondary-btn" href="../dashboard.php">← Dashboard</a></div>
 <?php if($msg):?><div class="notice success"><?=h($msg)?></div><?php endif;?><?php if($err):?><div class="notice danger"><?=h($err)?></div><?php endif;?>

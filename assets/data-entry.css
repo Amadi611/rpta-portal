@@ -77,3 +77,93 @@
 .crud-grid .table td:last-child .link-danger:focus-visible {
 	outline-color: #d77b91;
 }
+
+.data-entry-documents .crud-grid {
+	align-items: start;
+}
+
+.data-entry-documents .crud-grid > .form-card {
+	padding: 18px;
+}
+
+.data-entry-documents .crud-grid > .form-card h3 {
+	margin-bottom: 10px;
+}
+
+.data-entry-documents .crud-grid > .form-card label {
+	margin: 6px 0 4px;
+}
+
+.data-entry-documents .crud-grid > .form-card input:not([type="checkbox"]) {
+	padding: 8px 11px;
+	font-size: 14px;
+}
+
+.data-entry-documents .crud-grid > .form-card .choice-options {
+	margin: 8px 0;
+}
+
+.data-entry-documents .crud-grid > .form-card .primary-btn {
+	margin-top: 8px;
+	padding: 9px 16px;
+}
+
+.data-entry-documents .crud-grid .table td:last-child .table-link,
+.data-entry-documents .crud-grid .table td:last-child .link-danger {
+	min-height: 32px;
+	padding: 6px 10px;
+}
+
+.data-entry-documents .crud-grid .table td:last-child .table-link {
+	margin-bottom: 4px;
+}
+
+.data-entry-documents .crud-grid .table td:last-child .inline-form {
+	margin-bottom: 4px;
+}
+
+.data-entry-faqs .crud-grid {
+	align-items: start;
+}
+
+.data-entry-faqs .crud-grid > .form-card {
+	padding: 18px;
+}
+
+.data-entry-faqs .crud-grid > .form-card h3 {
+	margin-bottom: 10px;
+}
+
+.data-entry-faqs .crud-grid > .form-card label {
+	margin: 6px 0 4px;
+}
+
+.data-entry-faqs .crud-grid > .form-card input,
+.data-entry-faqs .crud-grid > .form-card select,
+.data-entry-faqs .crud-grid > .form-card textarea {
+	padding: 8px 11px;
+	font-size: 14px;
+}
+
+.data-entry-faqs .crud-grid > .form-card textarea {
+	min-height: 64px;
+}
+
+.data-entry-faqs .crud-grid > .form-card .primary-btn {
+	margin-top: 8px;
+	padding: 9px 16px;
+}
+
+.data-entry-faqs .crud-grid .table td:last-child .table-link,
+.data-entry-faqs .crud-grid .table td:last-child .link-danger {
+	min-height: 32px;
+	padding: 6px 10px;
+}
+
+.data-entry-faqs .crud-grid .table td:last-child .table-link {
+	margin-bottom: 4px;
+}
+
+.data-entry-faqs .crud-grid .table td:last-child .inline-form {
+	margin-bottom: 4px;
+}
