@@ -51,6 +51,17 @@ $pageStyles=['assets/data-entry.css'];$title='Data Entry Management';include '..
 <div class="page"><div class="section-title"><div><span class="badge">DATA ENTRY</span><h2>Data Entry Management / දත්ත කළමනාකරණය</h2><p class="muted">Enter, edit and delete operational data.</p></div><a class="secondary-btn" href="../dashboard.php">← Dashboard</a></div>
 <?php if($msg):?><div class="notice success"><?=h($msg)?></div><?php endif;?><?php if($err):?><div class="notice danger"><?=h($err)?></div><?php endif;?>
 <div class="tabs"><?php if($canManageOperationalData):?><a class="<?= $tab==='services'?'active':''?>" href="?tab=services">Services</a><a class="<?= $tab==='vehicles'?'active':''?>" href="?tab=vehicles">Vehicles</a><a class="<?= $tab==='stands'?'active':''?>" href="?tab=stands">Bus Stands</a><a class="<?= $tab==='faqs'?'active':''?>" href="?tab=faqs">FAQ / AI</a><?php endif;?><a class="<?= $tab==='documents'?'active':''?>" href="?tab=documents">Documents</a></div>
+<script>
+document.addEventListener('submit', (event) => {
+	const form = event.target;
+	if (!(form instanceof HTMLFormElement) || !form.matches('.crud-grid .table td:last-child form.inline-form')) return;
+	const type = form.querySelector('input[name="type"]')?.value;
+	const message = type === 'documents'
+		? 'Remove this document from the client list?'
+		: 'Delete this record? This action cannot be undone.';
+	if (!window.confirm(message)) event.preventDefault();
+});
+</script>
 <?php if($tab==='services'):?><div class="crud-grid"><div class="form-card"><h3><?= $editRow?"Edit Service":"Add Service" ?></h3><form method="post"><input type="hidden" name="entity" value="services"><input type="hidden" name="id" value="<?= (int)($editRow["id"]??0) ?>"><label>English name</label><input name="name_en" value="<?=h($editRow["name_en"]??"")?>" required><label>Sinhala name</label><input name="name_si" value="<?=h($editRow["name_si"]??"")?>" required><label>Category</label><input name="category" value="<?=h($editRow["category"]??"")?>" required><button class="primary-btn">Save Service</button></form></div><div class="table-wrap"><table class="table"><tr><th>ID</th><th>English</th><th>Sinhala</th><th>Category</th><th>Action</th></tr><?php $rs=$conn->query('SELECT * FROM services ORDER BY id DESC');while($x=$rs->fetch_assoc()):?><tr><td><?=$x['id']?></td><td><?=h($x['name_en'])?></td><td><?=h($x['name_si'])?></td><td><?=h($x['category'])?></td><td><a class="table-link" href="?tab=services&edit=<?=$x['id']?>">Edit</a> <form class="inline-form" method="post"><input type="hidden" name="entity" value="delete"><input type="hidden" name="type" value="services"><input type="hidden" name="id" value="<?=$x['id']?>"><button class="link-danger">Delete</button></form></td></tr><?php endwhile;?></table></div></div>
 <?php elseif($tab==='vehicles'):?>
 <div class="crud-grid vehicle-management">
@@ -73,8 +84,8 @@ $pageStyles=['assets/data-entry.css'];$title='Data Entry Management';include '..
 			<tr>
 				<td><?=h($x['vehicle_type'])?></td><td><?=h($x['registration_no'])?></td><td><?=h($x['operator_name'])?></td><td><?=h($x['route'])?></td>
 				<td class="vehicle-table-actions">
-					<a class="table-link vehicle-action vehicle-action-edit" href="?tab=vehicles&amp;edit=<?=(int)$x['id']?>">Edit</a>
-					<form class="inline-form vehicle-delete-form" method="post" onsubmit="return confirm('Delete this vehicle? This action cannot be undone.');">
+					<a class="table-link" href="?tab=vehicles&amp;edit=<?=(int)$x['id']?>">Edit</a>
+					<form class="inline-form vehicle-delete-form" method="post">
 						<input type="hidden" name="entity" value="delete">
 						<input type="hidden" name="type" value="vehicles">
 						<input type="hidden" name="id" value="<?=(int)$x['id']?>">

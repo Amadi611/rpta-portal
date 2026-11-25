@@ -18,7 +18,8 @@
 	margin: 0;
 }
 
-.vehicle-action {
+.crud-grid .table td:last-child .table-link,
+.crud-grid .table td:last-child .link-danger {
 	display: inline-flex;
 	min-height: 36px;
 	align-items: center;
@@ -35,38 +36,44 @@
 	transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
 }
 
-.vehicle-action-edit {
+.crud-grid .table td:last-child .table-link {
 	border-color: #c9d9eb;
 	background: #f0f6ff;
 	color: #234c81;
 }
 
-.vehicle-action-delete {
+.crud-grid .table td:last-child .link-danger {
 	border-color: #f0cbd3;
 	background: #fff0f2;
 	color: #9b173f;
 }
 
-.vehicle-action-edit:hover,
-.vehicle-action-delete:hover {
+.crud-grid .table td:last-child .inline-form {
+	display: inline-flex;
+	margin: 0;
+}
+
+.crud-grid .table td:last-child .table-link:hover,
+.crud-grid .table td:last-child .link-danger:hover {
 	transform: translateY(-1px);
 }
 
-.vehicle-action-edit:hover {
+.crud-grid .table td:last-child .table-link:hover {
 	border-color: #9bb9dc;
 	background: #e2efff;
 }
 
-.vehicle-action-delete:hover {
+.crud-grid .table td:last-child .link-danger:hover {
 	border-color: #dfa2b0;
 	background: #ffe2e7;
 }
 
-.vehicle-action:focus-visible {
+.crud-grid .table td:last-child .table-link:focus-visible,
+.crud-grid .table td:last-child .link-danger:focus-visible {
 	outline: 3px solid #8daed2;
 	outline-offset: 2px;
 }
 
-.vehicle-action-delete:focus-visible {
+.crud-grid .table td:last-child .link-danger:focus-visible {
 	outline-color: #d77b91;
 }
