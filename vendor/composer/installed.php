@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
-        'pretty_version' => '3.29.x-dev',
-        'version' => '3.29.9999999.9999999-dev',
-        'reference' => 'ea121f8859e4b13e47a8f845e4586164519588bc',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => 'e6e1332b369c00dff105458db8a9ca13e2c17b8e',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => '3.29.x-dev',
-            'version' => '3.29.9999999.9999999-dev',
-            'reference' => 'ea121f8859e4b13e47a8f845e4586164519588bc',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'e6e1332b369c00dff105458db8a9ca13e2c17b8e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -151,6 +151,15 @@
             'reference' => '996434e5492cb4c3edcb9168db6fbb1359ef965a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../paragonie/random_compat',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'phpmailer/phpmailer' => array(
+            'pretty_version' => 'v6.12.0',
+            'version' => '6.12.0.0',
+            'reference' => 'd1ac35d784bf9f5e61b424901d5a014967f15b12',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpmailer/phpmailer',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

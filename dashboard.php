@@ -36,6 +36,63 @@ if($department!==null){
 }
 $canViewOperationalData=in_array($r,['data_entry','super_admin'],true);
 $canViewAdminReports=in_array($r,['admin','super_admin'],true);
+$monthlyTokenLabels=[];
+$monthlyTokenCounts=[];
+$feedbackStatusCounts=['Resolved'=>0,'Pending'=>0,'In Progress'=>0];
+$chartDataError=false;
+if($canViewAdminReports){
+	$currentMonth=new DateTimeImmutable('first day of this month 00:00:00');
+	$chartStart=$currentMonth->modify('-5 months');
+	$chartEnd=$currentMonth->modify('+1 month');
+	$monthlyCountsByKey=[];
+	for($monthOffset=5;$monthOffset>=0;$monthOffset--){
+		$month=$currentMonth->modify('-'.$monthOffset.' months');
+		$monthKey=$month->format('Y-m');
+		$monthlyTokenLabels[]=$month->format('M Y');
+		$monthlyCountsByKey[$monthKey]=0;
+	}
+
+	$monthlyTokenStmt=$conn->prepare("SELECT DATE_FORMAT(created_at,'%Y-%m') AS month_key,COUNT(*) AS token_count FROM tokens WHERE created_at>=? AND created_at<? GROUP BY DATE_FORMAT(created_at,'%Y-%m') ORDER BY month_key");
+	if(!$monthlyTokenStmt){
+		error_log('Could not prepare monthly token chart query: '.$conn->error);
+		$chartDataError=true;
+	}else{
+		$chartStartValue=$chartStart->format('Y-m-d H:i:s');
+		$chartEndValue=$chartEnd->format('Y-m-d H:i:s');
+		$monthlyTokenStmt->bind_param('ss',$chartStartValue,$chartEndValue);
+		if(!$monthlyTokenStmt->execute()){
+			error_log('Could not execute monthly token chart query: '.$monthlyTokenStmt->error);
+			$chartDataError=true;
+		}else{
+			$monthlyTokenRows=$monthlyTokenStmt->get_result();
+			while($monthlyTokenRow=$monthlyTokenRows->fetch_assoc()){
+				if(array_key_exists($monthlyTokenRow['month_key'],$monthlyCountsByKey)){
+					$monthlyCountsByKey[$monthlyTokenRow['month_key']]=(int)$monthlyTokenRow['token_count'];
+				}
+			}
+		}
+		$monthlyTokenStmt->close();
+	}
+	$monthlyTokenCounts=array_values($monthlyCountsByKey);
+
+	// feedback has no status column, so derive these buckets from token status and linked feedback.
+	$feedbackStatusStmt=$conn->prepare("SELECT feedback_status,COUNT(*) AS status_count FROM (SELECT CASE WHEN t.status='completed' AND f.token_id IS NOT NULL THEN 'Resolved' WHEN t.status='completed' THEN 'Pending' WHEN t.status IN('pending','issued') THEN 'In Progress' ELSE NULL END AS feedback_status FROM tokens t LEFT JOIN (SELECT token_id FROM feedback WHERE token_id IS NOT NULL GROUP BY token_id) AS f ON f.token_id=t.id) AS feedback_statuses WHERE feedback_status IS NOT NULL GROUP BY feedback_status");
+	if(!$feedbackStatusStmt){
+		error_log('Could not prepare feedback status chart query: '.$conn->error);
+		$chartDataError=true;
+	}else{
+		if(!$feedbackStatusStmt->execute()){
+			error_log('Could not execute feedback status chart query: '.$feedbackStatusStmt->error);
+			$chartDataError=true;
+		}else{
+			$feedbackStatusRows=$feedbackStatusStmt->get_result();
+			while($feedbackStatusRow=$feedbackStatusRows->fetch_assoc()){
+				$feedbackStatusCounts[$feedbackStatusRow['feedback_status']]=(int)$feedbackStatusRow['status_count'];
+			}
+		}
+		$feedbackStatusStmt->close();
+	}
+}
 $completionNotifications=[];
 $notificationError='';
 $clientTasks=[];
@@ -203,6 +260,113 @@ if(completionPopup?.showModal)completionPopup.showModal();
 	<?php if($r!=='officer_registrar'):?><a class="dash-card dashboard-card-link dash-card-documents" href="documents.php" aria-label="Open documents"><div class="muted">Documents</div><strong><?=$docCount?></strong></a><?php endif;?>
 	<?php if(is_staff()):?><a class="dash-card dashboard-card-link dash-card-clients" href="admin/passengers.php" aria-label="Open client records"><div class="muted">Clients</div><strong><?=$passCount?></strong></a><?php if($canViewOperationalData):?><a class="dash-card dashboard-card-link dash-card-vehicles" href="admin/data_entry.php?tab=vehicles" aria-label="Open vehicle records"><div class="muted">Vehicles</div><strong><?=$vehicleCount?></strong></a><a class="dash-card dashboard-card-link dash-card-stands" href="admin/data_entry.php?tab=stands" aria-label="Open bus stand records"><div class="muted">Bus Stands</div><strong><?=$standCount?></strong></a><?php endif;?><?php if($canViewAdminReports):?><a class="dash-card dashboard-card-link dash-card-feedback" href="admin/feedback.php" aria-label="Open feedback records"><div class="muted">Feedback</div><strong><?=$feedbackCount?></strong></a><a class="dash-card dashboard-card-link dash-card-complaints" href="admin/complaints.php" aria-label="Open complaint records"><div class="muted">Complaints</div><strong><?=$complaintCount?></strong></a><?php endif;?><?php endif;?>
 </div><?php endif;?>
+<?php if($canViewAdminReports):?>
+<section class="dashboard-visualizations" aria-labelledby="dashboard-visualizations-title">
+	<div class="dashboard-visualizations-heading">
+		<div><span class="dashboard-visualizations-eyebrow">Authority insights</span><h3 id="dashboard-visualizations-title">Data Visualization</h3></div>
+		<p>Recent client requests and feedback progress</p>
+	</div>
+	<?php if($chartDataError):?><div class="notice danger" role="alert">Some chart data could not be loaded. Please try again later.</div><?php endif;?>
+	<div class="row dashboard-visualizations-row">
+		<div class="col-lg-7 dashboard-visualizations-column">
+			<article class="dashboard-chart-card" aria-labelledby="monthly-tokens-title">
+				<div class="dashboard-chart-heading"><div><h4 id="monthly-tokens-title">Monthly Client Tokens Issued</h4><p>Last six months, including this month</p></div><span class="dashboard-chart-icon" aria-hidden="true">↗</span></div>
+				<div class="dashboard-chart-canvas"><canvas id="monthlyTokensChart" role="img" aria-label="Monthly client tokens issued for the last six months"></canvas></div>
+				<p class="dashboard-chart-empty" id="monthlyTokensEmpty" role="status" hidden>No token records for this period yet.</p>
+			</article>
+		</div>
+		<div class="col-lg-5 dashboard-visualizations-column">
+			<article class="dashboard-chart-card" aria-labelledby="feedback-status-title">
+				<div class="dashboard-chart-heading"><div><h4 id="feedback-status-title">Feedback Status Overview</h4><p>Resolved requests have feedback; pending requests are awaiting feedback</p></div><span class="dashboard-chart-icon" aria-hidden="true">◌</span></div>
+				<div class="dashboard-chart-canvas dashboard-chart-canvas-doughnut"><canvas id="feedbackStatusChart" role="img" aria-label="Feedback status overview for resolved, pending, and in-progress requests"></canvas></div>
+				<p class="dashboard-chart-empty" id="feedbackStatusEmpty" role="status" hidden>No feedback-related requests yet.</p>
+			</article>
+		</div>
+	</div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script>
+(() => {
+	const monthlyLabels = <?=json_encode($monthlyTokenLabels,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_AMP|JSON_HEX_QUOT)?>;
+	const monthlyCounts = <?=json_encode($monthlyTokenCounts,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_AMP|JSON_HEX_QUOT)?>;
+	const feedbackLabels = <?=json_encode(array_keys($feedbackStatusCounts),JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_AMP|JSON_HEX_QUOT)?>;
+	const feedbackCounts = <?=json_encode(array_values($feedbackStatusCounts),JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_AMP|JSON_HEX_QUOT)?>;
+	const emptyStates = [
+		['monthlyTokensEmpty', monthlyCounts],
+		['feedbackStatusEmpty', feedbackCounts]
+	];
+	emptyStates.forEach(([elementId, values]) => {
+		const element = document.getElementById(elementId);
+		if (element) element.hidden = !values.some(value => value > 0);
+	});
+
+	if (typeof window.Chart === 'undefined') {
+		emptyStates.forEach(([elementId]) => {
+			const element = document.getElementById(elementId);
+			if (element) {
+				element.hidden = false;
+				element.textContent = 'Charts could not be loaded. Please check your connection and refresh.';
+			}
+		});
+		return;
+	}
+
+	const monthlyCanvas = document.getElementById('monthlyTokensChart');
+	if (monthlyCanvas) {
+		new Chart(monthlyCanvas, {
+			type: 'line',
+			data: {
+				labels: monthlyLabels,
+				datasets: [{
+					label: 'Client tokens',
+					data: monthlyCounts,
+					borderColor: '#16834a',
+					backgroundColor: 'rgba(22, 131, 74, 0.12)',
+					pointBackgroundColor: '#16834a',
+					pointBorderColor: '#ffffff',
+					pointBorderWidth: 2,
+					pointRadius: 4,
+					fill: true,
+					tension: 0.35
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				plugins: { legend: { display: false } },
+				scales: {
+					y: { beginAtZero: true, ticks: { precision: 0 } },
+					x: { grid: { display: false } }
+				}
+			}
+		});
+	}
+
+	const feedbackCanvas = document.getElementById('feedbackStatusChart');
+	if (feedbackCanvas) {
+		new Chart(feedbackCanvas, {
+			type: 'doughnut',
+			data: {
+				labels: feedbackLabels,
+				datasets: [{
+					data: feedbackCounts,
+					backgroundColor: ['#16834a', '#e3a72f', '#3d8b72'],
+					borderColor: '#ffffff',
+					borderWidth: 3,
+					hoverOffset: 6
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				cutout: '66%',
+				plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, padding: 18 } } }
+			}
+		});
+	}
+})();
+</script>
+<?php endif;?>
 <?php if($department!==null):$taskQuery=$conn->prepare('SELECT token_no,full_name,service_type,preferred_date,status FROM tokens WHERE department=? ORDER BY id DESC LIMIT 8');$taskQuery->bind_param('s',$department);$taskQuery->execute();$departmentTasksRows=$taskQuery->get_result();?><div class="card department-dashboard department-task-card"><h3><?=h(ucfirst($department))?> Section Tasks</h3><div class="table-wrap"><table class="table"><thead><tr><th>Token</th><th>Client</th><th>Task</th><th>Date</th><th>Status</th></tr></thead><tbody><?php while($task=$departmentTasksRows->fetch_assoc()):?><tr><td><?=h($task['token_no'])?></td><td><?=h($task['full_name'])?></td><td><?=h($task['service_type'])?></td><td><?=h($task['preferred_date'])?></td><td><?=h($task['status']==='completed'?'Completed':'Pending')?></td></tr><?php endwhile;?></tbody></table></div><a class="table-link" href="admin/tokens.php">Open section task manager</a></div><?php $customerQuery=$conn->prepare('SELECT u.full_name,p.customer_type,p.nic,p.phone FROM users u JOIN passenger_profiles p ON p.user_id=u.id WHERE p.department=? ORDER BY u.id DESC LIMIT 8');$customerQuery->bind_param('s',$department);$customerQuery->execute();$sectionClients=$customerQuery->get_result();?><div class="card department-dashboard department-client-card"><h3><?=h(ucfirst($department))?> Section Clients</h3><div class="table-wrap"><table class="table"><thead><tr><th>Name</th><th>Client type</th><th>NIC</th><th>Phone</th></tr></thead><tbody><?php while($customer=$sectionClients->fetch_assoc()):?><tr><td><?=h($customer['full_name'])?></td><td><?=h($customer['customer_type'])?></td><td><?=h($customer['nic'])?></td><td><?=h($customer['phone'])?></td></tr><?php endwhile;?></tbody></table></div><a class="table-link" href="admin/passengers.php">Open section customer records</a></div><?php endif;?>
 <?php if($showStaffNavigation):?></div></div><?php endif;?>
 <section class="access-card" aria-labelledby="access-card-title">

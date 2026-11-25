@@ -1,5 +1,20 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    ini_set('session.use_strict_mode', '1');
+    ini_set('session.use_only_cookies', '1');
+    $httpsRequest = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== ''
+        && strtolower((string)$_SERVER['HTTPS']) !== 'off';
+    $sessionCookie = session_get_cookie_params();
+    session_set_cookie_params([
+        'lifetime' => 0,
+        'path' => $sessionCookie['path'] ?: '/',
+        'domain' => $sessionCookie['domain'],
+        'secure' => $httpsRequest,
+        'httponly' => true,
+        'samesite' => 'Lax'
+    ]);
+    session_start();
+}
 const DB_HOST = 'localhost';
 const DB_USER = 'root';
 const DB_PASS = '';
@@ -188,11 +203,9 @@ if($faqCount===0){
     $faqFile=__DIR__.'/sql/faqs_400.sql';
     if(is_file($faqFile)){ $sql400=@file_get_contents($faqFile); if($sql400) @$conn->multi_query($sql400); while($conn->more_results() && $conn->next_result()){} }
 }
-// Seed staff accounts only when they do not already exist, preserving user-selected credentials.
+// Seed non-admin demo staff accounts only when they do not already exist.
 $demoHash=password_hash('password', PASSWORD_DEFAULT);
 $users=[
- ['System Super Administrator','superadmin','super_admin'],
- ['Portal Administrator','admin','admin'],
  ['Control Section Administrator','controladmin','control_admin'],
  ['Driving Section Administrator','drivingadmin','driving_admin'],
  ['Accounts Section Administrator','accountsadmin','accounts_admin'],

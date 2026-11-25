@@ -5,6 +5,125 @@
 	gap: 20px;
 }
 
+.dashboard-visualizations {
+	margin-top: 28px;
+}
+
+.dashboard-visualizations-heading {
+	display: flex;
+	align-items: end;
+	justify-content: space-between;
+	gap: 16px;
+	margin: 0 0 14px;
+}
+
+.dashboard-visualizations-heading h3 {
+	margin: 4px 0 0;
+	color: #185b3a;
+	font-size: 1.35rem;
+}
+
+.dashboard-visualizations-heading p,
+.dashboard-chart-heading p {
+	margin: 5px 0 0;
+	color: #687970;
+	font-size: 0.85rem;
+}
+
+.dashboard-visualizations-eyebrow {
+	color: #16834a;
+	font-size: 0.7rem;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.dashboard-visualizations-row {
+	display: grid;
+	grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+	gap: 18px;
+	margin: 0;
+}
+
+.dashboard-visualizations-column {
+	min-width: 0;
+	padding: 0;
+}
+
+.dashboard-chart-card {
+	height: 100%;
+	padding: 20px;
+	border: 1px solid #dcece2;
+	border-radius: 18px;
+	background: linear-gradient(155deg, #ffffff 0%, #f7fcf8 100%);
+	box-shadow: 0 12px 28px rgba(24, 91, 58, 0.08);
+}
+
+.dashboard-chart-heading {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 12px;
+	margin-bottom: 12px;
+}
+
+.dashboard-chart-heading h4 {
+	margin: 0;
+	color: #204b36;
+	font-size: 1rem;
+}
+
+.dashboard-chart-icon {
+	display: grid;
+	width: 34px;
+	height: 34px;
+	flex: 0 0 auto;
+	place-items: center;
+	border-radius: 11px;
+	background: #e7f5eb;
+	color: #16834a;
+	font-size: 1.2rem;
+	font-weight: 800;
+}
+
+.dashboard-chart-canvas {
+	position: relative;
+	height: 280px;
+}
+
+.dashboard-chart-canvas-doughnut {
+	height: 280px;
+}
+
+.dashboard-chart-empty {
+	margin: 8px 0 0;
+	color: #687970;
+	font-size: 0.85rem;
+	text-align: center;
+}
+
+@media (max-width: 991.98px) {
+	.dashboard-visualizations-row {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+	.dashboard-visualizations-heading {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.dashboard-chart-card {
+		padding: 16px;
+	}
+
+	.dashboard-chart-canvas,
+	.dashboard-chart-canvas-doughnut {
+		height: 250px;
+	}
+}
+
 .admin-dashboard-sidebar {
 	grid-column: 1;
 	grid-row: 1;

@@ -2556,8 +2556,6 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `full_name`, `username`, `password_hash`, `role`, `created_at`) VALUES
-(1, 'System Super Administrator', 'superadmin', '$2y$10$WlVE3i.jcV/zYgSCi.iqh.nH7OHY2.D2MwPa9SNio38UPDx5IjILa', 'super_admin', '2026-09-28 14:58:36'),
-(2, 'Portal Administrator', 'admin', '$2y$10$WlVE3i.jcV/zYgSCi.iqh.nH7OHY2.D2MwPa9SNio38UPDx5IjILa', 'admin', '2026-09-28 14:58:36'),
 (3, 'Content Data Entry', 'dataentry', '$2y$10$WlVE3i.jcV/zYgSCi.iqh.nH7OHY2.D2MwPa9SNio38UPDx5IjILa', 'data_entry', '2026-09-28 14:58:36'),
 (4, 'Demo Passenger', 'passenger', '$2y$10$WlVE3i.jcV/zYgSCi.iqh.nH7OHY2.D2MwPa9SNio38UPDx5IjILa', 'passenger', '2026-09-28 14:58:36'),
 (369, 'Demo Passenger 2', 'demo_passenger2', '$2y$10$4lBYimytFMVe1J4d5E76LuHeBgRdXp1XjlZjAzXrd7SQcrVs4BYY2', 'passenger', '2026-09-29 09:27:41'),

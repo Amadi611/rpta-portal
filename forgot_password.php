@@ -26,6 +26,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     }
 }
 $title='Forgot Password';
+$pageStyles=['assets/forgot-password.css'];
 include __DIR__.'/includes/header.php';
 ?>
 <div class="page narrow">
@@ -33,11 +34,11 @@ include __DIR__.'/includes/header.php';
         <div class="section-title"><div><h2>Forgot password?</h2><p class="muted">Verify your registered details to set a new password.</p></div><a class="secondary-btn" href="login.php">Back to login</a></div>
         <?php if($updated):?><div class="notice success">Password updated. You can now sign in.</div><?php endif;?>
         <?php if($error):?><div class="notice danger"><?=h($error)?></div><?php endif;?>
-        <form method="post" autocomplete="off">
+        <form class="forgot-password-form" method="post" autocomplete="off">
             <label>Username</label><input name="username" autocomplete="username" required>
             <label>Registered NIC</label><input name="nic" required>
             <label>New password</label><input type="password" name="password" inputmode="numeric" pattern="[0-9]{6}" minlength="6" maxlength="6" autocomplete="new-password" required>
-            <button class="primary-btn" type="submit">Reset password</button>
+            <button class="primary-btn forgot-password-submit" type="submit">Reset password</button>
         </form>
     </div>
 </div>

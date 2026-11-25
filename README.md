@@ -18,9 +18,16 @@ Run `composer install` in the project directory after a fresh checkout. QR codes
 - Data Entry: operational data entry/edit/delete, passenger records, vehicles, bus stands, services and FAQ knowledge.
 - Super Admin: full access.
 
+## Admin and Super Admin account recovery
+- Only `admin` and `super_admin` accounts are subject to lockout and email recovery. Five consecutive failed logins cause a two-minute lockout.
+- Before upgrading, back up the database. Apply `sql/admin_account_recovery.sql` to create the account-scoped recovery table.
+- Set `RPTA_ADMIN_RECOVERY_EMAIL` and `RPTA_SUPERADMIN_RECOVERY_EMAIL` in the PHP process environment, then run `php configure_admin_recovery_emails.php`. The CLI tool saves the addresses against the matching account IDs; no addresses are printed.
+- Configure SMTP outside the source tree using `RPTA_SMTP_HOST`, `RPTA_SMTP_PORT`, `RPTA_SMTP_USERNAME`, `RPTA_SMTP_PASSWORD`, `RPTA_SMTP_ENCRYPTION` (`tls` or `ssl`), and `RPTA_SMTP_FROM_ADDRESS`. `RPTA_SMTP_FROM_NAME` is optional.
+- Recovery codes expire after five minutes, allow five verification attempts, and are limited to one send per minute and three email requests per 15-minute window.
+- Admin and Super Admin passwords are never documented here. Use the local CLI reset tool only when intentionally rotating them. Passenger and other staff login/recovery behavior is unchanged.
+
 ## Test credentials (not displayed on the login page)
-- superadmin / password
-- admin / password
+- Admin and Super Admin credentials are provisioned locally and are not listed in source documentation.
 - dataentry / password
 
 ## Local AI
