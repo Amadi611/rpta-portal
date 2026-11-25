@@ -1,0 +1,72 @@
+.vehicle-management {
+	align-items: start;
+}
+
+.vehicle-form .vehicle-save-btn {
+	margin-top: 16px;
+	padding: 12px 20px;
+}
+
+.vehicle-table-actions {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	white-space: nowrap;
+}
+
+.vehicle-delete-form {
+	margin: 0;
+}
+
+.vehicle-action {
+	display: inline-flex;
+	min-height: 36px;
+	align-items: center;
+	justify-content: center;
+	padding: 8px 12px;
+	border: 1px solid transparent;
+	border-radius: 9px;
+	font: inherit;
+	font-size: 13px;
+	font-weight: 800;
+	line-height: 1;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.vehicle-action-edit {
+	border-color: #c9d9eb;
+	background: #f0f6ff;
+	color: #234c81;
+}
+
+.vehicle-action-delete {
+	border-color: #f0cbd3;
+	background: #fff0f2;
+	color: #9b173f;
+}
+
+.vehicle-action-edit:hover,
+.vehicle-action-delete:hover {
+	transform: translateY(-1px);
+}
+
+.vehicle-action-edit:hover {
+	border-color: #9bb9dc;
+	background: #e2efff;
+}
+
+.vehicle-action-delete:hover {
+	border-color: #dfa2b0;
+	background: #ffe2e7;
+}
+
+.vehicle-action:focus-visible {
+	outline: 3px solid #8daed2;
+	outline-offset: 2px;
+}
+
+.vehicle-action-delete:focus-visible {
+	outline-color: #d77b91;
+}
