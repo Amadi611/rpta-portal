@@ -108,10 +108,43 @@
 
 .home-about,
 .home-help,
+.home-document-guide,
 .home-services,
 .home-next-step,
 .home-events {
 	background: transparent;
+}
+
+.home-document-guide {
+	padding: 34px 20px 0;
+}
+
+.home-document-guide-card {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	padding: 20px 22px;
+	border: 1px solid rgba(116, 19, 51, .18);
+	border-radius: 12px;
+	background: rgba(255, 255, 255, .86);
+	box-shadow: 0 10px 24px rgba(74, 17, 38, .06);
+}
+
+.home-document-guide-card p {
+	margin: 0;
+	line-height: 1.6;
+}
+
+.home-document-guide-card .home-document-guide-sinhala {
+	margin-bottom: 5px;
+	color: #57162d;
+	font-size: 17px;
+	font-weight: 800;
+}
+
+.home-document-guide-card .home-button {
+	flex: 0 0 auto;
 }
 
 .home-services {
@@ -147,5 +180,22 @@
 @media (prefers-reduced-motion: reduce) {
 	.home-shell::before {
 		animation: none;
+	}
+}
+
+@media (max-width: 650px) {
+	.home-document-guide {
+		padding: 26px 18px 0;
+	}
+
+	.home-document-guide-card {
+		align-items: stretch;
+		flex-direction: column;
+		gap: 14px;
+		padding: 18px;
+	}
+
+	.home-document-guide-card .home-button {
+		width: 100%;
 	}
 }

@@ -137,6 +137,68 @@ body:has(.dashboard-page--client) {
 	background: linear-gradient(145deg, #fcfeff 0%, #dceaf0 100%);
 }
 
+.client-document-guide {
+	display: flex;
+	width: min(100%, 1180px);
+	align-items: center;
+	justify-content: space-between;
+	gap: 18px;
+	padding: 17px 20px;
+	border: 1px solid #bfd0dc;
+	border-radius: 16px;
+	background: linear-gradient(135deg, #f8fbfd 0%, #e8f0f5 100%);
+	box-shadow: 0 8px 18px rgba(43, 69, 91, .08);
+}
+
+.client-document-guide strong,
+.client-document-guide span {
+	display: block;
+}
+
+.client-document-guide strong {
+	color: #294660;
+	font-size: 16px;
+	font-weight: 900;
+	line-height: 1.45;
+}
+
+.client-document-guide span {
+	margin-top: 4px;
+	color: #496174;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1.5;
+}
+
+.client-document-guide a {
+	display: inline-flex;
+	min-height: 42px;
+	flex: 0 0 auto;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 16px;
+	border: 1px solid #294660;
+	border-radius: 9px;
+	background: #294660;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 800;
+	text-align: center;
+	transition: background-color .18s ease, border-color .18s ease, transform .18s ease;
+}
+
+.client-document-guide a:hover,
+.client-document-guide a:focus-visible {
+	transform: translateY(-1px);
+	border-color: #1d3448;
+	background: #1d3448;
+}
+
+.client-document-guide a:focus-visible {
+	outline: 3px solid #7fa3bd;
+	outline-offset: 3px;
+}
+
 .dashboard-page--client .client-status-card {
 	border-color: #b7cad9;
 	background:
@@ -312,5 +374,16 @@ body:has(.dashboard-page--client) {
 
 	.dashboard-page--client .client-status-card h3 {
 		font-size: 19px;
+	}
+
+	.client-document-guide {
+		align-items: stretch;
+		flex-direction: column;
+		gap: 12px;
+		padding: 15px;
+	}
+
+	.client-document-guide a {
+		width: 100%;
 	}
 }

@@ -472,6 +472,12 @@ body.site-soft-theme:has(.dashboard-page--client) {
 	box-shadow: 0 12px 26px rgba(17, 72, 64, .16);
 }
 
+.site-soft-theme .dashboard-page--officer-registration .admin-dashboard-sidebar {
+	border-color: #c5e7db;
+	background: linear-gradient(135deg, #f8fcfa 0%, #fffaf4 48%, #f4f8ff 100%);
+	box-shadow: 0 12px 28px rgba(65, 103, 113, .12);
+}
+
 .site-soft-theme .dashboard-page .admin-sidebar-brand,
 .site-soft-theme .dashboard-page .admin-dashboard-sidebar nav a {
 	color: #fff;
@@ -511,13 +517,40 @@ body.site-soft-theme:has(.dashboard-page--client) {
 	--documents-shadow: rgba(23, 102, 91, .08);
 }
 
-.site-soft-theme .officer-registration-card--control,
-.site-soft-theme .officer-registration-card--accounts,
+.site-soft-theme .officer-registration-card--control {
+	--officer-card-accent: #c6f2d6;
+	--officer-card-icon-accent: #197448;
+	--officer-card-tint: #d9f1e2;
+	--officer-card-border: #2d8056;
+	--officer-card-surface: #145b3b;
+}
+
+.site-soft-theme .officer-registration-card--accounts {
+	--officer-card-accent: #ffe3a3;
+	--officer-card-icon-accent: #8a5a00;
+	--officer-card-tint: #ffefc9;
+	--officer-card-border: #a8791d;
+	--officer-card-surface: #704b00;
+}
+
 .site-soft-theme .officer-registration-card--driving {
-	--officer-card-accent: #17665b;
-	--officer-card-tint: #e3efeb;
-	--officer-card-border: #d8e5e0;
-	--officer-card-surface: #fff;
+	--officer-card-accent: #cfe0ff;
+	--officer-card-icon-accent: #285db1;
+	--officer-card-tint: #deebff;
+	--officer-card-border: #4d78bd;
+	--officer-card-surface: #214d91;
+}
+
+.site-soft-theme .officer-registrar-dashboard .admin-dashboard-sidebar nav a.officer-registration-card strong {
+	color: #fff;
+}
+
+.site-soft-theme .officer-registrar-dashboard .admin-dashboard-sidebar nav a.officer-registration-card small {
+	color: #f0f3f2;
+}
+
+.site-soft-theme .officer-registration-card .officer-card-label {
+	color: #e5eee9;
 }
 
 .site-soft-theme .registration-page {

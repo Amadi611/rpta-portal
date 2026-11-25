@@ -50,6 +50,30 @@
 	background: #f7e6ee;
 }
 
+.admin-nav a.officer-create-button,
+.site-soft-theme .admin-nav a.officer-create-button {
+	border-color: #3a1724;
+	background: #3a1724;
+	color: #fff8f4;
+	transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.admin-nav a.officer-create-button:hover,
+.admin-nav a.officer-create-button:focus-visible,
+.site-soft-theme .admin-nav a.officer-create-button:hover,
+.site-soft-theme .admin-nav a.officer-create-button:focus-visible {
+	transform: translateY(-1px);
+	border-color: #24101a;
+	background: #24101a;
+	color: #fff;
+}
+
+.admin-nav a.officer-create-button:focus-visible,
+.site-soft-theme .admin-nav a.officer-create-button:focus-visible {
+	outline: 3px solid #d5b879;
+	outline-offset: 3px;
+}
+
 @media (max-width: 600px) {
 	.officers-page {
 		padding: 18px 14px;

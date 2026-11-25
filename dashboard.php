@@ -210,6 +210,13 @@ if(completionPopup?.showModal)completionPopup.showModal();
 			<a class="client-dashboard-action client-dashboard-action-officers" href="officers.php"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20v-1a6 6 0 0 1 12 0v1m1-9a3 3 0 1 0 0-6m1 9a5 5 0 0 1 4 5"/></svg><span>Officer Directory / නිලධාරී නාමාවලිය</span></a>
 			<a class="client-dashboard-action client-dashboard-action-complaint" href="complaint.php"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.8 19h18.4L12 3Z"/><path d="M12 9v4m0 3h.01"/></svg><span>Make a Complaint / පැමිණිල්ලක් ඉදිරිපත් කරන්න</span></a>
 		</nav>
+		<div class="client-document-guide">
+			<div>
+				<strong>Documents to Bring Before Visiting the Institution</strong>
+				<span lang="si">ආයතනයට පැමිණීමට පෙර රැගෙන ආ යුතු ලියකියවිලි</span>
+			</div>
+			<a href="<?=BASE_URL?>/documents/documents-to-bring-before-visiting.pdf" download>Download PDF / PDF බාගන්න</a>
+		</div>
 	</div>
 </section>
 <?php endif;?>

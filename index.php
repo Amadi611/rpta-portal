@@ -2,6 +2,7 @@
 require_once __DIR__.'/config.php';
 $title='Passenger Transport Services / මගී ප්‍රවාහන සේවා';
 $pageStyles=['assets/home-background.css'];
+$documentGuideUrl=BASE_URL.'/documents/documents-to-bring-before-visiting.pdf';
 $homeSlides=[
   ['src'=>BASE_URL.'/assets/images/image1.png','alt'=>'Public bus at Galle Bus Stand, Sri Lanka','caption'=>'Public transport at Galle Bus Stand'],
   ['src'=>BASE_URL.'/assets/images/home-slide-1.png','alt'=>'Southern Provincial Road Passenger Transport Authority building at night','caption'=>'Southern Provincial Road Passenger Transport Authority'],
@@ -103,6 +104,20 @@ $serviceHref=role()==='passenger'?'token.php':(logged_in()?'dashboard.php':'logi
     startHomeSlideshow();
     //SCRIPT: HOME ASSISTANT
   </script>
+  <section class="home-document-guide" id="documents-to-bring" aria-labelledby="documents-to-bring-title">
+    <div class="home-services-inner">
+      <div class="home-section-heading">
+        <h2 id="documents-to-bring-title">Documents to Bring Before Visiting the Institution</h2>
+      </div>
+      <div class="home-document-guide-card">
+        <div>
+          <p class="home-document-guide-sinhala" lang="si">ආයතනයට පැමිණීමට පෙර රැගෙන ආ යුතු ලියකියවිලි</p>
+          <p>Review the guide before your visit to make sure you bring the required documents.</p>
+        </div>
+        <a class="home-button home-button-primary" href="<?=h($documentGuideUrl)?>" download>Download PDF / PDF බාගන්න</a>
+      </div>
+    </div>
+  </section>
   <section class="home-about" id="about" aria-labelledby="home-about-title">
     <div class="home-services-inner">
       <div class="home-section-heading">
