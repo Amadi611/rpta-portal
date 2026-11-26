@@ -26,13 +26,28 @@ if (!$account || !admin_auth_is_target_role($account['role']) || (int)$account['
     redirect('login.php');
 }
 
-$notice = '';
+$notice = isset($_SESSION['admin_recovery_notice']) && is_string($_SESSION['admin_recovery_notice'])
+    ? $_SESSION['admin_recovery_notice']
+    : '';
+unset($_SESSION['admin_recovery_notice']);
 $error = '';
 $otpPrompt = !empty($_SESSION['admin_recovery_otp_prompt']);
 $resetToken = isset($_SESSION['admin_recovery_reset_token'])
     && is_string($_SESSION['admin_recovery_reset_token'])
     ? $_SESSION['admin_recovery_reset_token']
     : '';
+$isOtpPage = isset($_GET['step'])
+    && is_string($_GET['step'])
+    && $_GET['step'] === 'verify'
+    && $otpPrompt;
+if (
+    isset($_GET['step'])
+    && $_GET['step'] === 'verify'
+    && !$isOtpPage
+    && $resetToken === ''
+) {
+    redirect('admin_account_recovery.php');
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = isset($_POST['action']) && is_string($_POST['action']) ? $_POST['action'] : '';
@@ -140,20 +155,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     );
                     $clearOtp = $pdo->prepare(
                         'UPDATE admin_account_recovery
-                         SET otp_hash=NULL,otp_expires_at=NULL
+                         SET otp_hash=NULL,otp_expires_at=NULL,otp_sent_at=NULL
                          WHERE user_id=? AND otp_hash=?'
                     );
                     $clearOtp->execute([$userId, $otpHashToSend]);
                 }
             }
-            $otpPrompt = true;
-            $notice = 'If the email address matches an account, a verification code has been sent. Please check your inbox and spam folder.';
+            $_SESSION['admin_recovery_notice'] = 'If the email address matches an account, a verification code has been sent. Please check your inbox and spam folder.';
+            redirect('admin_account_recovery.php?step=verify');
         } catch (Throwable $requestError) {
             if ($pdo->inTransaction()) $pdo->rollBack();
             error_log('Admin OTP request failed for user id '.$userId.': '.$requestError->getMessage());
             $error = 'Recovery is temporarily unavailable. Please try again later.';
         }
-    } elseif ($action === 'verify_otp') {
+    } elseif ($action === 'verify_otp' && $isOtpPage) {
         $submittedOtp = isset($_POST['otp']) && is_string($_POST['otp']) ? trim($_POST['otp']) : '';
         $otpValid = preg_match('/^[0-9]{6}$/D', $submittedOtp) === 1;
         try {
@@ -312,7 +327,7 @@ include __DIR__.'/includes/header.php';
 ?>
 <div class="page narrow">
 	<div class="form-card">
-		<div class="section-title"><div><h2>Admin account recovery</h2><p class="muted">Verify your registered email to reset your password.</p></div><a class="secondary-btn" href="login.php">Back to login</a></div>
+		<div class="section-title"><div><h2>Admin account recovery</h2><p class="muted"><?= $resetToken!==''?'Set a new password.':($isOtpPage?'Enter the verification code sent to your registered email.':'Verify your registered email to reset your password.')?></p></div><a class="secondary-btn" href="login.php">Back to login</a></div>
 		<?php if($notice!==''):?><div class="notice info" role="status"><?=h($notice)?></div><?php endif;?>
 		<?php if($error!==''):?><div class="notice danger" role="alert"><?=h($error)?></div><?php endif;?>
 		<?php if($resetToken!==''):?>
@@ -326,6 +341,19 @@ include __DIR__.'/includes/header.php';
 			<p class="muted">Use 12–72 characters with uppercase and lowercase letters, a number, and a symbol.</p>
 			<button class="primary-btn" type="submit">Reset password and unlock</button>
 		</form>
+		<?php elseif($isOtpPage):?>
+		<section class="recovery-otp" aria-labelledby="recovery-otp-title">
+			<h3 id="recovery-otp-title">Enter verification code</h3>
+			<p class="muted">Enter the six-digit code to continue to password reset.</p>
+			<form method="post" action="admin_account_recovery.php?step=verify" autocomplete="off">
+				<input type="hidden" name="csrf_token" value="<?=h($csrfToken)?>">
+				<input type="hidden" name="action" value="verify_otp">
+				<label for="recovery-otp">Six-digit recovery code</label>
+				<input id="recovery-otp" type="text" name="otp" inputmode="numeric" pattern="[0-9]{6}" minlength="6" maxlength="6" autocomplete="one-time-code" required>
+				<button class="primary-btn" type="submit">Verify code</button>
+			</form>
+			<p class="recovery-otp-return"><a class="secondary-btn" href="admin_account_recovery.php">Request another code</a></p>
+		</section>
 		<?php else:?>
 		<form method="post" autocomplete="off">
 			<input type="hidden" name="csrf_token" value="<?=h($csrfToken)?>">
@@ -334,19 +362,6 @@ include __DIR__.'/includes/header.php';
 			<input id="recovery-email" type="email" name="email" autocomplete="email" maxlength="254" required>
 			<button class="primary-btn" type="submit">Send recovery code</button>
 		</form>
-		<?php if($otpPrompt):?>
-		<section class="recovery-otp" aria-labelledby="recovery-otp-title">
-			<h3 id="recovery-otp-title">Enter verification code</h3>
-			<p class="muted">Enter the six-digit code to continue to password reset.</p>
-			<form method="post" autocomplete="off">
-				<input type="hidden" name="csrf_token" value="<?=h($csrfToken)?>">
-				<input type="hidden" name="action" value="verify_otp">
-				<label for="recovery-otp">Six-digit recovery code</label>
-				<input id="recovery-otp" type="text" name="otp" inputmode="numeric" pattern="[0-9]{6}" minlength="6" maxlength="6" autocomplete="one-time-code" required>
-				<button class="primary-btn" type="submit">Verify code</button>
-			</form>
-		</section>
-		<?php endif;?>
 		<?php endif;?>
 	</div>
 </div>

@@ -122,5 +122,9 @@ function send_admin_recovery_otp($recipient, $otp, $role)
     $mail->Subject = 'SPRPTA account recovery code';
     $mail->Body = "Your one-time account recovery code is: ".$otp
         ."\n\nThis code expires in five minutes. If you did not request it, ignore this message.";
-    $mail->send();
+    if (!$mail->send()) {
+        throw new RuntimeException(
+            'PHPMailer send() returned false: '.$mail->ErrorInfo
+        );
+    }
 }

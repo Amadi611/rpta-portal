@@ -16,3 +16,7 @@
 .recovery-otp .primary-btn {
 	margin-top: 14px;
 }
+
+.recovery-otp-return {
+	margin: 16px 0 0;
+}
