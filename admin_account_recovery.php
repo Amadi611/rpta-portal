@@ -79,10 +79,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if (!$rateLimited) {
                 $requestCount++;
+                $expectedRecoveryEmail = admin_auth_recovery_email_for_role($account['role']);
                 $emailMatches = filter_var($submittedEmail, FILTER_VALIDATE_EMAIL)
                     && is_string($recovery['recovery_email'])
+                    && is_string($expectedRecoveryEmail)
                     && hash_equals(
-                        strtolower($recovery['recovery_email']),
+                        $expectedRecoveryEmail,
+                        strtolower($recovery['recovery_email'])
+                    )
+                    && hash_equals(
+                        $expectedRecoveryEmail,
                         strtolower($submittedEmail)
                     );
 
@@ -122,9 +128,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ($otpToSend !== null) {
                 try {
-                    send_admin_recovery_otp($recovery['recovery_email'], $otpToSend);
+                    send_admin_recovery_otp(
+                        $recovery['recovery_email'],
+                        $otpToSend,
+                        $account['role']
+                    );
                 } catch (Throwable $mailError) {
-                    error_log('Admin OTP email delivery failed for user id '.$userId.': '.$mailError->getMessage());
+                    error_log(
+                        'Admin OTP SMTP configuration or delivery failed for user id '
+                        .$userId.': '.$mailError->getMessage()
+                    );
                     $clearOtp = $pdo->prepare(
                         'UPDATE admin_account_recovery
                          SET otp_hash=NULL,otp_expires_at=NULL
@@ -134,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
             }
             $otpPrompt = true;
-            $notice = 'Request received. If the details match, check the registered email. This page cannot confirm a match or delivery.';
+            $notice = 'If the email address matches an account, a verification code has been sent. Please check your inbox and spam folder.';
         } catch (Throwable $requestError) {
             if ($pdo->inTransaction()) $pdo->rollBack();
             error_log('Admin OTP request failed for user id '.$userId.': '.$requestError->getMessage());
@@ -294,6 +307,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $csrfToken = admin_auth_csrf_token('admin_recovery_csrf');
 $title = 'Admin Account Recovery';
+$pageStyles = ['assets/account-recovery.css'];
 include __DIR__.'/includes/header.php';
 ?>
 <div class="page narrow">
@@ -321,13 +335,17 @@ include __DIR__.'/includes/header.php';
 			<button class="primary-btn" type="submit">Send recovery code</button>
 		</form>
 		<?php if($otpPrompt):?>
-		<form method="post" autocomplete="off">
-			<input type="hidden" name="csrf_token" value="<?=h($csrfToken)?>">
-			<input type="hidden" name="action" value="verify_otp">
-			<label for="recovery-otp">Six-digit recovery code</label>
-			<input id="recovery-otp" type="text" name="otp" inputmode="numeric" pattern="[0-9]{6}" minlength="6" maxlength="6" autocomplete="one-time-code" required>
-			<button class="primary-btn" type="submit">Verify code</button>
-		</form>
+		<section class="recovery-otp" aria-labelledby="recovery-otp-title">
+			<h3 id="recovery-otp-title">Enter verification code</h3>
+			<p class="muted">Enter the six-digit code to continue to password reset.</p>
+			<form method="post" autocomplete="off">
+				<input type="hidden" name="csrf_token" value="<?=h($csrfToken)?>">
+				<input type="hidden" name="action" value="verify_otp">
+				<label for="recovery-otp">Six-digit recovery code</label>
+				<input id="recovery-otp" type="text" name="otp" inputmode="numeric" pattern="[0-9]{6}" minlength="6" maxlength="6" autocomplete="one-time-code" required>
+				<button class="primary-btn" type="submit">Verify code</button>
+			</form>
+		</section>
 		<?php endif;?>
 		<?php endif;?>
 	</div>

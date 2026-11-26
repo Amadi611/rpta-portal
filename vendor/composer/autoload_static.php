@@ -107,7 +107,7 @@ class ComposerStaticInit04334b99bf18f8ba2ff99c8cd3b4bb0e
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
-        'PHPMailer\\PHPMailer\\' =>
+        'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),

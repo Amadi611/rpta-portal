@@ -1,0 +1,18 @@
+.recovery-otp {
+	margin-top: 22px;
+	padding-top: 18px;
+	border-top: 1px solid var(--line);
+}
+
+.recovery-otp h3 {
+	margin: 0 0 6px;
+	color: var(--maroon2);
+}
+
+.recovery-otp .muted {
+	margin: 0 0 12px;
+}
+
+.recovery-otp .primary-btn {
+	margin-top: 14px;
+}

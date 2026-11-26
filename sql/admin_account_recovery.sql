@@ -19,3 +19,12 @@ CREATE TABLE IF NOT EXISTS admin_account_recovery (
 
 INSERT IGNORE INTO admin_account_recovery (user_id)
 SELECT id FROM users WHERE role IN ('admin', 'super_admin');
+
+UPDATE admin_account_recovery r
+JOIN users u ON u.id = r.user_id
+SET r.recovery_email = CASE u.role
+    WHEN 'admin' THEN 'amadinethsarani611@gmail.com'
+    WHEN 'super_admin' THEN 'aktarushika@gmail.com'
+END
+WHERE (u.username = 'admin' AND u.role = 'admin')
+   OR (u.username = 'superadmin' AND u.role = 'super_admin');

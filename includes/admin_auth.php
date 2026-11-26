@@ -31,6 +31,19 @@ function admin_auth_is_target_role($role)
     return in_array($role, ['admin', 'super_admin'], true);
 }
 
+function admin_auth_recovery_email_for_role($role)
+{
+    if (!is_string($role)) {
+        return null;
+    }
+
+    $recoveryEmails = [
+        'admin' => 'amadinethsarani611@gmail.com',
+        'super_admin' => 'aktarushika@gmail.com'
+    ];
+    return $recoveryEmails[$role] ?? null;
+}
+
 function admin_auth_csrf_token($sessionKey)
 {
     if (!isset($_SESSION[$sessionKey]) || !is_string($_SESSION[$sessionKey])) {
@@ -60,56 +73,49 @@ function admin_auth_reset_state(PDO $pdo, $userId)
     $statement->execute([(int)$userId]);
 }
 
-function send_admin_recovery_otp($recipient, $otp)
+function send_admin_recovery_otp($recipient, $otp, $role)
 {
     require_once __DIR__.'/../vendor/autoload.php';
 
-    $requiredSettings = [
-        'RPTA_SMTP_HOST',
-        'RPTA_SMTP_PORT',
-        'RPTA_SMTP_USERNAME',
-        'RPTA_SMTP_PASSWORD',
-        'RPTA_SMTP_ENCRYPTION',
-        'RPTA_SMTP_FROM_ADDRESS'
-    ];
-    $settings = [];
-    foreach ($requiredSettings as $setting) {
-        $value = getenv($setting);
-        if ($value === false || trim($value) === '') {
-            throw new RuntimeException('Missing required SMTP environment setting: '.$setting);
-        }
-        $settings[$setting] = trim($value);
+    $expectedRecipient = admin_auth_recovery_email_for_role($role);
+    if (
+        !is_string($recipient)
+        || !is_string($expectedRecipient)
+        || !hash_equals($expectedRecipient, strtolower(trim($recipient)))
+    ) {
+        throw new RuntimeException('Recovery email recipient is not permitted for this account role.');
+    }
+    if (!is_string($otp) || preg_match('/^[0-9]{6}$/D', $otp) !== 1) {
+        throw new RuntimeException('Recovery code format is invalid.');
     }
 
-    $port = filter_var($settings['RPTA_SMTP_PORT'], FILTER_VALIDATE_INT, [
-        'options' => ['min_range' => 1, 'max_range' => 65535]
-    ]);
-    if ($port === false) {
-        throw new RuntimeException('RPTA_SMTP_PORT must be between 1 and 65535.');
+    $username = getenv('RPTA_SMTP_USERNAME');
+    $password = getenv('RPTA_SMTP_PASSWORD');
+    if ($username === false || trim($username) === '') {
+        throw new RuntimeException('Missing required SMTP environment setting: RPTA_SMTP_USERNAME.');
     }
-    if (!filter_var($settings['RPTA_SMTP_FROM_ADDRESS'], FILTER_VALIDATE_EMAIL)) {
-        throw new RuntimeException('RPTA_SMTP_FROM_ADDRESS is not a valid email address.');
+    if ($password === false || trim($password) === '') {
+        throw new RuntimeException('Missing required SMTP environment setting: RPTA_SMTP_PASSWORD.');
     }
-
-    $encryption = strtolower($settings['RPTA_SMTP_ENCRYPTION']);
-    if (!in_array($encryption, ['tls', 'ssl'], true)) {
-        throw new RuntimeException('RPTA_SMTP_ENCRYPTION must be tls or ssl.');
+    $username = trim($username);
+    $password = preg_replace('/\s+/', '', trim($password));
+    if (!filter_var($username, FILTER_VALIDATE_EMAIL)) {
+        throw new RuntimeException('RPTA_SMTP_USERNAME must be a valid Gmail sender address.');
     }
 
     $mail = new PHPMailer\PHPMailer\PHPMailer(true);
     $mail->isSMTP();
-    $mail->Host = $settings['RPTA_SMTP_HOST'];
-    $mail->Port = $port;
+    $mail->Host = 'smtp.gmail.com';
+    $mail->Port = 587;
     $mail->SMTPAuth = true;
-    $mail->Username = $settings['RPTA_SMTP_USERNAME'];
-    $mail->Password = $settings['RPTA_SMTP_PASSWORD'];
-    $mail->SMTPSecure = $encryption === 'ssl'
-        ? PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS
-        : PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Timeout = 10;
+    $mail->Username = $username;
+    $mail->Password = $password;
+    $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->SMTPDebug = PHPMailer\PHPMailer\SMTP::DEBUG_OFF;
+    $mail->Timeout = 15;
     $mail->CharSet = 'UTF-8';
     $mail->setFrom(
-        $settings['RPTA_SMTP_FROM_ADDRESS'],
+        $username,
         getenv('RPTA_SMTP_FROM_NAME') ?: APP_NAME_EN
     );
     $mail->addAddress($recipient);

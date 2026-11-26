@@ -20,9 +20,9 @@ Run `composer install` in the project directory after a fresh checkout. QR codes
 
 ## Admin and Super Admin account recovery
 - Only `admin` and `super_admin` accounts are subject to lockout and email recovery. Five consecutive failed logins cause a two-minute lockout.
-- Before upgrading, back up the database. Apply `sql/admin_account_recovery.sql` to create the account-scoped recovery table.
-- Set `RPTA_ADMIN_RECOVERY_EMAIL` and `RPTA_SUPERADMIN_RECOVERY_EMAIL` in the PHP process environment, then run `php configure_admin_recovery_emails.php`. The CLI tool saves the addresses against the matching account IDs; no addresses are printed.
-- Configure SMTP outside the source tree using `RPTA_SMTP_HOST`, `RPTA_SMTP_PORT`, `RPTA_SMTP_USERNAME`, `RPTA_SMTP_PASSWORD`, `RPTA_SMTP_ENCRYPTION` (`tls` or `ssl`), and `RPTA_SMTP_FROM_ADDRESS`. `RPTA_SMTP_FROM_NAME` is optional.
+- Admin recovery codes are restricted to `amadinethsarani611@gmail.com`; Super Admin recovery codes are restricted to `aktarushika@gmail.com`. Recovery addresses are stored in `admin_account_recovery`, checked against the account role, and cannot be changed through the recovery page.
+- Before upgrading, back up the database and apply `sql/admin_account_recovery.sql`. Run `php configure_admin_recovery_emails.php` to apply the fixed addresses to the corresponding Admin and Super Admin accounts in an existing database.
+- Configure Gmail SMTP in the PHP process environment using `RPTA_SMTP_USERNAME` and `RPTA_SMTP_PASSWORD`. The username must be the Gmail sender address; the password must be a Gmail App Password (spaces are ignored). SMTP uses `smtp.gmail.com`, port `587`, and TLS. `RPTA_SMTP_FROM_NAME` is optional. Do not store or commit the App Password in the source tree.
 - Recovery codes expire after five minutes, allow five verification attempts, and are limited to one send per minute and three email requests per 15-minute window.
 - Admin and Super Admin passwords are never documented here. Use the local CLI reset tool only when intentionally rotating them. Passenger and other staff login/recovery behavior is unchanged.
 
