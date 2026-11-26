@@ -198,8 +198,10 @@ if ($positionColumn && $positionColumn->num_rows > 0 && !$conn->query("ALTER TAB
     error_log('Could not enforce officer_profiles.position: '.$conn->error);
 }
 
-$faqCount=(int)($conn->query("SELECT COUNT(*) c FROM faqs")->fetch_assoc()['c'] ?? 0);
-if($faqCount===0){
+$faqCountResult = $conn->query("SELECT COUNT(*) c FROM faqs");
+if ($faqCountResult === false) {
+    error_log('Could not count FAQs: '.$conn->error);
+} elseif ((int)($faqCountResult->fetch_assoc()['c'] ?? 0) === 0) {
     $faqFile=__DIR__.'/sql/faqs_400.sql';
     if(is_file($faqFile)){ $sql400=@file_get_contents($faqFile); if($sql400) @$conn->multi_query($sql400); while($conn->more_results() && $conn->next_result()){} }
 }
@@ -214,14 +216,35 @@ $users=[
 ];
 $stmt=$conn->prepare("INSERT IGNORE INTO users(full_name,username,password_hash,role) VALUES(?,?,?,?)");
 if($stmt){ foreach($users as $u){$seedHash=$u[1]==='rpta'?password_hash('rpta',PASSWORD_DEFAULT):$demoHash;$stmt->bind_param('ssss',$u[0],$u[1],$seedHash,$u[2]);$stmt->execute();} }
+else { error_log('Could not prepare demo user seeding: '.$conn->error); }
 $rptaLookup=$conn->prepare('SELECT role FROM users WHERE username=? LIMIT 1');
 $rptaUsername='rpta';
-$rptaLookup->bind_param('s',$rptaUsername); $rptaLookup->execute();
-$rptaAccount=$rptaLookup->get_result()->fetch_assoc();
-if($rptaAccount && $rptaAccount['role']!=='officer_registrar'){
-    $repairHash=password_hash('rpta',PASSWORD_DEFAULT);
-    $repair=$conn->prepare("UPDATE users SET full_name='Officer Registration',password_hash=?,role='officer_registrar' WHERE username=?");
-    $repair->bind_param('ss',$repairHash,$rptaUsername); $repair->execute();
+if (!$rptaLookup) {
+    error_log('Could not prepare officer registration lookup: '.$conn->error);
+} else {
+    $rptaLookup->bind_param('s',$rptaUsername);
+    if (!$rptaLookup->execute()) {
+        error_log('Could not look up officer registration account: '.$rptaLookup->error);
+    } else {
+        $rptaResult=$rptaLookup->get_result();
+        if (!$rptaResult) {
+            error_log('Could not read officer registration account: '.$rptaLookup->error);
+        } else {
+            $rptaAccount=$rptaResult->fetch_assoc();
+            if($rptaAccount && $rptaAccount['role']!=='officer_registrar'){
+                $repairHash=password_hash('rpta',PASSWORD_DEFAULT);
+                $repair=$conn->prepare("UPDATE users SET full_name='Officer Registration',password_hash=?,role='officer_registrar' WHERE username=?");
+                if (!$repair) {
+                    error_log('Could not prepare officer registration account repair: '.$conn->error);
+                } else {
+                    $repair->bind_param('ss',$repairHash,$rptaUsername);
+                    if (!$repair->execute()) {
+                        error_log('Could not repair officer registration account: '.$repair->error);
+                    }
+                }
+            }
+        }
+    }
 }
 
 $seedServices=[
@@ -250,11 +273,30 @@ $seedServices=[
  ['Bus service / route information','බස් සේවා / මාර්ග තොරතුරු','Passenger Information'],
  ['Other authority service','වෙනත් අධිකාරි සේවාවක්','Other']
 ];
-if((int)($conn->query("SELECT COUNT(*) c FROM services")->fetch_assoc()['c']??0)===0){$s=$conn->prepare("INSERT INTO services(name_en,name_si,category,active) VALUES(?,?,?,1)");if($s){foreach($seedServices as $x){$s->bind_param('sss',$x[0],$x[1],$x[2]);$s->execute();}}} else { @$conn->query("UPDATE services SET active=1 WHERE active IS NULL OR active=0"); }
+$serviceCountResult=$conn->query("SELECT COUNT(*) c FROM services");
+if(!$serviceCountResult){
+    error_log('Could not count services: '.$conn->error);
+} elseif((int)($serviceCountResult->fetch_assoc()['c']??0)===0){
+    $s=$conn->prepare("INSERT INTO services(name_en,name_si,category,active) VALUES(?,?,?,1)");
+    if(!$s){error_log('Could not prepare service seeding: '.$conn->error);}
+    else {foreach($seedServices as $x){$s->bind_param('sss',$x[0],$x[1],$x[2]);$s->execute();}}
+} else { @$conn->query("UPDATE services SET active=1 WHERE active IS NULL OR active=0"); }
 $seedStands=[['Galle Bus Stand','Galle','Galle District'],['Matara Bus Stand','Matara','Matara District'],['Hambantota Bus Stand','Hambantota','Hambantota District'],['Tangalle Bus Stand','Hambantota','Hambantota District'],['Ambalangoda Bus Stand','Galle','Galle District'],['Akuressa Bus Stand','Matara','Matara District']];
-if((int)($conn->query("SELECT COUNT(*) c FROM bus_stands")->fetch_assoc()['c']??0)===0){$s=$conn->prepare("INSERT INTO bus_stands(name,district,address) VALUES(?,?,?)");foreach($seedStands as $x){$s->bind_param('sss',$x[0],$x[1],$x[2]);$s->execute();}}
+$standCountResult=$conn->query("SELECT COUNT(*) c FROM bus_stands");
+if(!$standCountResult){error_log('Could not count bus stands: '.$conn->error);}
+elseif((int)($standCountResult->fetch_assoc()['c']??0)===0){
+    $s=$conn->prepare("INSERT INTO bus_stands(name,district,address) VALUES(?,?,?)");
+    if(!$s){error_log('Could not prepare bus stand seeding: '.$conn->error);}
+    else {foreach($seedStands as $x){$s->bind_param('sss',$x[0],$x[1],$x[2]);$s->execute();}}
+}
 $seedVehicles=[['SLTB Bus','NA-1234','Sri Lanka Transport Board','Galle - Matara'],['Private Bus','NB-5678','Demo Private Operator','Matara - Galle'],['Three-Wheeler','WP-3456','Demo Passenger Service','Galle'],['School Van','NC-7890','Demo School Transport','Matara']];
-if((int)($conn->query("SELECT COUNT(*) c FROM vehicles")->fetch_assoc()['c']??0)===0){$s=$conn->prepare("INSERT INTO vehicles(vehicle_type,registration_no,operator_name,route) VALUES(?,?,?,?)");foreach($seedVehicles as $x){$s->bind_param('ssss',$x[0],$x[1],$x[2],$x[3]);$s->execute();}}
+$vehicleCountResult=$conn->query("SELECT COUNT(*) c FROM vehicles");
+if(!$vehicleCountResult){error_log('Could not count vehicles: '.$conn->error);}
+elseif((int)($vehicleCountResult->fetch_assoc()['c']??0)===0){
+    $s=$conn->prepare("INSERT INTO vehicles(vehicle_type,registration_no,operator_name,route) VALUES(?,?,?,?)");
+    if(!$s){error_log('Could not prepare vehicle seeding: '.$conn->error);}
+    else {foreach($seedVehicles as $x){$s->bind_param('ssss',$x[0],$x[1],$x[2],$x[3]);$s->execute();}}
+}
 $docs=[
  ['Conductor License Application','කොන්දොස්තර බලපත්‍ර අයදුම්පත','Conductor_License_Application.pdf'],
  ['Conductor Medical Examination Report','කොන්දොස්තර වෛද්‍ය පරීක්ෂණ වාර්තාව','Conductor_Medical_Examination_Report.pdf'],
@@ -267,11 +309,26 @@ $docs=[
 @$conn->query("UPDATE documents SET active=0 WHERE file_name IN ('passenger_complaint_form.pdf','passenger_service_application.pdf','transport_information_guide.pdf')");
 $findDoc=$conn->prepare('SELECT id FROM documents WHERE file_name=? LIMIT 1');
 $insertDoc=$conn->prepare('INSERT INTO documents(title_en,title_si,file_name,file_path) VALUES(?,?,?,?)');
-foreach($docs as $doc){
- $path='documents/'.$doc[2];
- if(!is_file(__DIR__.'/'.$path)) continue;
- $findDoc->bind_param('s',$doc[2]);$findDoc->execute();$found=$findDoc->get_result()->fetch_assoc();
- if($found){$updateDoc=$conn->prepare('UPDATE documents SET title_en=?,title_si=?,file_path=?,active=1 WHERE id=?');$updateDoc->bind_param('sssi',$doc[0],$doc[1],$path,$found['id']);$updateDoc->execute();}
- else{$insertDoc->bind_param('ssss',$doc[0],$doc[1],$doc[2],$path);$insertDoc->execute();}
+if(!$findDoc){error_log('Could not prepare document lookup: '.$conn->error);}
+if(!$insertDoc){error_log('Could not prepare document seeding: '.$conn->error);}
+if($findDoc && $insertDoc){
+    foreach($docs as $doc){
+        $path='documents/'.$doc[2];
+        if(!is_file(__DIR__.'/'.$path)) continue;
+        $findDoc->bind_param('s',$doc[2]);
+        if(!$findDoc->execute()){error_log('Could not look up document '.$doc[2].': '.$findDoc->error);continue;}
+        $findResult=$findDoc->get_result();
+        if(!$findResult){error_log('Could not read document '.$doc[2].': '.$findDoc->error);continue;}
+        $found=$findResult->fetch_assoc();
+        if($found){
+            $updateDoc=$conn->prepare('UPDATE documents SET title_en=?,title_si=?,file_path=?,active=1 WHERE id=?');
+            if(!$updateDoc){error_log('Could not prepare document update: '.$conn->error);continue;}
+            $updateDoc->bind_param('sssi',$doc[0],$doc[1],$path,$found['id']);
+            if(!$updateDoc->execute()){error_log('Could not update document '.$doc[2].': '.$updateDoc->error);}
+        } else {
+            $insertDoc->bind_param('ssss',$doc[0],$doc[1],$doc[2],$path);
+            if(!$insertDoc->execute()){error_log('Could not seed document '.$doc[2].': '.$insertDoc->error);}
+        }
+    }
 }
 ?>

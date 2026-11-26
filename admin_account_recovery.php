@@ -360,7 +360,7 @@ include __DIR__.'/includes/header.php';
 			<input type="hidden" name="action" value="request_otp">
 			<label for="recovery-email">Registered email address</label>
 			<input id="recovery-email" type="email" name="email" autocomplete="email" maxlength="254" required>
-			<button class="primary-btn" type="submit">Send recovery code</button>
+			<button class="primary-btn recovery-send-button" type="submit">Send recovery code</button>
 		</form>
 		<?php endif;?>
 	</div>
