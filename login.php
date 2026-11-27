@@ -105,7 +105,6 @@ include __DIR__.'/includes/header.php';
 		<img class="login-logo" src="<?=h(OFFICIAL_LOGO_URL)?>" onerror="this.onerror=null;this.src='<?=h(OFFICIAL_LOGO_FALLBACK_URL)?>';" alt="Southern Provincial Road Passenger Transport Authority Logo" referrerpolicy="no-referrer">
 		<h2>Login / ඇතුල් වන්න</h2>
 		<p class="muted">Please sign in to access the passenger transport services.</p>
-		<p class="muted">මගී ප්‍රවාහන සේවා භාවිතා කිරීමට පද්ධතියට ඇතුල් වන්න.</p>
 		<?php if($recovered):?><div class="notice success" role="status">Your password has been reset. Please sign in with your new password.</div><?php endif;?>
 		<?php if($err):?><div class="notice danger" role="alert"><?=h($err)?></div><?php endif;?>
 		<form method="post" autocomplete="off">

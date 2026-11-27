@@ -21,6 +21,17 @@ $clientTypeSinhala=[
   'bus_stand'=>'බස් නැවතුම්පොළ',
   'other'=>'වෙනත්'
 ];
+$clientTypeTamil=[
+  'bus_owner'=>'பேருந்து உரிமையாளர்',
+  'bus_driver'=>'பேருந்து ஓட்டுநர்',
+  'bus_conductor'=>'பேருந்து நடத்துநர்',
+  'threewheel_owner'=>'முச்சக்கர வண்டி உரிமையாளர்',
+  'passenger'=>'பயணி',
+  'bus_stand'=>'பேருந்து நிலையம்',
+  'other'=>'மற்றவை'
+];
+$displayClientTypes=lang()==='ta'?$clientTypeTamil:(lang()==='si'?$clientTypeSinhala:$clientTypes);
+$registrationLabel=['si'=>'ලියාපදිංචி','en'=>'Registration','ta'=>'பதிவு'][lang()];
 $busTypes=['bus_owner','bus_driver','bus_conductor'];
 $profile=[]; $err=''; $ok=''; $formValues=[]; $permitRecord=null;
 $departments=['control'=>'Control Section','driving'=>'Driving Section','accounts'=>'Account Section'];
@@ -135,7 +146,7 @@ $clientTypeIcons=[
   'other'=>'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8 12h.01m4 0h.01m4 0h.01"/></svg>'
 ];
 $pageStyles=['assets/registration.css'];
-$title='Client Registration / සේවාලාභී ලියාපදිංචිය'; include 'includes/header.php';
+$title=['si'=>'සේවාලාභී ලියාපදිංචිය','en'=>'Client Registration','ta'=>'வாடிக்கையாளர் பதிவு'][lang()]; include 'includes/header.php';
 ?>
 <div class="page narrow registration-page">
   <div class="registration-heading"><div><span class="badge">CLIENT REGISTRATION / සේවාලාභී ලියාපදිංචිය</span><h2>Choose your client type / ඔබගේ සේවාලාභී වර්ගය තෝරන්න</h2><p class="muted">Select the account type that matches your service. / ඔබට ගැළපෙන සේවා ගිණුම් වර්ගය තෝරන්න.</p></div><a class="secondary-btn" href="<?= $authenticated ? 'dashboard.php' : 'login.php' ?>"><?= $authenticated ? '← Dashboard / පුවරුව' : 'Login / ඇතුල් වන්න' ?></a></div>
@@ -143,12 +154,12 @@ $title='Client Registration / සේවාලාභී ලියාපදිං�
   <?php if($ok):?><div class="notice success" role="status"><?=h($ok)?></div><?php endif;?>
   <div class="registration-cards">
     <?php foreach($clientTypes as $typeKey=>$typeLabel):?>
-      <a class="registration-card <?=$selectedType===$typeKey?'selected':''?>" href="register.php?type=<?=h($typeKey)?>"><span class="registration-card-mark" aria-hidden="true"><?=$clientTypeIcons[$typeKey]?></span><span class="registration-card-label"><span><?=h($typeLabel)?></span><small><?=h($clientTypeSinhala[$typeKey])?></small></span><span class="registration-card-arrow" aria-hidden="true">→</span></a>
+      <a class="registration-card <?=$selectedType===$typeKey?'selected':''?>" href="register.php?type=<?=h($typeKey)?>"><span class="registration-card-mark" aria-hidden="true"><?=$clientTypeIcons[$typeKey]?></span><span class="registration-card-label"><span><?=h($displayClientTypes[$typeKey])?></span></span><span class="registration-card-arrow" aria-hidden="true">→</span></a>
     <?php endforeach;?>
   </div>
   <?php if($selectedType):?>
     <section class="form-card registration-form-card">
-      <div class="registration-subheading"><div><span class="badge"><?=h(strtoupper($clientTypes[$selectedType]))?> / <?=h($clientTypeSinhala[$selectedType])?></span><h3><?=h($clientTypes[$selectedType])?> Registration / <?=h($clientTypeSinhala[$selectedType])?> ලියාපදිංචිය</h3></div><a class="secondary-btn" href="register.php">All client types / සියලුම සේවාලාභී වර්ග</a></div>
+      <div class="registration-subheading"><div><span class="badge"><?=h(strtoupper($displayClientTypes[$selectedType]))?></span><h3><?=h($displayClientTypes[$selectedType])?> <?=h($registrationLabel)?></h3></div><a class="secondary-btn" href="register.php"><?=lang()==='si'?'සියලුම සේවාලාභී වර්ග':(lang()==='ta'?'அனைத்து வாடிக்கையாளர் வகைகள்':'All client types')?></a></div>
       <?php if(in_array($selectedType,$busTypes,true)):?>
         <fieldset class="permit-question" id="permitQuestion"><legend>Do you have a bus registration number or bus permit number? / ඔබට බස් ලියාපදිංචි අංකයක් හෝ බස් බලපත්‍ර අංකයක් තිබේද?</legend>
           <div class="choice-options"><label><input type="radio" name="permit_choice" value="yes" <?=$lookupChoice==='yes'?'checked':''?>> Yes / ඔව්</label><label><input type="radio" name="permit_choice" value="no" <?=$lookupChoice==='no'?'checked':''?>> No / නැත</label></div>

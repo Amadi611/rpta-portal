@@ -82,8 +82,13 @@ function department_tasks(){
         ]
     ];
 }
+if (isset($_GET['lang']) && is_string($_GET['lang']) && in_array($_GET['lang'], ['si', 'en', 'ta'], true)) {
+    $_SESSION['lang'] = $_GET['lang'];
+}
+if (!isset($_SESSION['lang']) || !in_array($_SESSION['lang'], ['si', 'en', 'ta'], true)) {
+    $_SESSION['lang'] = 'si';
+}
 function lang(){ return $_SESSION['lang'] ?? 'si'; }
-if(isset($_GET['lang']) && in_array($_GET['lang'],['si','en'],true)) $_SESSION['lang']=$_GET['lang'];
 
 $tables = [
 "CREATE TABLE IF NOT EXISTS users(id INT AUTO_INCREMENT PRIMARY KEY,full_name VARCHAR(120) NOT NULL,username VARCHAR(80) UNIQUE NOT NULL,password_hash VARCHAR(255) NOT NULL,role ENUM('passenger','data_entry','admin','control_admin','driving_admin','accounts_admin','super_admin','officer_registrar') NOT NULL DEFAULT 'passenger',created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP) ENGINE=InnoDB",

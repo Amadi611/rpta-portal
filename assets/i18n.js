@@ -1,0 +1,519 @@
+(() => {
+	'use strict';
+
+	const language = document.documentElement.lang;
+	const entries = {
+		'Admin account recovery': ['පරිපාලක ගිණුම නැවත ලබාගැනීම', 'நிர்வாகக் கணக்கை மீட்டெடுத்தல்'],
+		'Back to login': ['පිවිසුමට ආපසු', 'உள்நுழைவுக்குத் திரும்பு'],
+		'New password': ['නව මුරපදය', 'புதிய கடவுச்சொல்'],
+		'Confirm new password': ['නව මුරපදය තහවුරු කරන්න', 'புதிய கடவுச்சொல்லை உறுதிப்படுத்தவும்'],
+		'Reset password and unlock': ['මුරපදය යළි සකසා අගුළු හරින්න', 'கடவுச்சொல்லை மீட்டமைத்து திறக்கவும்'],
+		'Enter verification code': ['සත්‍යාපන කේතය ඇතුළත් කරන්න', 'சரிபார்ப்புக் குறியீட்டை உள்ளிடவும்'],
+		'Enter the six-digit code to continue to password reset.': ['මුරපදය යළි සැකසීමට ඉලක්කම් හයේ කේතය ඇතුළත් කරන්න.', 'கடவுச்சொல் மீட்டமைப்பைத் தொடர ஆறு இலக்கக் குறியீட்டை உள்ளிடவும்.'],
+		'Six-digit recovery code': ['ඉලක්කම් හයේ ප්‍රතිසාධන කේතය', 'ஆறு இலக்க மீட்புக் குறியீடு'],
+		'Verify code': ['කේතය සත්‍යාපනය කරන්න', 'குறியீட்டைச் சரிபார்க்கவும்'],
+		'Request another code': ['වෙනත් කේතයක් ඉල්ලන්න', 'மற்றொரு குறியீட்டைக் கோரவும்'],
+		'Registered email address': ['ලියාපදිංචි කළ විද්‍යුත් තැපැල් ලිපිනය', 'பதிவுசெய்த மின்னஞ்சல் முகவரி'],
+		'Send recovery code': ['ප්‍රතිසාධන කේතය යවන්න', 'மீட்புக் குறியீட்டை அனுப்பவும்'],
+		'Use 12–72 characters with uppercase and lowercase letters, a number, and a symbol.': ['ලොකු සහ කුඩා අකුරු, අංකයක් සහ සංකේතයක් ඇතුළත් අක්ෂර 12–72ක් භාවිතා කරන්න.', 'பெரிய மற்றும் சிறிய எழுத்துகள், ஓர் எண், ஒரு குறியீடு உட்பட 12–72 எழுத்துகளைப் பயன்படுத்தவும்.'],
+		'Forgot password?': ['මුරපදය අමතකද?', 'கடவுச்சொல்லை மறந்துவிட்டீர்களா?'],
+		'Verify your registered details to set a new password.': ['නව මුරපදයක් සැකසීමට ඔබේ ලියාපදිංචි විස්තර සත්‍යාපනය කරන්න.', 'புதிய கடவுச்சொல்லை அமைக்க உங்கள் பதிவுசெய்த விவரங்களைச் சரிபார்க்கவும்.'],
+		'Password updated. You can now sign in.': ['මුරපදය යාවත්කාලීන කරන ලදී. දැන් පිවිසිය හැකිය.', 'கடவுச்சொல் புதுப்பிக்கப்பட்டது. இப்போது உள்நுழையலாம்.'],
+		'Registered NIC': ['ලියාපදිංචි ජාතික හැඳුනුම්පත් අංකය', 'பதிவுசெய்த தேசிய அடையாள அட்டை எண்'],
+		'Reset password': ['මුරපදය යළි සකසන්න', 'கடவுச்சொல்லை மீட்டமைக்கவும்'],
+		'Username': ['පරිශීලක නාමය', 'பயனர்பெயர்'],
+		'Password': ['මුරපදය', 'கடவுச்சொல்'],
+		'Please sign in to access the passenger transport services.': ['මගී ප්‍රවාහන සේවා භාවිත කිරීමට පිවිසෙන්න.', 'பயணிகள் போக்குவரத்துச் சேவைகளைப் பயன்படுத்த உள்நுழையவும்.'],
+		'මගී ප්‍රවාහන සේවා භාවිතා කිරීමට පද්ධතියට ඇතුල් වන්න.': ['මගී ප්‍රවාහන සේවා භාවිතා කිරීමට පද්ධතියට ඇතුල් වන්න.', 'பயணிகள் போக்குவரத்துச் சேவைகளைப் பயன்படுத்த உள்நுழையவும்.'],
+		'Enter username': ['පරිශීලක නාමය ඇතුළත් කරන්න', 'பயனர்பெயரை உள்ளிடவும்'],
+		'Enter password': ['මුරපදය ඇතුළත් කරන්න', 'கடவுச்சொல்லை உள்ளிடவும்'],
+		'🔐 Login': ['🔐 ඇතුළු වන්න', '🔐 உள்நுழைக'],
+		'Southern Province': ['දකුණු පළාත', 'தென் மாகாணம்'],
+		'🇱🇰 Southern Province': ['🇱🇰 දකුණු පළාත', '🇱🇰 தென் மாகாணம்'],
+		'Sri Lanka public transport bus': ['ශ්‍රී ලංකාවේ පොදු ප්‍රවාහන බස් රථය', 'இலங்கை பொதுப் போக்குவரத்துப் பேருந்து'],
+		'WE’RE HERE TO HELP': ['අපි උදව් කිරීමට සූදානම්', 'உதவ நாங்கள் தயாராக இருக்கிறோம்'],
+		'Southern Province transport photos': ['දකුණු පළාතේ ප්‍රවාහන ඡායාරූප', 'தென் மாகாணப் போக்குவரத்துப் புகைப்படங்கள்'],
+		'Your password has been reset. Please sign in with your new password.': ['ඔබේ මුරපදය යළි සකසා ඇත. නව මුරපදයෙන් පිවිසෙන්න.', 'உங்கள் கடவுச்சொல் மீட்டமைக்கப்பட்டது. புதிய கடவுச்சொல்லைப் பயன்படுத்தி உள்நுழையவும்.'],
+		'Passenger Transport Services': ['මගී ප්‍රවාහන සේවා', 'பயணிகள் போக்குவரத்துச் சேவைகள்'],
+		'Register as a Client': ['සේවාලාභියෙකු ලෙස ලියාපදිංචි වන්න', 'வாடிக்கையாளராகப் பதிவு செய்க'],
+		'General Contact': ['සාමාන්‍ය විමසීම්', 'பொதுவான விசாரணைகள்'],
+		'Documents to Bring Before Visiting the Institution': ['ආයතනයට පැමිණීමට පෙර රැගෙන ආ යුතු ලේඛන', 'அலுவலகத்திற்கு வருவதற்கு முன் கொண்டுவர வேண்டிய ஆவணங்கள்'],
+		'Review the guide before your visit to make sure you bring the required documents.': ['අවශ්‍ය ලේඛන රැගෙන එන බව තහවුරු කර ගැනීමට පැමිණීමට පෙර මාර්ගෝපදේශය කියවන්න.', 'உரிய ஆவணங்களைக் கொண்டு வருவதை உறுதிசெய்ய வருகைக்கு முன் வழிகாட்டியைப் பாருங்கள்.'],
+		'About the Authority': ['අධිකාරිය පිළිබඳව', 'அதிகாரசபை பற்றி'],
+		'The Southern Provincial Road Passenger Transport Authority is dedicated to delivering safe, reliable, and efficient public transport services across the province. We work closely with operators, commuters, and service providers to maintain standards, improve access, and support a modern transportation network.': ['දකුණු පළාත පුරා ආරක්ෂිත, විශ්වාසදායක සහ කාර්යක්ෂම පොදු ප්‍රවාහන සේවා සැපයීමට දකුණු පළාත් මාර්ගස්ථ මගී ප්‍රවාහන අධිකාරිය කැපවී සිටී. ප්‍රමිතීන් පවත්වා ගැනීමට, ප්‍රවේශය වැඩිදියුණු කිරීමට සහ නවීන ප්‍රවාහන ජාලයකට සහාය වීමට අපි සේවා සපයන්නන් හා මගීන් සමඟ සමීපව කටයුතු කරමු.', 'தென் மாகாணம் முழுவதும் பாதுகாப்பான, நம்பகமான, திறமையான பொதுப் போக்குவரத்துச் சேவைகளை வழங்க தென் மாகாண வீதிப் பயணிகள் போக்குவரத்து அதிகாரசபை அர்ப்பணித்துள்ளது. தரநிலைகளைப் பேணவும், அணுகலை மேம்படுத்தவும், நவீன போக்குவரத்து வலையமைப்பை ஆதரிக்கவும் சேவை வழங்குநர்கள் மற்றும் பயணிகளுடன் நெருக்கமாகப் பணியாற்றுகிறோம்.'],
+		'Passenger transport regulation and monitoring': ['මගී ප්‍රවාහන නියාමනය සහ අධීක්ෂණය', 'பயணிகள் போக்குவரத்து ஒழுங்குபடுத்தலும் கண்காணிப்பும்'],
+		'Service token management and public access': ['සේවා ටෝකන කළමනාකරණය සහ මහජන ප්‍රවේශය', 'சேவை டோக்கன் மேலாண்மையும் பொதுமக்கள் அணுகலும்'],
+		'Documentation, forms, and guidance for commuters': ['මගීන් සඳහා ලේඛන, පෝරම සහ මඟපෙන්වීම්', 'பயணிகளுக்கான ஆவணங்கள், படிவங்கள் மற்றும் வழிகாட்டுதல்'],
+		'How can we help you today?': ['අද අපට ඔබට උදව් කළ හැක්කේ කෙසේද?', 'இன்று நாங்கள் உங்களுக்கு எவ்வாறு உதவலாம்?'],
+		'Choose a service to get started': ['ආරම්භ කිරීමට සේවාවක් තෝරන්න', 'தொடங்க ஒரு சேவையைத் தேர்ந்தெடுக்கவும்'],
+		'New to the portal? Start here to create your client account.': ['මෙම ද්වාරයට අලුත්ද? සේවාලාභී ගිණුමක් සෑදීමට මෙතැනින් ආරම්භ කරන්න.', 'இந்தத் தளத்திற்கு புதியவரா? வாடிக்கையாளர் கணக்கை உருவாக்க இங்கே தொடங்கவும்.'],
+		'Start registration': ['ලියාපදිංචිය ආරම්භ කරන්න', 'பதிவைத் தொடங்கவும்'],
+		'Your online account': ['ඔබේ මාර්ගගත ගිණුම', 'உங்கள் இணையக் கணக்கு'],
+		'Already registered? Sign in to continue to your account.': ['දැනටමත් ලියාපදිංචිද? ඔබේ ගිණුමට යාමට පිවිසෙන්න.', 'ஏற்கனவே பதிவு செய்துள்ளீர்களா? உங்கள் கணக்கைத் தொடர உள்நுழையவும்.'],
+		'Help & enquiries': ['උදවු සහ විමසීම්', 'உதவியும் விசாரணைகளும்'],
+		'Not sure where to begin? Get in touch for help with your next step.': ['ආරම්භ කළ යුත්තේ කොතැනින්දැයි නොදන්නේද? ඊළඟ පියවර සඳහා අප අමතන්න.', 'எங்கு தொடங்குவது என்று தெரியவில்லையா? அடுத்த படிக்கு உதவ எங்களைத் தொடர்புகொள்ளவும்.'],
+		'Find support': ['සහාය ලබාගන්න', 'ஆதரவைப் பெறுக'],
+		'Vision & Mission': ['දැක්ම සහ මෙහෙවර', 'தொலைநோக்கும் பணிக்குறிக்கோளும்'],
+		'Our commitment to passenger transport across the Southern Province.': ['දකුණු පළාතේ මගී ප්‍රවාහනය වෙනුවෙන් අපගේ කැපවීම.', 'தென் மாகாணப் பயணிகள் போக்குவரத்திற்கான எங்கள் அர்ப்பணிப்பு.'],
+		'Contact Us': ['අප අමතන්න', 'எங்களைத் தொடர்புகொள்ள'],
+		'Get in touch with the Southern Provincial Road Passenger Transport Authority.': ['දකුණු පළාත් මාර්ගස්ථ මගී ප්‍රවාහන අධිකාරිය අමතන්න.', 'தென் மாகாண வீதிப் பயணிகள் போக்குவரத்து அதிகாரசபையைத் தொடர்புகொள்ளவும்.'],
+		'Authority contact details': ['අධිකාරියේ සම්බන්ධතා විස්තර', 'அதிகாரசபையின் தொடர்பு விவரங்கள்'],
+		'Address': ['ලිපිනය', 'முகவரி'],
+		'Location': ['ස්ථානය', 'இடம்'],
+		'View on Google Maps': ['Google සිතියම් මත බලන්න', 'Google வரைபடத்தில் பார்க்கவும்'],
+		'Head office': ['ප්‍රධාන කාර්යාලය', 'தலைமை அலுவலகம்'],
+		'Fax': ['ෆැක්ස්', 'தொலைநகல்'],
+		'Website': ['වෙබ් අඩවිය', 'இணையதளம்'],
+		'Visit our Facebook page': ['අපගේ Facebook පිටුවට පිවිසෙන්න', 'எங்கள் Facebook பக்கத்தைப் பார்வையிடவும்'],
+		'Send us a message': ['අපට පණිවිඩයක් එවන්න', 'எங்களுக்கு ஒரு செய்தியை அனுப்பவும்'],
+		'Your message will be saved for the Authority to review.': ['අධිකාරියට සමාලෝචනය කිරීමට ඔබේ පණිවිඩය සුරැකෙනු ඇත.', 'அதிகாரசபை பரிசீலிக்க உங்கள் செய்தி சேமிக்கப்படும்.'],
+		'Thank you. Your message has been submitted.': ['ස්තුතියි. ඔබේ පණිවිඩය යවා ඇත.', 'நன்றி. உங்கள் செய்தி சமர்ப்பிக்கப்பட்டது.'],
+		'Your name': ['ඔබේ නම', 'உங்கள் பெயர்'],
+		'Email address': ['විද්‍යුත් තැපැල් ලිපිනය', 'மின்னஞ்சல் முகவரி'],
+		'Message': ['පණිවිඩය', 'செய்தி'],
+		'Send message': ['පණිවිඩය යවන්න', 'செய்தியை அனுப்பவும்'],
+		'Make a Complaint': ['පැමිණිල්ලක් ඉදිරිපත් කරන්න', 'புகார் அளிக்கவும்'],
+		'Provide journey details so the authority can review your complaint.': ['ඔබේ පැමිණිල්ල සමාලෝචනය කිරීමට ගමන් විස්තර ලබා දෙන්න.', 'உங்கள் புகாரை அதிகாரசபை பரிசீலிக்க பயண விவரங்களை வழங்கவும்.'],
+		'Your complaint has been submitted for review.': ['ඔබේ පැමිණිල්ල සමාලෝචනය සඳහා යවා ඇත.', 'உங்கள் புகார் பரிசீலனைக்காக சமர்ப்பிக்கப்பட்டது.'],
+		'Complaint details': ['පැමිණිල්ලේ විස්තර', 'புகார் விவரங்கள்'],
+		'Complaint type': ['පැමිණිලි වර්ගය', 'புகார் வகை'],
+		'Select a category': ['වර්ගයක් තෝරන්න', 'ஒரு வகையைத் தேர்ந்தெடுக்கவும்'],
+		'Date of incident': ['සිදුවූ දිනය', 'சம்பவத் தேதி'],
+		'Approximate time': ['ආසන්න වේලාව', 'தோராயமான நேரம்'],
+		'Bus number': ['බස් අංකය', 'பேருந்து எண்'],
+		'Route': ['මාර්ගය', 'வழித்தடம்'],
+		'Location': ['ස්ථානය', 'இடம்'],
+		'What happened?': ['සිදු වූයේ කුමක්ද?', 'என்ன நடந்தது?'],
+		'Contact details': ['සම්බන්ධතා විස්තර', 'தொடர்பு விவரங்கள்'],
+		'Phone': ['දුරකථනය', 'தொலைபேசி'],
+		'Email': ['විද්‍යුත් තැපෑල', 'மின்னஞ்சல்'],
+		'Submit Complaint': ['පැමිණිල්ල යවන්න', 'புகாரைச் சமர்ப்பிக்கவும்'],
+		'Feedback': ['ප්‍රතිචාර', 'கருத்து'],
+		'Tell us about your experience with the service.': ['සේවාව පිළිබඳ ඔබේ අත්දැකීම අපට කියන්න.', 'சேவை குறித்த உங்கள் அனுபவத்தை எங்களிடம் பகிரவும்.'],
+		'Thank you. Your feedback has been recorded.': ['ස්තුතියි. ඔබේ ප්‍රතිචාරය සටහන් කරන ලදී.', 'நன்றி. உங்கள் கருத்து பதிவு செய்யப்பட்டது.'],
+		'You have already submitted feedback for this task.': ['මෙම කාර්යය සඳහා ඔබ දැනටමත් ප්‍රතිචාර ලබා දී ඇත.', 'இந்தப் பணிக்கான கருத்தை ஏற்கனவே சமர்ப்பித்துள்ளீர்கள்.'],
+		'Service experience': ['සේවා අත්දැකීම', 'சேவை அனுபவம்'],
+		'How was the service?': ['සේවාව පිළිබඳ ඔබේ අදහස කුමක්ද?', 'சேவை எப்படி இருந்தது?'],
+		'Were you satisfied with this service?': ['මෙම සේවාව පිළිබඳ ඔබ සෑහීමකට පත්වුණාද?', 'இந்தச் சேவையில் நீங்கள் திருப்தியடைந்தீர்களா?'],
+		'Yes': ['ඔව්', 'ஆம்'],
+		'No': ['නැත', 'இல்லை'],
+		'Your opinion about this institution and its services': ['මෙම ආයතනය සහ එහි සේවාවන් පිළිබඳ ඔබේ අදහස', 'இந்த நிறுவனமும் அதன் சேவைகளும் குறித்த உங்கள் கருத்து'],
+		'New suggestions': ['නව යෝජනා', 'புதிய பரிந்துரைகள்'],
+		'Submit Feedback': ['ප්‍රතිචාර යවන්න', 'கருத்தைச் சமர்ப்பிக்கவும்'],
+		'My Status': ['මගේ තත්ත්වය', 'எனது நிலை'],
+		'Track your pending and completed tasks.': ['ඔබේ ඉතිරි සහ සම්පූර්ණ කළ කාර්යයන් නිරීක්ෂණය කරන්න.', 'நிலுவையிலுள்ள மற்றும் நிறைவுசெய்த பணிகளைக் கண்காணிக்கவும்.'],
+		'Pending': ['අපේක්ෂිතයි', 'நிலுவையில்'],
+		'In progress': ['ක්‍රියාත්මකයි', 'செயலில்'],
+		'Completed': ['සම්පූර්ණයි', 'நிறைவடைந்தது'],
+		'You have no tasks yet. Create a token to request a service.': ['ඔබට තවම කාර්යයන් නොමැත. සේවාවක් ඉල්ලීමට ටෝකනයක් සාදන්න.', 'உங்களுக்கு இன்னும் பணிகள் இல்லை. சேவையைக் கோர டோக்கனை உருவாக்கவும்.'],
+		'Token': ['ටෝකනය', 'டோக்கன்'],
+		'Task': ['කාර්යය', 'பணி'],
+		'Section': ['අංශය', 'பிரிவு'],
+		'Preferred date': ['කැමති දිනය', 'விரும்பும் தேதி'],
+		'Preferred time': ['කැමති වේලාව', 'விரும்பும் நேரம்'],
+		'Status': ['තත්ත්වය', 'நிலை'],
+		'Give feedback': ['ප්‍රතිචාර ලබා දෙන්න', 'கருத்து தெரிவிக்கவும்'],
+		'Submitted': ['යවන ලදී', 'சமர்ப்பிக்கப்பட்டது'],
+		'Available after completion': ['සම්පූර්ණ කිරීමෙන් පසු ලබාගත හැකිය', 'நிறைவடைந்த பிறகு கிடைக்கும்'],
+		'Officer Directory': ['නිලධාරී නාමාවලිය', 'அலுவலர் பட்டியல்'],
+		'Contact officers by service section.': ['සේවා අංශය අනුව නිලධාරීන් අමතන්න.', 'சேவைப் பிரிவின்படி அலுவலர்களைத் தொடர்புகொள்ளவும்.'],
+		'Name': ['නම', 'பெயர்'],
+		'Position': ['තනතුර', 'பதவி'],
+		'Client Registration': ['සේවාලාභී ලියාපදිංචිය', 'வாடிக்கையாளர் பதிவு'],
+		'Choose your client type': ['ඔබේ සේවාලාභී වර්ගය තෝරන්න', 'உங்கள் வாடிக்கையாளர் வகையைத் தேர்ந்தெடுக்கவும்'],
+		'Select the account type that matches your service.': ['ඔබේ සේවාවට ගැළපෙන ගිණුම් වර්ගය තෝරන්න.', 'உங்கள் சேவைக்குப் பொருந்தும் கணக்கு வகையைத் தேர்ந்தெடுக்கவும்.'],
+		'Registration': ['ලියාපදිංචිය', 'பதிவு'],
+		'All client types': ['සියලුම සේවාලාභී වර්ග', 'அனைத்து வாடிக்கையாளர் வகைகள்'],
+		'Bus registration number or permit number': ['බස් ලියාපදිංචි අංකය හෝ බලපත්‍ර අංකය', 'பேருந்து பதிவு எண் அல்லது அனுமதிப்பத்திர எண்'],
+		'Find record': ['වාර්තාව සොයන්න', 'பதிவைத் தேடவும்'],
+		'Full Name': ['සම්පූර්ණ නම', 'முழுப் பெயர்'],
+		'Phone Number': ['දුරකථන අංකය', 'தொலைபேசி எண்'],
+		'NIC': ['ජාතික හැඳුනුම්පත් අංකය', 'தேசிய அடையாள அட்டை எண்'],
+		'Create Officer Account': ['නිලධාරී ගිණුම සාදන්න', 'அலுவலர் கணக்கை உருவாக்கவும்'],
+		'Officer Registration': ['නිලධාරී ලියාපදිංචිය', 'அலுவலர் பதிவு'],
+		'Create an officer account for the selected service section.': ['තෝරාගත් සේවා අංශය සඳහා නිලධාරී ගිණුමක් සාදන්න.', 'தேர்ந்தெடுக்கப்பட்ட சேவைப் பிரிவுக்கான அலுவலர் கணக்கை உருவாக்கவும்.'],
+		'Use at least 6 characters.': ['අවම වශයෙන් අක්ෂර 6ක් භාවිතා කරන්න.', 'குறைந்தது 6 எழுத்துகளைப் பயன்படுத்தவும்.'],
+		'Documents': ['ලේඛන', 'ஆவணங்கள்'],
+		'Download official-style portal forms and guides.': ['නිල ද්වාර පෝරම සහ මඟපෙන්වීම් බාගන්න.', 'அதிகாரப்பூர்வ தளப் படிவங்கள் மற்றும் வழிகாட்டிகளைப் பதிவிறக்கவும்.'],
+		'Open PDF': ['PDF විවෘත කරන්න', 'PDF திறக்கவும்'],
+		'Download': ['බාගන්න', 'பதிவிறக்கவும்'],
+		'Back': ['ආපසු', 'திரும்பு'],
+		'Data Entry Management': ['දත්ත ඇතුළත් කිරීමේ කළමනාකරණය', 'தரவு உள்ளீட்டு மேலாண்மை'],
+		'Enter, edit and delete operational data.': ['මෙහෙයුම් දත්ත ඇතුළත් කරන්න, සංස්කරණය කරන්න සහ මකන්න.', 'செயற்பாட்டுத் தரவை உள்ளிடவும், திருத்தவும், நீக்கவும்.'],
+		'Services': ['සේවා', 'சேவைகள்'],
+		'Vehicles': ['වාහන', 'வாகனங்கள்'],
+		'Bus Stands': ['බස් නැවතුම්පොළ', 'பேருந்து நிலையங்கள்'],
+		'FAQ / AI': ['නිතර අසන ප්‍රශ්න / AI', 'அடிக்கடி கேட்கப்படும் கேள்விகள் / AI'],
+		'English name': ['ඉංග්‍රීසි නම', 'ஆங்கிலப் பெயர்'],
+		'Sinhala name': ['සිංහල නම', 'சிங்களப் பெயர்'],
+		'Category': ['වර්ගය', 'வகை'],
+		'Save Service': ['සේවාව සුරකින්න', 'சேவையைச் சேமிக்கவும்'],
+		'ID': ['හැඳුනුම් අංකය', 'அடையாள எண்'],
+		'Action': ['ක්‍රියාව', 'செயல்'],
+		'Edit': ['සංස්කරණය කරන්න', 'திருத்து'],
+		'Delete': ['මකන්න', 'நீக்கு'],
+		'Vehicle type': ['වාහන වර්ගය', 'வாகன வகை'],
+		'Registration number': ['ලියාපදිංචි අංකය', 'பதிவு எண்'],
+		'Operator': ['මෙහෙයුම්කරු', 'இயக்குநர்'],
+		'Save Vehicle': ['වාහනය සුරකින්න', 'வாகனத்தைச் சேமிக்கவும்'],
+		'Manage Events': ['සිදුවීම් කළමනාකරණය', 'நிகழ்வுகளை நிர்வகிக்கவும்'],
+		'Upload event photos and choose which announcements appear on the home page.': ['සිදුවීම් ඡායාරූප උඩුගත කර මුල් පිටුවේ පෙන්විය යුතු නිවේදන තෝරන්න.', 'நிகழ்வுப் புகைப்படங்களைப் பதிவேற்றி, முகப்புப் பக்கத்தில் காட்ட வேண்டிய அறிவிப்புகளைத் தேர்ந்தெடுக்கவும்.'],
+		'Event saved.': ['සිදුවීම සුරකින ලදී.', 'நிகழ்வு சேமிக்கப்பட்டது.'],
+		'Event deleted.': ['සිදුවීම මකා දමන ලදී.', 'நிகழ்வு நீக்கப்பட்டது.'],
+		'Event title': ['සිදුවීමේ මාතෘකාව', 'நிகழ்வுத் தலைப்பு'],
+		'Event date': ['සිදුවීමේ දිනය', 'நிகழ்வுத் தேதி'],
+		'Details': ['විස්තර', 'விவரங்கள்'],
+		'Event photo': ['සිදුවීමේ ඡායාරූපය', 'நிகழ்வுப் புகைப்படம்'],
+		'Show on home page': ['මුල් පිටුවේ පෙන්වන්න', 'முகப்புப் பக்கத்தில் காட்டவும்'],
+		'Save Event': ['සිදුවීම සුරකින්න', 'நிகழ்வைச் சேமிக்கவும்'],
+		'Cancel': ['අවලංගු කරන්න', 'ரத்துசெய்'],
+		'Events': ['සිදුවීම්', 'நிகழ்வுகள்'],
+		'No events have been added.': ['තවම සිදුවීම් එක් කර නැත.', 'இதுவரை நிகழ்வுகள் எதுவும் சேர்க்கப்படவில்லை.'],
+		'Passenger Complaints': ['මගී පැමිණිලි', 'பயணிகள் புகார்கள்'],
+		'Complaints submitted through the passenger portal.': ['මගී ද්වාරය හරහා යොමු කළ පැමිණිලි.', 'பயணிகள் தளம் வழியாகச் சமர்ப்பிக்கப்பட்ட புகார்கள்.'],
+		'Incident': ['සිදුවීම', 'சம்பவம்'],
+		'Journey': ['ගමන', 'பயணம்'],
+		'Contact': ['සම්බන්ධතා', 'தொடர்பு'],
+		'Passenger': ['මගියා', 'பயணி'],
+		'Service survey responses and Assistant ratings.': ['සේවා සමීක්ෂණ ප්‍රතිචාර සහ සහායක ඇගයීම්.', 'சேவை ஆய்வுப் பதில்களும் உதவியாளர் மதிப்பீடுகளும்.'],
+		'Recommend': ['නිර්දේශය', 'பரிந்துரை'],
+		'Comments': ['අදහස්', 'கருத்துகள்'],
+		'User': ['පරිශීලකයා', 'பயனர்'],
+		'Service date': ['සේවා දිනය', 'சேவைத் தேதி'],
+		'Clients': ['සේවාලාභීන්', 'வாடிக்கையாளர்கள்'],
+		'Browse clients by account type.': ['ගිණුම් වර්ගය අනුව සේවාලාභීන් බලන්න.', 'கணக்கு வகையின்படி வாடிக்கையாளர்களைப் பார்க்கவும்.'],
+		'Client account created successfully.': ['සේවාලාභී ගිණුම සාර්ථකව සාදන ලදී.', 'வாடிக்கையாளர் கணக்கு வெற்றிகரமாக உருவாக்கப்பட்டது.'],
+		'Client type': ['සේවාලාභී වර්ගය', 'வாடிக்கையாளர் வகை'],
+		'No clients registered for this type.': ['මෙම වර්ගය සඳහා සේවාලාභීන් ලියාපදිංචි වී නැත.', 'இந்த வகையில் வாடிக்கையாளர்கள் யாரும் பதிவு செய்யப்படவில்லை.'],
+		'Add Client': ['සේවාලාභියෙකු එක් කරන්න', 'வாடிக்கையாளரைச் சேர்க்கவும்'],
+		'Create Client Account': ['සේවාලාභී ගිණුම සාදන්න', 'வாடிக்கையாளர் கணக்கை உருவாக்கவும்'],
+		'Review client requests assigned to this section and update their progress.': ['මෙම අංශයට පැවරූ සේවාලාභී ඉල්ලීම් සමාලෝචනය කර ප්‍රගතිය යාවත්කාලීන කරන්න.', 'இந்தப் பிரிவுக்கு ஒதுக்கப்பட்ட வாடிக்கையாளர் கோரிக்கைகளைப் பரிசீலித்து முன்னேற்றத்தைப் புதுப்பிக்கவும்.'],
+		'Submitted at': ['යැවූ වේලාව', 'சமர்ப்பித்த நேரம்'],
+		'Update': ['යාවත්කාලීන කරන්න', 'புதுப்பிக்கவும்'],
+		'Save': ['සුරකින්න', 'சேமிக்கவும்'],
+		'Quick links': ['ඉක්මන් සබැඳි', 'விரைவு இணைப்புகள்'],
+		'Our services': ['අපගේ සේවා', 'எங்கள் சேவைகள்'],
+		'Client registration': ['සේවාලාභී ලියාපදිංචිය', 'வாடிக்கையாளர் பதிவு'],
+		'Here to help': ['උදව් සඳහා', 'உதவிக்கு'],
+		'Help & guidance': ['උදවු සහ මඟපෙන්වීම', 'உதவியும் வழிகாட்டுதலும்'],
+		'Contact us': ['අප අමතන්න', 'எங்களைத் தொடர்புகொள்ளவும்'],
+		'General enquiries:': ['සාමාන්‍ය විමසීම්:', 'பொதுவான விசாரணைகள்:'],
+		'Your starting point for road passenger transport services in the Southern Province of Sri Lanka.': ['ශ්‍රී ලංකාවේ දකුණු පළාතේ මාර්ගස්ථ මගී ප්‍රවාහන සේවා සඳහා ඔබේ ආරම්භක ස්ථානය.', 'இலங்கையின் தென் மாகாண வீதிப் பயணிகள் போக்குவரத்துச் சேவைகளுக்கான உங்கள் தொடக்க இடம்.'],
+		'Chat with RPTA Assistant': ['RPTA සහායක සමඟ කතාබස් කරන්න', 'RPTA உதவியாளருடன் உரையாடவும்'],
+		'Quick questions': ['ඉක්මන් ප්‍රශ්න', 'விரைவான கேள்விகள்'],
+		'End chat & feedback': ['කතාබහ අවසන් කර ප්‍රතිචාර දෙන්න', 'உரையாடலை முடித்து கருத்து தெரிவிக்கவும்'],
+		'How was your experience?': ['ඔබේ අත්දැකීම කෙසේද?', 'உங்கள் அனுபவம் எப்படி இருந்தது?'],
+		'Submit Feedback': ['ප්‍රතිචාර යවන්න', 'கருத்தைச் சமர்ப்பிக்கவும்'],
+		'Send': ['යවන්න', 'அனுப்பு'],
+		'Southern Province / Sri Lanka': ['දකුණු පළාත / ශ්‍රී ලංකාව', 'தென் மாகாணம் / இலங்கை'],
+		'Passenger Transport Digital Service Portal': ['මගී ප්‍රවාහන ඩිජිටල් සේවා ද්වාරය', 'பயணிகள் போக்குவரத்து டிஜிட்டல் சேவைத் தளம்'],
+		'Officer account created successfully.': ['නිලධාරී ගිණුම සාර්ථකව සාදන ලදී.', 'அலுவலர் கணக்கு வெற்றிகரமாக உருவாக்கப்பட்டது.'],
+		'Task': ['කාර්යය', 'பணி'],
+		'Register officer': ['නිලධාරියා ලියාපදිංචි කරන්න', 'அலுவலரைப் பதிவு செய்க'],
+		'Control Officer': ['පාලන නිලධාරී', 'கட்டுப்பாட்டு அலுவலர்'],
+		'Accounts Officer': ['ගිණුම් නිලධාරී', 'கணக்குப் பிரிவு அலுவலர்'],
+		'Driving Officer': ['ධාවන නිලධාරී', 'போக்குவரத்து அலுவலர்'],
+		'Create an account for the Control section.': ['පාලන අංශය සඳහා ගිණුමක් සාදන්න.', 'கட்டுப்பாட்டுப் பிரிவுக்கான கணக்கை உருவாக்கவும்.'],
+		'Create an account for the Accounts section.': ['ගිණුම් අංශය සඳහා ගිණුමක් සාදන්න.', 'கணக்குப் பிரிவுக்கான கணக்கை உருவாக்கவும்.'],
+		'Create an account for the Driving section.': ['ධාවන අංශය සඳහා ගිණුමක් සාදන්න.', 'போக்குவரத்துப் பிரிவுக்கான கணக்கை உருவாக்கவும்.'],
+		"Client's Tokens": ['සේවාලාභියාගේ ටෝකන', 'வாடிக்கையாளர் டோக்கன்கள்'],
+		'Get Client Token': ['සේවාලාභී ටෝකනය ලබාගන්න', 'வாடிக்கையாளர் டோக்கனைப் பெறுக'],
+		'Choose a section and a task to request a token.': ['ටෝකනයක් ඉල්ලීමට අංශයක් සහ කාර්යයක් තෝරන්න.', 'டோக்கனைக் கோர ஒரு பிரிவையும் பணியையும் தேர்ந்தெடுக்கவும்.'],
+		'Give feedback now': ['දැන් ප්‍රතිචාර ලබා දෙන්න', 'இப்போது கருத்து தெரிவிக்கவும்'],
+		'Token created successfully!': ['ටෝකනය සාර්ථකව සාදන ලදී!', 'டோக்கன் வெற்றிகரமாக உருவாக்கப்பட்டது!'],
+		'Client type': ['සේවාලාභී වර්ගය', 'வாடிக்கையாளர் வகை'],
+		'Client Details': ['සේවාලාභී විස්තර', 'வாடிக்கையாளர் விவரங்கள்'],
+		'Select Section': ['අංශය තෝරන්න', 'பிரிவைத் தேர்ந்தெடுக்கவும்'],
+		'Select a section': ['අංශයක් තෝරන්න', 'ஒரு பிரிவைத் தேர்ந்தெடுக்கவும்'],
+		'Select task': ['කාර්යය තෝරන්න', 'பணியைத் தேர்ந்தெடுக்கவும்'],
+		'Select a section first': ['පළමුව අංශයක් තෝරන්න', 'முதலில் ஒரு பிரிவைத் தேர்ந்தெடுக்கவும்'],
+		'Preferred Date': ['කැමති දිනය', 'விரும்பும் தேதி'],
+		'Preferred Time': ['කැමති වේලාව', 'விரும்பும் நேரம்'],
+		'Create a Token': ['ටෝකනයක් සාදන්න', 'டோக்கனை உருவாக்கவும்'],
+		'Fill in the details above, then create your token QR code.': ['ඉහත විස්තර පුරවා ඔබේ ටෝකන QR කේතය සාදන්න.', 'மேலுள்ள விவரங்களை நிரப்பி உங்கள் டோக்கன் QR குறியீட்டை உருவாக்கவும்.'],
+		'CREATE TOKEN QR': ['ටෝකන QR සාදන්න', 'டோக்கன் QR உருவாக்கவும்'],
+		'TOKEN READY': ['ටෝකනය සූදාனම්', 'டோக்கன் தயார்'],
+		'Token No': ['ටෝකන අංකය', 'டோக்கன் எண்'],
+		'Date': ['දිනය', 'தேதி'],
+		'Time': ['වේලාව', 'நேரம்'],
+		'Download Token QR': ['ටෝකන QR බාගන්න', 'டோக்கன் QR பதிவிறக்கவும்'],
+		'Give Feedback': ['ප්‍රතිචාර ලබා දෙන්න', 'கருத்து தெரிவிக்கவும்'],
+		'Service': ['සේවාව', 'சேவை'],
+		'Event': ['සිදුවීම', 'நிகழ்வு'],
+		'Rating': ['ඇගයීම', 'மதிப்பீடு'],
+		'Control': ['පාලන', 'கட்டுப்பாடு'],
+		'Accounts': ['ගිණුම්', 'கணக்குகள்'],
+		'Driving': ['ධාවන', 'போக்குவரத்து'],
+		'Username': ['පරිශීලක නාමය', 'பயனர்பெயர்'],
+		'NIC': ['ජාතික හැඳුනුම්පත් අංකය', 'தேசிய அடையாள அட்டை எண்'],
+		'Registered': ['ලියාපදිංචි කළ', 'பதிவுசெய்யப்பட்டது'],
+		'Registered at': ['ලියාපදිංචි කළ වේලාව', 'பதிவுசெய்த நேரம்'],
+		'Type': ['වර්ගය', 'வகை'],
+		'Show on home page': ['මුල් පිටුවේ පෙන්වන්න', 'முகப்புப் பக்கத்தில் காட்டவும்'],
+		'Save Event': ['සිදුවීම සුරකින්න', 'நிகழ்வைச் சேமிக்கவும்'],
+		'No clients registered for this type.': ['මෙම වර්ගය සඳහා සේවාලාභීන් ලියාපදිංචි වී නැත.', 'இந்த வகையில் வாடிக்கையாளர்கள் யாரும் பதிவு செய்யப்படவில்லை.'],
+		'Full name': ['සම්පූර්ණ නම', 'முழுப் பெயர்'],
+		'Select type': ['වර්ගය තෝරන්න', 'வகையைத் தேர்ந்தெடுக்கவும்'],
+		'Client account created successfully.': ['සේවාලාභී ගිණුම සාර්ථකව සාදන ලදී.', 'வாடிக்கையாளர் கணக்கு வெற்றிகரமாக உருவாக்கப்பட்டது.'],
+		'Officer identities and account access for each service section.': ['එක් එක් සේවා අංශයේ නිලධාරීන්ගේ අනන්‍යතා සහ ගිණුම් ප්‍රවේශය.', 'ஒவ்வொரு சேவைப் பிரிவின் அலுவலர் அடையாளங்களும் கணக்கு அணுகலும்.'],
+		'Passenger Feedback': ['මගී ප්‍රතිචාර', 'பயணிகள் கருத்துகள்'],
+		'Passenger Complaints': ['මගී පැමිණිලි', 'பயணிகள் புகார்கள்'],
+		'Open PDF': ['PDF විවෘත කරන්න', 'PDF திறக்கவும்'],
+		'Back to website': ['වෙබ් අඩවියට ආපසු', 'இணையதளத்திற்குத் திரும்பு'],
+		'Home': ['මුල් පිටුව', 'முகப்பு'],
+		'Login': ['ඇතුළු වන්න', 'உள்நுழைக'],
+		'Logout': ['පිටවන්න', 'வெளியேறு'],
+		'Page not found': ['පිටුව හමු නොවීය', 'பக்கம் கிடைக்கவில்லை'],
+		'Forgot Password': ['මුරපදය අමතකද?', 'கடவுச்சொல்லை மறந்துவிட்டீர்களா?'],
+		'Show password': ['මුරපදය පෙන්වන්න', 'கடவுச்சொல்லைக் காட்டவும்'],
+		'Hide password': ['මුරපදය සඟවන්න', 'கடவுச்சொல்லை மறைக்கவும்'],
+		'Help topics': ['උදවු මාතෘකා', 'உதவித் தலைப்புகள்'],
+		'Southern Provincial Road Passenger Transport Authority logo': ['දකුණු පළාත් මාර්ගස්ථ මගී ප්‍රවාහන අධිකාරියේ ලාංඡනය', 'தென் மாகாண வீதிப் பயணிகள் போக்குவரத்து அதிகாரசபையின் சின்னம்'],
+		'RPTA Local AI Test': ['RPTA දේශීය AI පරීක්ෂණය', 'RPTA உள்ளக AI சோதனை'],
+		'RPTA Local Generative AI Test': ['RPTA දේශීය ජනක AI පරීක්ෂණය', 'RPTA உள்ளக உருவாக்க AI சோதனை'],
+		'Model:': ['ආකෘතිය:', 'மாதிரி:'],
+		'Endpoint:': ['සේවා ලිපිනය:', 'சேவை முகவரி:'],
+		'Local AI is working.': ['දේශීය AI ක්‍රියාත්මකයි.', 'உள்ளக AI இயங்குகிறது.'],
+		'Response:': ['ප්‍රතිචාරය:', 'பதில்:'],
+		'Local AI is not available.': ['දේශීය AI ලබාගත නොහැක.', 'உள்ளக AI கிடைக்கவில்லை.'],
+		'Install Ollama, then run:': ['Ollama ස්ථාපනය කර පහත විධානය ක්‍රියාත්මක කරන්න:', 'Ollama-ஐ நிறுவி, பின்னர் இயக்கவும்:'],
+		'Back to website': ['වෙබ් අඩවියට ආපසු', 'இணையதளத்திற்குத் திரும்பு'],
+		'Southern Provincial Road Passenger Transport Authority': ['දකුණු පළාත් මාර්ගස්ථ මගී ප්‍රවාහන අධිකාරිය', 'தென் மாகாண வீதிப் பயணிகள் போக்குவரத்து அதிகாரசபை'],
+		'Southern Provincial Road Passenger Transport Authority Logo': ['දකුණු පළාත් මාර්ගස්ථ මගී ප්‍රවාහන අධිකාරියේ ලාංඡනය', 'தென் மாகாண வீதிப் பயணிகள் போக்குவரத்து அதிகாரசபையின் சின்னம்'],
+		'SOUTHERN PROVINCE · SRI LANKA': ['දකුණු පළාත · ශ්‍රී ලංකාව', 'தென் மாகாணம் · இலங்கை'],
+		'The Southern Provincial Road Passenger Transport Authority': ['දකුණු පළාත් මාර්ගස්ථ මගී ප්‍රවාහන අධිකාරිය', 'தென் மாகாண வீதிப் பயணிகள் போக்குவரத்து அதிகாரசபை'],
+		'Passenger Transport Digital Service Portal': ['මගී ප්‍රවාහන ඩිජිටල් සේවා ද්වාරය', 'பயணிகள் போக்குவரத்து டிஜிட்டல் சேவைத் தளம்'],
+		'PASSENGER TOKEN': ['මගී ටෝකනය', 'பயணிகள் டோக்கன்'],
+		'PASSENGER TOKEN / ONLINE SERVICE REQUEST': ['මගී ටෝකනය / මාර්ගගත සේවා ඉල්ලීම', 'பயணிகள் டோக்கன் / இணையவழிச் சேவை கோரிக்கை'],
+		'REGISTERED PASSENGER DETAILS': ['ලියාපදිංචි මගියාගේ විස්තර', 'பதிவுசெய்த பயணி விவரங்கள்'],
+		'SERVICE REQUEST DETAILS': ['සේවා ඉල්ලීමේ විස්තර', 'சேவை கோரிக்கை விவரங்கள்'],
+		'Home': ['මුල් පිටුව', 'முகப்பு'],
+		'Documents / ලේඛන': ['ලේඛන', 'ஆவணங்கள்'],
+		'Documents / ලේඛන': ['ලේඛන', 'ஆவணங்கள்'],
+		'Home / මුල් පිටුව': ['මුල් පිටුව', 'முகப்பு'],
+		'Our Services / අපගේ සේවා': ['අපගේ සේවා', 'எங்கள் சேவைகள்'],
+		'Help & Guidance': ['උදවු සහ මඟපෙන්වීම', 'உதவியும் வழிகாட்டுதலும்'],
+		'About the Authority': ['අධිකාරිය පිළිබඳව', 'அதிகாரசபை பற்றி'],
+		'Get Token': ['ටෝකනය ලබාගන්න', 'டோக்கனைப் பெறுக'],
+		'Make a Complaint': ['පැමිණිල්ලක් ඉදිරිපත් කරන්න', 'புகார் அளிக்கவும்'],
+		'Task completed': ['කාර්යය සම්පූර්ණයි', 'பணி நிறைவடைந்தது'],
+		'Your task is complete': ['ඔබේ කාර්යය සම්පූර්ණයි', 'உங்கள் பணி நிறைவடைந்தது'],
+		'has been completed.': ['සම්පූර්ණ කර ඇත.', 'நிறைவுசெய்யப்பட்டது.'],
+		'Please share your feedback about this service.': ['මෙම සේවාව පිළිබඳ ඔබේ ප්‍රතිචාරය ලබා දෙන්න.', 'இந்தச் சேவை குறித்த உங்கள் கருத்தைப் பகிரவும்.'],
+		'Give feedback now': ['දැන් ප්‍රතිචාර ලබා දෙන්න', 'இப்போது கருத்து தெரிவிக்கவும்'],
+		'Later': ['පසුව', 'பின்னர்'],
+		'Task completed:': ['කාර්යය සම්පූර්ණයි:', 'பணி நிறைவடைந்தது:'],
+		'Track service requests, view updates, and share feedback from your dashboard.': ['ඔබේ පුවරුවෙන් සේවා ඉල්ලීම් නිරීක්ෂණය කර යාවත්කාලීන කිරීම් බලමින් ප්‍රතිචාර ලබා දෙන්න.', 'உங்கள் பலகையிலிருந்து சேவை கோரிக்கைகளைக் கண்காணித்து, புதுப்பிப்புகளைப் பார்த்து, கருத்துகளைப் பகிரவும்.'],
+		'Choose a service section below to create an officer account.': ['නිලධාරී ගිණුමක් සෑදීමට පහත සේවා අංශයක් තෝරන්න.', 'அலுவலர் கணக்கை உருவாக்க கீழே உள்ள சேவைப் பிரிவைத் தேர்ந்தெடுக்கவும்.'],
+		'3 service sections': ['සේවා අංශ 3ක්', '3 சேவைப் பிரிவுகள்'],
+		'Menu': ['මෙනුව', 'பட்டியல்'],
+		'SERVICE SECTION 01': ['සේවා අංශය 01', 'சேவைப் பிரிவு 01'],
+		'SERVICE SECTION 02': ['සේවා අංශය 02', 'சேவைப் பிரிவு 02'],
+		'SERVICE SECTION 03': ['සේවා අංශය 03', 'சேவைப் பிரிவு 03'],
+		'OUR PURPOSE': ['අපගේ අරමුණ', 'எங்கள் நோக்கம்'],
+		'OUR VISION': ['අපගේ දැක්ම', 'எங்கள் தொலைநோக்கு'],
+		'OUR MISSION': ['අපගේ මෙහෙවර', 'எங்கள் பணி'],
+		'To be the Premier Passenger Transport Services Facilitator in Sri Lanka': ['ශ්‍රී ලංකාවේ ප්‍රමුඛතම මගී ප්‍රවාහන සේවා පහසුකම් සපයන්නා වීම.', 'இலங்கையின் முதன்மையான பயணிகள் போக்குவரத்துச் சேவை வசதியாளராகத் திகழ்தல்.'],
+		'Vision & Mission': ['දැක්ම සහ මෙහෙවර', 'தொலைநோக்கும் பணிக்குறிக்கோளும்'],
+		'Contact Us': ['අප අමතන්න', 'எங்களைத் தொடர்புகொள்ள'],
+		'Passenger Transport Services': ['මගී ප්‍රවාහන සේවා', 'பயணிகள் போக்குவரத்துச் சேவைகள்'],
+		'General Contact': ['සාමාන්‍ය විමසීම්', 'பொதுவான விசாரணைகள்'],
+		'Open PDF': ['PDF විවෘත කරන්න', 'PDF திறக்கவும்'],
+		'👁 Open PDF': ['👁 PDF විවෘත කරන්න', '👁 PDF திறக்கவும்'],
+		'⬇ Download': ['⬇ බාගන්න', '⬇ பதிவிறக்கவும்'],
+		'← Dashboard': ['← පුවරුව', '← பலகை'],
+		'← Dashboard / පුවරුව': ['← පුවරුව', '← பலகை'],
+		'← Back / ආපසු': ['← ආපසු', '← திரும்பு'],
+		'← Back to website': ['← වෙබ් අඩවියට ආපසු', '← இணையதளத்திற்குத் திரும்பு'],
+		'Help & enquiries': ['උදවු සහ විමසීම්', 'உதவியும் விசாரணைகளும்'],
+		'Our purpose': ['අපගේ අරමුණ', 'எங்கள் நோக்கம்'],
+		'Download PDF': ['PDF බාගන්න', 'PDF பதிவிறக்கவும்'],
+		'No response text': ['ප්‍රතිචාර පෙළක් නැත', 'பதில் உரை இல்லை'],
+		'No response': ['ප්‍රතිචාරයක් නැත', 'பதில் இல்லை'],
+		'No events have been added.': ['තවම සිදුවීම් එක් කර නැත.', 'இதுவரை நிகழ்வுகள் எதுவும் சேர்க்கப்படவில்லை.'],
+		'JPG, PNG, or WebP. Maximum 8 MB.': ['JPG, PNG හෝ WebP. උපරිම 8 MB.', 'JPG, PNG அல்லது WebP. அதிகபட்சம் 8 MB.'],
+		'FAQ / AI': ['නිතර අසන ප්‍රශ්න / AI', 'அடிக்கடி கேட்கப்படும் கேள்விகள் / AI'],
+		'Service experience': ['සේවා අත්දැකීම', 'சேவை அனுபவம்'],
+		'You have no tasks yet. Create a token to request a service.': ['ඔබට තවම කාර්යයන් නොමැත. සේවාවක් ඉල්ලීමට ටෝකනයක් සාදන්න.', 'உங்களுக்கு இன்னும் பணிகள் இல்லை. சேவையைக் கோர டோக்கனை உருவாக்கவும்.'],
+		'Select a section first': ['පළමුව අංශයක් තෝරන්න', 'முதலில் ஒரு பிரிவைத் தேர்ந்தெடுக்கவும்'],
+		'Select a section': ['අංශයක් තෝරන්න', 'ஒரு பிரிவைத் தேர்ந்தெடுக்கவும்'],
+		'Select task': ['කාර්යය තෝරන්න', 'பணியைத் தேர்ந்தெடுக்கவும்'],
+		'Preferred Date': ['කැමති දිනය', 'விரும்பும் தேதி'],
+		'Preferred Time': ['කැමති වේලාව', 'விரும்பும் நேரம்'],
+		'Client type': ['සේවාලාභී වර්ගය', 'வாடிக்கையாளர் வகை'],
+		'Full Name': ['සම්පූර්ණ නම', 'முழுப் பெயர்'],
+		'Phone Number': ['දුරකථන අංකය', 'தொலைபேசி எண்'],
+		'National Identity Card': ['ජාතික හැඳුනුම්පත', 'தேசிய அடையாள அட்டை'],
+		'Operator': ['මෙහෙයුම්කරු', 'இயக்குநர்'],
+		'Route': ['මාර්ගය', 'வழித்தடம்'],
+		'Bus Stand / Halt': ['බස් නැවතුම්පොළ / නැවතුම', 'பேருந்து நிலையம் / நிறுத்தம்'],
+		'Vehicle Type': ['වාහන වර්ගය', 'வாகன வகை'],
+		'Vehicle Registration No': ['වාහන ලියාපදිංචි අංකය', 'வாகனப் பதிவு எண்'],
+		'Additional Details': ['අමතර විස්තර', 'கூடுதல் விவரங்கள்'],
+		'Purpose': ['අරමුණ', 'நோக்கம்'],
+		'General Contact:': ['සාමාන්‍ය විමසීම්:', 'பொதுவான விசாரணைகள்:'],
+		'This document is generated by the RPTA passenger transport portal.': ['මෙම ලේඛනය RPTA මගී ප්‍රවාහන ද්වාරය මඟින් ජනනය කරන ලදී.', 'இந்த ஆவணம் RPTA பயணிகள் போக்குவரத்துத் தளத்தால் உருவாக்கப்பட்டது.'],
+		'Token not found': ['ටෝකනය හමු නොවීය', 'டோக்கன் கிடைக்கவில்லை'],
+		'PDF generation failed': ['PDF නිර්මාණය අසාර්ථක විය', 'PDF உருவாக்கம் தோல்வியடைந்தது'],
+		'You are not allowed to download this token.': ['මෙම ටෝකනය බාගැනීමට ඔබට අවසර නැත.', 'இந்த டோக்கனைப் பதிவிறக்க உங்களுக்கு அனுமதி இல்லை.'],
+		'Public bus at Galle Bus Stand, Sri Lanka': ['ශ්‍රී ලංකාවේ ගාල්ල බස් නැවතුම්පොළේ පොදු බස් රථයක්', 'இலங்கையின் காலி பேருந்து நிலையத்தில் பொதுப் பேருந்து'],
+		'Public transport at Galle Bus Stand': ['ගාල්ල බස් නැවතුම්පොළේ පොදු ප්‍රවාහනය', 'காலி பேருந்து நிலையத்தில் பொதுப் போக்குவரத்து'],
+		'View photo full size': ['ඡායාරූපය සම්පූර්ණ ප්‍රමාණයෙන් බලන්න', 'புகைப்படத்தை முழு அளவில் பார்க்கவும்'],
+		'Previous photo': ['පෙර ඡායාරූපය', 'முந்தைய புகைப்படம்'],
+		'Next photo': ['ඊළඟ ඡායාරූපය', 'அடுத்த புகைப்படம்'],
+		'Choose a photo': ['ඡායාරූපයක් තෝරන්න', 'புகைப்படத்தைத் தேர்ந்தெடுக்கவும்'],
+		'Login to your account': ['ඔබේ ගිණුමට පිවිසෙන්න', 'உங்கள் கணக்கில் உள்நுழைக'],
+		'To promote the development of passenger transport service with efficiency, quality and quantity to meet the transport needs of the passengers and to provide equitable distribution of the Passenger service in southern province on the basis of social needs in friendly manner.': ['මගීන්ගේ ප්‍රවාහන අවශ්‍යතා කාර්යක්ෂමව හා ගුණාත්මකව සපුරාලමින් දකුණු පළාතේ සමාජ අවශ්‍යතා අනුව සාධාරණ මගී ප්‍රවාහන සේවාවක් මිත්‍රශීලීව සැපයීම ප්‍රවර්ධනය කිරීම.', 'பயணிகளின் போக்குவரத்துத் தேவைகளைத் திறமையாகவும் தரமாகவும் பூர்த்திசெய்து, தென் மாகாணத்தின் சமூகத் தேவைகளின் அடிப்படையில் சமமான பயணிகள் சேவையை நட்புறவுடன் வழங்குவதை மேம்படுத்துதல்.'],
+		'SUPPORT FOR EVERY STEP': ['සෑම පියවරකටම සහාය', 'ஒவ்வொரு படியிலும் ஆதரவு'],
+		'Choose a topic below to go straight to the right place.': ['අදාළ පිටුවට යාමට පහත මාතෘකාවක් තෝරන්න.', 'சரியான இடத்திற்குச் செல்ல கீழே உள்ள தலைப்பைத் தேர்ந்தெடுக்கவும்.'],
+		'How can we help?': ['අපට ඔබට උදව් කළ හැක්කේ කෙසේද?', 'நாங்கள் எவ்வாறு உதவலாம்?'],
+		'Use the portal to register, access documents, request a service token, and track your applications. Our team is ready to help if you need more support.': ['ලියාපදිංචි වීමට, ලේඛන ලබාගැනීමට, සේවා ටෝකනයක් ඉල්ලීමට සහ ඔබේ ඉල්ලීම් නිරීක්ෂණය කිරීමට ද්වාරය භාවිතා කරන්න. තවත් සහායක් අවශ්‍ය නම් අපගේ කණ්ඩායම උදව් කිරීමට සූදානම්.', 'பதிவுசெய்யவும், ஆவணங்களைப் பெறவும், சேவை டோக்கனைக் கோரவும், உங்கள் விண்ணப்பங்களைக் கண்காணிக்கவும் தளத்தைப் பயன்படுத்தவும். மேலும் ஆதரவு தேவைப்பட்டால் எங்கள் குழு உதவத் தயாராக உள்ளது.'],
+		'Register or sign in': ['ලියාපදිංචි වන්න හෝ පිවිසෙන්න', 'பதிவு செய்க அல்லது உள்நுழைக'],
+		'Choose registration or sign in to your account.': ['ලියාපදිංචිය හෝ ඔබේ ගිණුමට පිවිසීම තෝරන්න.', 'பதிவு செய்யவும் அல்லது உங்கள் கணக்கில் உள்நுழையவும்.'],
+		'Documents and forms': ['ලේඛන සහ පෝරම', 'ஆவணங்கள் மற்றும் படிவங்கள்'],
+		'Find and download available portal documents.': ['ලබාගත හැකි ද්වාර ලේඛන සොයා බාගන්න.', 'கிடைக்கும் தள ஆவணங்களைக் கண்டறிந்து பதிவிறக்கவும்.'],
+		'Complaints and service requests': ['පැමිණිලි සහ සේවා ඉල්ලීම්', 'புகார்கள் மற்றும் சேவை கோரிக்கைகள்'],
+		'Send an inquiry or get in touch with the Authority.': ['විමසීමක් යවන්න හෝ අධිකාරිය අමතන්න.', 'விசாரணையை அனுப்பவும் அல்லது அதிகாரசபையைத் தொடர்புகொள்ளவும்.'],
+		'Chat with Assistant': ['සහායක සමඟ කතාබස් කරන්න', 'உதவியாளருடன் உரையாடவும்'],
+		'SPRPTA chatbot': ['SPRPTA කතාබස් සහායක', 'SPRPTA உரையாடல் உதவியாளர்'],
+		'Optional short note': ['විකල්ප කෙටි සටහනක්', 'விருப்பமான சுருக்கக் குறிப்பு'],
+		'Type a question': ['ප්‍රශ්නයක් ලියන්න', 'கேள்வியைத் தட்டச்சு செய்யவும்'],
+		'The Southern Provincial Road Passenger Transport Authority logo': ['දකුණු පළාත් මාර්ගස්ථ මගී ප්‍රවාහන අධිකාරියේ ලාංඡනය', 'தென் மாகாண வீதிப் பயணிகள் போக்குவரத்து அதிகாரசபையின் சின்னம்'],
+		'Southern Provincial Road Passenger Transport Authority · Sri Lanka': ['දකුණු පළාත් මාර්ගස්ථ මගී ප්‍රවාහන අධිකාරිය · ශ්‍රී ලංකාව', 'தென் மாகாண வீதிப் பயணிகள் போக்குவரத்து அதிகாரசபை · இலங்கை'],
+		'Facebook': ['Facebook', 'Facebook'],
+		'An error occurred. Please try again.': ['දෝෂයක් ඇතිවිය. නැවත උත්සාහ කරන්න.', 'பிழை ஏற்பட்டது. மீண்டும் முயற்சிக்கவும்.'],
+		'Select the account type that matches your service.': ['ඔබේ සේවාවට ගැළපෙන ගිණුම් වර්ගය තෝරන්න.', 'உங்கள் சேவைக்குப் பொருந்தும் கணக்கு வகையைத் தேர்ந்தெடுக்கவும்.'],
+		'Do you have a bus registration number or bus permit number?': ['ඔබට බස් ලියාපදිංචි අංකයක් හෝ බස් බලපත්‍ර අංකයක් තිබේද?', 'உங்களிடம் பேருந்துப் பதிவு எண் அல்லது பேருந்து அனுமதிப்பத்திர எண் உள்ளதா?'],
+		'Choose exactly 6 digits': ['ඉලක්කම් 6ක් පමණක් තෝරන්න', 'சரியாக 6 இலக்கங்களைத் தேர்ந்தெடுக்கவும்'],
+		'CLIENT REGISTRATION': ['සේවාලාභී ලියාපදිංචිය', 'வாடிக்கையாளர் பதிவு'],
+		'CLIENT TASKS': ['සේවාලාභී කාර්යයන්', 'வாடிக்கையாளர் பணிகள்'],
+		'OFFICER REGISTRATION': ['නිලධාරී ලියාපදිංචිය', 'அலுவலர் பதிவு'],
+		'DATA ENTRY': ['දත්ත ඇතුළත් කිරීම', 'தரவு உள்ளீடு'],
+		'EVENTS': ['සිදුවීම්', 'நிகழ்வுகள்'],
+		'Passenger Feedback': ['මගී ප්‍රතිචාර', 'பயணிகள் கருத்துகள்'],
+		'Passenger Complaints': ['මගී පැමිණිලි', 'பயணிகள் புகார்கள்'],
+		'Event saved.': ['සිදුවීම සුරකින ලදී.', 'நிகழ்வு சேமிக்கப்பட்டது.'],
+		'Event deleted.': ['සිදුවීම මකා දමන ලදී.', 'நிகழ்வு நீக்கப்பட்டது.'],
+		'FAQ': ['නිතර අසන ප්‍රශ්න', 'அடிக்கடி கேட்கப்படும் கேள்விகள்'],
+		'Language': ['භාෂාව', 'மொழி'],
+		'English': ['ඉංග්‍රීසි', 'ஆங்கிலம்'],
+		'Sinhala': ['සිංහල', 'சிங்களம்'],
+		'Tamil': ['දෙමළ', 'தமிழ்'],
+		'ආයතනයට පැමිණීමට පෙර රැගෙන ආ යුතු ලියකියවිලි': ['ආයතනයට පැමිණීමට පෙර රැගෙන ආ යුතු ලියකියවිලි', 'அலுவலகத்திற்கு வருவதற்கு முன் கொண்டுவர வேண்டிய ஆவணங்கள்'],
+		'දකුණු පළාත් මාර්ගස්ථ මගී ප්‍රවාහන අධිකාරිය': ['දකුණු පළාත් මාර්ගස්ථ මගී ප්‍රවාහන අධිකාරිය', 'தென் மாகாண வீதிப் பயணிகள் போக்குவரத்து அதிகாரசபை'],
+	};
+	const englishOverrides = {
+		'දකුණු පළාත් මාර්ගස්ථ මගී ප්‍රවාහන අධිකාරිය': 'Southern Provincial Road Passenger Transport Authority',
+		'ආයතනයට පැමිණීමට පෙර රැගෙන ආ යුතු ලියකියවිලි': 'Documents to Bring Before Visiting the Institution'
+	};
+
+	const hasSinhala = /[\u0D80-\u0DFF]/u;
+	const sourceText = new WeakMap();
+	const sourceAttributes = new WeakMap();
+
+	function translate(value) {
+		const trimmed = value.trim();
+		const generalEnquiries = 'General enquiries:';
+		if (trimmed.startsWith(generalEnquiries + ' ')) {
+			const localizedPrefix = language === 'si' ? 'සාමාන්‍ය විමසීම්:' : language === 'ta' ? 'பொதுவான விசாரணைகள்:' : generalEnquiries;
+			const leading = value.match(/^\s*/u)[0];
+			const trailing = value.match(/\s*$/u)[0];
+			return leading + localizedPrefix + trimmed.slice(generalEnquiries.length) + trailing;
+		}
+		const photoLabel = trimmed.match(/^Show photo (\d+) of (\d+)$/u);
+		if (photoLabel) {
+			const translated = language === 'si'
+				? `ඡායාරූපය ${photoLabel[1]} / ${photoLabel[2]} පෙන්වන්න`
+				: language === 'ta'
+					? `புகைப்படம் ${photoLabel[1]} / ${photoLabel[2]} ஐக் காட்டவும்`
+					: trimmed;
+			return translated;
+		}
+		const separator = trimmed.indexOf(' / ');
+		if (separator >= 0) {
+			const english = trimmed.slice(0, separator).trim();
+			const sinhala = trimmed.slice(separator + 3).trim();
+			if (english && hasSinhala.test(sinhala)) {
+				const translated = entries[english];
+				if (!translated) return value;
+				const replacement = language === 'en' ? english : language === 'si' ? translated[0] : translated[1];
+				const leading = value.match(/^\s*/u)[0];
+				const trailing = value.match(/\s*$/u)[0];
+				return leading + replacement + trailing;
+			}
+		}
+
+		const direct = entries[trimmed];
+		if (!direct) return value;
+		const replacement = language === 'si' ? direct[0] : language === 'ta' ? direct[1] : (englishOverrides[trimmed] || trimmed);
+
+		const leading = value.match(/^\s*/u)[0];
+		const trailing = value.match(/\s*$/u)[0];
+		return leading + replacement + trailing;
+	}
+
+	function localizeTextNode(node) {
+		const current = node.nodeValue;
+		const previous = sourceText.get(node);
+		if (previous && previous.translated === current) return;
+		const original = previous ? current : current;
+		const translated = translate(original);
+		sourceText.set(node, { translated });
+		if (translated !== original) node.nodeValue = translated;
+	}
+
+	function localizeElement(element) {
+		if (!element || element.nodeType !== Node.ELEMENT_NODE) return;
+		if (element.matches('script,style,textarea,pre,code,.bubble,.chat-body,.chat-docs,[data-user-content]')) return;
+		if (element.matches('td')) return;
+		if (element.tagName === 'INPUT' && !['button', 'submit'].includes(element.type)) {
+			['placeholder', 'aria-label', 'title'].forEach((attribute) => localizeAttribute(element, attribute));
+			return;
+		}
+		['placeholder', 'aria-label', 'title', 'alt'].forEach((attribute) => localizeAttribute(element, attribute));
+		if (element.tagName === 'TITLE') {
+			element.textContent = translate(element.textContent);
+		}
+		for (const child of element.childNodes) {
+			if (child.nodeType === Node.TEXT_NODE) localizeTextNode(child);
+			else if (child.nodeType === Node.ELEMENT_NODE) localizeElement(child);
+		}
+	}
+
+	function localizeAttribute(element, attribute) {
+		if (!element.hasAttribute(attribute)) return;
+		let originals = sourceAttributes.get(element);
+		if (!originals) {
+			originals = {};
+			sourceAttributes.set(element, originals);
+		}
+		const current = element.getAttribute(attribute);
+		if (originals[attribute] && originals[attribute].translated === current) return;
+		const translated = translate(current);
+		originals[attribute] = { translated };
+		if (translated !== current) element.setAttribute(attribute, translated);
+	}
+
+	document.title = translate(document.title);
+	localizeElement(document.body);
+	new MutationObserver((changes) => {
+		for (const change of changes) {
+			if (change.type === 'characterData') {
+				localizeTextNode(change.target);
+			} else if (change.type === 'attributes') {
+				localizeAttribute(change.target, change.attributeName);
+			} else {
+				change.addedNodes.forEach((node) => {
+					if (node.nodeType === Node.TEXT_NODE) localizeTextNode(node);
+					else if (node.nodeType === Node.ELEMENT_NODE) localizeElement(node);
+				});
+			}
+		}
+	}).observe(document.body, {
+		attributes: true,
+		attributeFilter: ['placeholder', 'aria-label', 'title', 'alt'],
+		characterData: true,
+		childList: true,
+		subtree: true
+	});
+})();

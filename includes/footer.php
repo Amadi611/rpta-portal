@@ -58,4 +58,6 @@
 		<div class="chat-input"><input id="chatInput" placeholder="Type a question / ප්‍රශ්නයක් ලියන්න"><button id="sendChat" class="primary-btn">Send</button></div>
 	</div>
 </div>
-<script src="<?=BASE_URL?>/assets/app.js?v=<?=filemtime(__DIR__.'/../assets/app.js')?>"></script></body></html>
+<script src="<?=BASE_URL?>/assets/app.js?v=<?=filemtime(__DIR__.'/../assets/app.js')?>"></script>
+<script src="<?=BASE_URL?>/assets/i18n.js?v=<?=filemtime(__DIR__.'/../assets/i18n.js')?>"></script>
+</body></html>

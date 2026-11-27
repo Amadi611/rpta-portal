@@ -38,6 +38,12 @@
 	color: #fff;
 }
 
+.language-strip .lang[aria-current="true"] {
+	font-weight: 800;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
 .language-strip .lang:hover,
 .language-strip .lang:focus-visible {
 	color: #c7d4d1;
