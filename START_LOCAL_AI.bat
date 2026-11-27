@@ -1,7 +1,7 @@
 @echo off
-title RPTA Local Generative AI
+title SPRPTA Local Generative AI
 echo ==========================================
-echo RPTA Local Generative AI
+echo SPRPTA Local Generative AI
 echo ==========================================
 where ollama >nul 2>nul
 if errorlevel 1 (

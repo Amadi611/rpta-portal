@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__.'/config.php';
-$sectionNames=['control'=>'Control','accounts'=>'Account','driving'=>'Driving'];
+$sectionNames=['control'=>'Admin','accounts'=>'Finance','driving'=>'Operation'];
 $rows=$conn->query("SELECT u.full_name,o.position,o.department,o.phone,o.email FROM users u JOIN officer_profiles o ON o.user_id=u.id ORDER BY o.department,u.full_name");
 $title='Officer Directory';
 $pageStyles=['assets/officers.css'];

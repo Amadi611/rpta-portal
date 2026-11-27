@@ -25,7 +25,7 @@
   },
   {
     "intent": "general_contact",
-    "question": "How do I contact RPTA?",
+    "question": "How do I contact SPRPTA?",
     "answer": "For general inquiries, please call the Road Passenger Transport Authority on the official contact number published on this website. / සාමාන්‍ය විමසීම් සඳහා මෙම වෙබ් අඩවියේ දක්වා ඇති නිල දුරකථන අංකයට අමතන්න.",
     "language": "en"
   },
@@ -55,7 +55,7 @@
   },
   {
     "intent": "general_contact",
-    "question": "RPTA එක අමතන්නේ කොහොමද?",
+    "question": "SPRPTA එක අමතන්නේ කොහොමද?",
     "answer": "For general inquiries, please call the Road Passenger Transport Authority on the official contact number published on this website. / සාමාන්‍ය විමසීම් සඳහා මෙම වෙබ් අඩවියේ දක්වා ඇති නිල දුරකථන අංකයට අමතන්න.",
     "language": "si"
   },

@@ -1,13 +1,14 @@
 <?php
 require_once __DIR__.'/config.php';
 require_login();
-if(role()!=='officer_registrar' && !can_manage_accounts()) redirect('dashboard.php');
+if(!can_register_officers()) redirect('dashboard.php');
 $departments=[
-    'control'=>['label'=>'Control','role'=>'control_admin'],
-    'accounts'=>['label'=>'Account','role'=>'accounts_admin'],
-    'driving'=>['label'=>'Driving','role'=>'driving_admin']
+    'control'=>['label'=>'Admin','role'=>'control_admin'],
+    'accounts'=>['label'=>'Finance','role'=>'accounts_admin'],
+    'driving'=>['label'=>'Operation','role'=>'driving_admin']
 ];
 $department=$_POST['department']??($_GET['department']??'');
+$showDepartmentChooser=$department==='' && $_SERVER['REQUEST_METHOD']!=='POST';
 $error='';
 $values=['full_name'=>'','username'=>'','nic'=>'','phone'=>'','email'=>'','position'=>''];
 if($_SERVER['REQUEST_METHOD']==='POST'){
@@ -64,7 +65,6 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
                 }
                 if($created){
                     if($conn->commit()){
-                        if(role()==='officer_registrar') redirect('dashboard.php?officer_created=1');
                         redirect('admin/officers.php?created=1');
                     }
                     error_log('Officer registration transaction commit failed: '.$conn->error);
@@ -77,17 +77,53 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 }
 $title='Officer Registration';
 $pageStyles=['assets/dashboard.css'];
+if($showDepartmentChooser) $pageBodyClass='officer-registration-dashboard-page';
 include __DIR__.'/includes/header.php';
 ?>
+<?php if($showDepartmentChooser):?>
+<div class="page officer-registration-picker">
+    <div class="section-title"><div><span class="badge">OFFICER REGISTRATION</span><h2>Officer Registration</h2></div><a class="secondary-btn" href="dashboard.php">← Dashboard</a></div>
+    <section class="dashboard-page dashboard-page--officer-registration" aria-label="Officer registration sections">
+        <div class="admin-dashboard-layout officer-registrar-dashboard">
+            <aside class="admin-dashboard-sidebar">
+                <div class="officer-navigation-heading"><p>Choose a service section below to create an officer account.</p><span class="officer-section-count">3 service sections</span></div>
+                <nav>
+                    <a class="officer-registration-card officer-registration-card--control" href="officer_register.php?department=control" aria-label="Register an Admin section officer">
+                        <svg class="admin-sidebar-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-1a7 7 0 0 1 14 0v1"/></svg>
+                        <span class="officer-card-label">SERVICE SECTION 01</span>
+                        <strong>Admin Officer</strong>
+                        <small>Create an account for the Admin section.</small>
+                        <span class="officer-card-action">Register officer <b aria-hidden="true">→</b></span>
+                    </a>
+                    <a class="officer-registration-card officer-registration-card--accounts" href="officer_register.php?department=accounts" aria-label="Register a Finance section officer">
+                        <svg class="admin-sidebar-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V5h6v2M4 11h16m-9 4h2"/></svg>
+                        <span class="officer-card-label">SERVICE SECTION 02</span>
+                        <strong>Finance Officer</strong>
+                        <small>Create an account for the Finance section.</small>
+                        <span class="officer-card-action">Register officer <b aria-hidden="true">→</b></span>
+                    </a>
+                    <a class="officer-registration-card officer-registration-card--driving" href="officer_register.php?department=driving" aria-label="Register an Operation section officer">
+                        <svg class="admin-sidebar-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 11 1.5-5h11L19 11m1 0H4a2 2 0 0 0-2 2v4h20v-4a2 2 0 0 0-2-2Z"/><path d="M6 17v2m12-2v2M7 14h.01M17 14h.01"/></svg>
+                        <span class="officer-card-label">SERVICE SECTION 03</span>
+                        <strong>Operation Officer</strong>
+                        <small>Create an account for the Operation section.</small>
+                        <span class="officer-card-action">Register officer <b aria-hidden="true">→</b></span>
+                    </a>
+                </nav>
+            </aside>
+        </div>
+    </section>
+</div>
+<?php else:?>
 <div class="page narrow officer-registration-page<?=isset($departments[$department])?' officer-registration-page--'.h($department):''?>">
     <div class="form-card">
-        <div class="section-title"><div><span class="badge">OFFICER REGISTRATION</span><h2>Officer Registration</h2><p class="muted">Create an officer account for the selected service section.</p></div><a class="secondary-btn" href="<?=role()==='officer_registrar'?'dashboard.php':'admin/officers.php'?>">← Back</a></div>
+        <div class="section-title"><div><span class="badge">OFFICER REGISTRATION</span><h2>Officer Registration</h2><p class="muted">Create an officer account for the selected service section.</p></div><a class="secondary-btn" href="admin/officers.php">← Back</a></div>
         <?php if($error):?><div class="notice danger" role="alert"><?=h($error)?></div><?php endif;?>
         <form method="post" autocomplete="off">
             <div class="split">
                 <div>
                     <label>Section *</label>
-                    <select name="department" required><?php foreach($departments as $key=>$section):?><option value="<?=h($key)?>" <?=$department===$key?'selected':''?>><?=h($section['label'])?></option><?php endforeach;?></select>
+                    <select name="department" required><option value="" <?=$department===''?'selected':''?>>Select Section / අංශය තෝරන්න</option><?php foreach($departments as $key=>$section):?><option value="<?=h($key)?>" <?=$department===$key?'selected':''?>><?=h($section['label'])?></option><?php endforeach;?></select>
                     <label>Full name *</label><input name="full_name" value="<?=h($values['full_name'])?>" maxlength="120" autocomplete="name" required>
                     <label>Position *</label><input name="position" value="<?=h($values['position'])?>" maxlength="120" placeholder="Officer / Senior Officer" required>
                     <label>NIC *</label><input name="nic" value="<?=h($values['nic'])?>" maxlength="30" required>
@@ -103,4 +139,5 @@ include __DIR__.'/includes/header.php';
         </form>
     </div>
 </div>
+<?php endif;?>
 <?php include __DIR__.'/includes/footer.php'; ?>

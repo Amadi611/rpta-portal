@@ -1,4 +1,4 @@
-# RPTA Local Generative AI – No API Payment
+# SPRPTA Local Generative AI – No API Payment
 
 This version does NOT use OpenAI API. No OpenAI API key or API credits are required.
 

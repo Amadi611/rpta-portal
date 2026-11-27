@@ -2547,7 +2547,7 @@ CREATE TABLE `users` (
   `full_name` varchar(120) NOT NULL,
   `username` varchar(80) NOT NULL,
   `password_hash` varchar(255) NOT NULL,
-  `role` enum('passenger','data_entry','admin','control_admin','driving_admin','accounts_admin','super_admin','officer_registrar') NOT NULL DEFAULT 'passenger',
+  `role` enum('passenger','data_entry','admin','control_admin','driving_admin','accounts_admin','super_admin') NOT NULL DEFAULT 'passenger',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -2562,11 +2562,10 @@ INSERT INTO `users` (`id`, `full_name`, `username`, `password_hash`, `role`, `cr
 (370, 'Demo Passenger 3', 'demo_passenger3', '$2y$10$4lBYimytFMVe1J4d5E76LuHeBgRdXp1XjlZjAzXrd7SQcrVs4BYY2', 'passenger', '2026-09-29 09:27:41'),
 (1492, 'chamodi', 'chamodi', '$2y$10$6q8fWIzXJhRn0B.k4yLXaedk3Tt1fK7v2N7mu4VnMOnGBPp8lXVoK', 'passenger', '2026-10-01 06:34:12'),
 (1706, 'Amadi Nethsarani', 'amadi', '$2y$10$lxibFx6U0CXn7Wuo4juzMuqvQn.Ec4kmRolue/a8DOq9RXFv2BtnC', 'passenger', '2026-10-02 15:02:29'),
-(1733, 'Control Section Administrator', 'controladmin', '$2y$10$x22Z7/5AZhU6MrXwl.522eMrNxi0LXqFedMUelKXN5sLQAvJIkK/W', 'control_admin', '2026-10-05 03:45:56'),
-(1734, 'Driving Section Administrator', 'drivingadmin', '$2y$10$x22Z7/5AZhU6MrXwl.522eMrNxi0LXqFedMUelKXN5sLQAvJIkK/W', 'driving_admin', '2026-10-05 03:45:56'),
-(1735, 'Accounts Section Administrator', 'accountsadmin', '$2y$10$x22Z7/5AZhU6MrXwl.522eMrNxi0LXqFedMUelKXN5sLQAvJIkK/W', 'accounts_admin', '2026-10-05 03:45:56'),
+(1733, 'Admin Section Administrator', 'controladmin', '$2y$10$x22Z7/5AZhU6MrXwl.522eMrNxi0LXqFedMUelKXN5sLQAvJIkK/W', 'control_admin', '2026-10-05 03:45:56'),
+(1734, 'Operation Section Administrator', 'drivingadmin', '$2y$10$x22Z7/5AZhU6MrXwl.522eMrNxi0LXqFedMUelKXN5sLQAvJIkK/W', 'driving_admin', '2026-10-05 03:45:56'),
+(1735, 'Finance Section Administrator', 'accountsadmin', '$2y$10$x22Z7/5AZhU6MrXwl.522eMrNxi0LXqFedMUelKXN5sLQAvJIkK/W', 'accounts_admin', '2026-10-05 03:45:56'),
 (1749, 'shahshika', 'shashika', '$2y$10$9u8FTcP/GjOh9TOSXm1TyO8goqSV4A2qVhC3kxkXXA17F/dZSCqi.', 'passenger', '2026-10-05 03:47:17'),
-(1852, 'Officer Registration', 'rpta', '$2y$10$cFnhcnzISNv8w/ffzMQ3JO.Vuwc6OUftKUWbKhpyQ1c8CNbMzbm46', 'officer_registrar', '2026-10-05 05:49:34'),
 (2105, 'Nethsarani', 'Nethsarani', '$2y$10$dQfXhDGazllsihZM/iqbqu9Tpo/cVokRXaHGaKDcOwqlpL0tXlFnu', 'control_admin', '2026-10-05 06:13:16'),
 (2239, 'Amadi Nethsarani', 'amadinethsarani611@gmail.com', '$2y$10$XNjQBtPiMw9U0ZOJ4YoamOQf1bImeFoRoNaFyxNAohFxy.WAIXY7e', 'passenger', '2026-10-05 06:20:39'),
 (2772, 'Ihalage', 'Ihalage', '$2y$10$yDS7Wc3N.jAOI9sLLEoCMO7pBiEqyuCJJIsBVZB66S2UzDpWtDTDm', 'passenger', '2026-10-05 06:34:36'),

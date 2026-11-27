@@ -1,4 +1,4 @@
-# RPTA ML Chatbot
+# SPRPTA ML Chatbot
 
 This portal uses a real machine-learning intent classifier for the Assistant.
 

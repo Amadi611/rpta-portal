@@ -163,8 +163,10 @@
 
 .admin-sidebar-brand > span {
 	display: grid;
-	width: 30px;
+	width: auto;
+	min-width: 30px;
 	height: 30px;
+	padding: 0 7px;
 	place-items: center;
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	border-radius: 9px;

@@ -1,6 +1,6 @@
 <?php
 /**
- * ML inference for the RPTA Assistant.
+ * ML inference for the SPRPTA Assistant.
  * Trained model: LinearSVC + TF-IDF word (1-2 gram) and character (2-5 gram)
  * trained on the 400-question starter dataset in data/faqs.json.
  */

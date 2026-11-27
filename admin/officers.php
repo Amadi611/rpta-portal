@@ -10,7 +10,7 @@ $stmt=$conn->prepare($sql);
 if($department!==null) $stmt->bind_param('s',$department);
 $stmt->execute();
 $rows=$stmt->get_result();
-$sectionNames=['control'=>'Control','accounts'=>'Account','driving'=>'Driving'];
+$sectionNames=['control'=>'Admin','accounts'=>'Finance','driving'=>'Operation'];
 $pageStyles=['assets/officers.css'];
 $title='Officer Records';
 include '../includes/header.php';
@@ -18,7 +18,7 @@ include '../includes/header.php';
 <div class="page">
     <div class="section-title"><div><h2><?=h($department?$sectionNames[$department].' Section Officers':'Officer Records')?> / Officer Registration</h2><p class="muted">Officer identities and account access for each service section.</p></div><a class="secondary-btn" href="../dashboard.php">← Dashboard</a></div>
     <?php if(isset($_GET['created'])):?><div class="notice success" role="status">Officer account created successfully.</div><?php endif;?>
-    <?php if(can_manage_accounts()):?><div class="admin-nav"><a class="officer-create-button" href="../officer_register.php?department=control">+ Control Officer</a><a class="officer-create-button" href="../officer_register.php?department=accounts">+ Account Officer</a><a class="officer-create-button" href="../officer_register.php?department=driving">+ Driving Officer</a></div><?php endif;?>
+    <?php if(can_register_officers()):?><div class="admin-nav"><a class="officer-create-button" href="../officer_register.php?department=control">+ Admin Officer</a><a class="officer-create-button" href="../officer_register.php?department=accounts">+ Finance Officer</a><a class="officer-create-button" href="../officer_register.php?department=driving">+ Operation Officer</a></div><?php endif;?>
     <div class="table-wrap"><table class="table"><thead><tr><th>Name</th><th>Username</th><th>Position</th><th>Section</th><th>NIC</th><th>Phone</th><th>Email</th><th>Registered</th></tr></thead><tbody>
         <?php while($officer=$rows->fetch_assoc()):?><tr><td><?=h($officer['full_name'])?></td><td><?=h($officer['username'])?></td><td><?=h($officer['position'])?></td><td><?=h($sectionNames[$officer['department']]??$officer['department'])?></td><td><?=h($officer['nic'])?></td><td><?=h($officer['phone'])?></td><td><?=h($officer['email'])?></td><td><?=h($officer['created_at'])?></td></tr><?php endwhile;?>
     </tbody></table></div>

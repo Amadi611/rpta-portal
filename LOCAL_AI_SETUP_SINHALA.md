@@ -1,4 +1,4 @@
-# RPTA Local Generative AI – API නැති Version එක
+# SPRPTA Local Generative AI – API නැති Version එක
 
 මේ version එක **OpenAI API භාවිතා කරන්නේ නැහැ**. API key හෝ API credits අවශ්‍ය නැහැ.
 
@@ -69,6 +69,6 @@ http://localhost/rpta_portal/local_ai_test.php
 
 ## Project report එකේ නිවැරදිව කියන්න
 
-**“A locally hosted generative AI chatbot using an open-source large language model (Qwen) and an RPTA-specific FAQ knowledge base.”**
+**“A locally hosted generative AI chatbot using an open-source large language model (Qwen) and an SPRPTA-specific FAQ knowledge base.”**
 
 මෙය OpenAI/ChatGPT API chatbot එකක් ලෙස report කරන්න එපා.

@@ -3,6 +3,7 @@
         "chillerlan/php-qrcode": "^5.0",
         "google/cloud-firestore": "^0.1.0",
         "google/auth": "^1.55",
-        "phpmailer/phpmailer": "^7.2"
+        "phpmailer/phpmailer": "^7.2",
+        "tecnickcom/tcpdf": "^6.10"
     }
 }

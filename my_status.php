@@ -37,7 +37,7 @@ include __DIR__.'/includes/header.php';
             ?><tr>
                 <td><strong><?=h($task['token_no'])?></strong></td>
                 <td><?=h($task['service_type'])?></td>
-                <td><?=h(ucfirst($task['department']??''))?></td>
+                <td><?=h(department_label($task['department']??''))?></td>
                 <td><?=h($task['preferred_date'])?></td>
                 <td><?=h($task['preferred_time'])?></td>
                 <td><span class="badge"><?=h($statusLabel)?></span></td>

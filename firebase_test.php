@@ -10,7 +10,7 @@ try {
         [
             'fields' => [
                 'message' => [
-                    'stringValue' => 'RPTA Portal Firebase Connected'
+                    'stringValue' => 'SPRPTA Portal Firebase Connected'
                 ],
                 'created_at' => [
                     'stringValue' => date('c')

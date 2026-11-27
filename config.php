@@ -25,7 +25,7 @@ const APP_NAME_SI = 'දකුණු පළාත් මාර්ගස්ථ �
 const CONTACT_PHONE = '0912234237';
 const BUS_PHOTO_URL = 'https://upload.wikimedia.org/wikipedia/commons/2/20/LANKA_ASHOK_LEYLAND_PUBLIC_BUS_AT_GALLE_RAILWAY_STATION_SRI_LANKA_JAN_2013_%288553472957%29.jpg';
 const OFFICIAL_LOGO_URL = 'https://www.sprpta.lk/sms/images/sprpta_logo.png';
-const OFFICIAL_LOGO_FALLBACK_URL = '/rpta_portal/assets/images/rpta_official_logo.png';
+const OFFICIAL_LOGO_FALLBACK_URL = '/rpta_portal/assets/images/sprpta_official_logo.png';
 
 mysqli_report(MYSQLI_REPORT_OFF);
 $conn = @new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -48,9 +48,13 @@ function role(){ return $_SESSION['user']['role'] ?? null; }
 function require_login(){ if(!logged_in()) redirect('login.php'); }
 function is_staff(){ return in_array(role(), ['admin','control_admin','driving_admin','accounts_admin','super_admin','data_entry'], true); }
 function can_manage_accounts(){ return in_array(role(), ['admin','super_admin','data_entry'], true); }
+function can_register_officers(){ return in_array(role(), ['admin','super_admin'], true); }
 function can($r){ return role()==='super_admin' || role()===$r; }
 function staff_department(){
     return ['control_admin'=>'control','driving_admin'=>'driving','accounts_admin'=>'accounts'][role()] ?? null;
+}
+function department_label($department){
+    return ['control'=>'Admin','accounts'=>'Finance','driving'=>'Operation'][$department] ?? (string)$department;
 }
 function department_tasks(){
     return [
@@ -91,7 +95,7 @@ if (!isset($_SESSION['lang']) || !in_array($_SESSION['lang'], ['si', 'en', 'ta']
 function lang(){ return $_SESSION['lang'] ?? 'si'; }
 
 $tables = [
-"CREATE TABLE IF NOT EXISTS users(id INT AUTO_INCREMENT PRIMARY KEY,full_name VARCHAR(120) NOT NULL,username VARCHAR(80) UNIQUE NOT NULL,password_hash VARCHAR(255) NOT NULL,role ENUM('passenger','data_entry','admin','control_admin','driving_admin','accounts_admin','super_admin','officer_registrar') NOT NULL DEFAULT 'passenger',created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP) ENGINE=InnoDB",
+"CREATE TABLE IF NOT EXISTS users(id INT AUTO_INCREMENT PRIMARY KEY,full_name VARCHAR(120) NOT NULL,username VARCHAR(80) UNIQUE NOT NULL,password_hash VARCHAR(255) NOT NULL,role ENUM('passenger','data_entry','admin','control_admin','driving_admin','accounts_admin','super_admin') NOT NULL DEFAULT 'passenger',created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP) ENGINE=InnoDB",
 "CREATE TABLE IF NOT EXISTS passenger_profiles(id INT AUTO_INCREMENT PRIMARY KEY,user_id INT UNIQUE NOT NULL,nic VARCHAR(30) NOT NULL,phone VARCHAR(30) NOT NULL,email VARCHAR(120) NULL,address VARCHAR(255) NULL,district VARCHAR(80) NULL,customer_type VARCHAR(80) NULL,department VARCHAR(40) NULL,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP) ENGINE=InnoDB",
 "CREATE TABLE IF NOT EXISTS active_permits(id INT AUTO_INCREMENT PRIMARY KEY,permit_number VARCHAR(40) NULL,registration_number VARCHAR(40) NULL,permit_status VARCHAR(40) NULL,owner_name VARCHAR(150) NULL,owner_nic VARCHAR(30) NULL,owner_phone VARCHAR(30) NULL,driver_name VARCHAR(150) NULL,driver_phone VARCHAR(30) NULL,conductor_name VARCHAR(150) NULL,conductor_phone VARCHAR(30) NULL,KEY idx_active_permits_permit(permit_number),KEY idx_active_permits_registration(registration_number)) ENGINE=InnoDB",
 "CREATE TABLE IF NOT EXISTS officer_profiles(id INT AUTO_INCREMENT PRIMARY KEY,user_id INT UNIQUE NOT NULL,nic VARCHAR(30) NOT NULL,phone VARCHAR(30) NOT NULL,email VARCHAR(120) NULL,position VARCHAR(120) NOT NULL,department ENUM('control','accounts','driving') NOT NULL,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP) ENGINE=InnoDB",
@@ -118,7 +122,24 @@ if(!$notificationTypeColumn){
     error_log('Could not add client_notifications.notification_type: '.$conn->error);
 }
 
-@$conn->query("ALTER TABLE users MODIFY role ENUM('passenger','data_entry','admin','control_admin','driving_admin','accounts_admin','super_admin','officer_registrar') NOT NULL DEFAULT 'passenger'");
+$legacyRegistrarRows=$conn->query("SELECT id FROM users WHERE role='officer_registrar'");
+$legacyRegistrarMigrationSucceeded=$legacyRegistrarRows!==false;
+if($legacyRegistrarRows===false){
+    error_log('Could not inspect legacy officer registrar accounts: '.$conn->error);
+} elseif($legacyRegistrarRows->num_rows>0){
+    $disabledRegistrarHash=password_hash(bin2hex(random_bytes(32)),PASSWORD_DEFAULT);
+    $disableRegistrar=$conn->prepare("UPDATE users SET role='passenger',password_hash=? WHERE role='officer_registrar'");
+    if(!$disableRegistrar){
+        error_log('Could not prepare legacy officer registrar account migration: '.$conn->error);
+        $legacyRegistrarMigrationSucceeded=false;
+    } elseif(!$disableRegistrar->bind_param('s',$disabledRegistrarHash)||!$disableRegistrar->execute()){
+        error_log('Could not disable legacy officer registrar accounts: '.$disableRegistrar->error);
+        $legacyRegistrarMigrationSucceeded=false;
+    }
+}
+if($legacyRegistrarMigrationSucceeded && !$conn->query("ALTER TABLE users MODIFY role ENUM('passenger','data_entry','admin','control_admin','driving_admin','accounts_admin','super_admin') NOT NULL DEFAULT 'passenger'")){
+    error_log('Could not remove the legacy officer registrar role: '.$conn->error);
+}
 @$conn->query("ALTER TABLE passenger_profiles ADD COLUMN customer_type VARCHAR(80) NULL");
 @$conn->query("ALTER TABLE passenger_profiles ADD COLUMN department VARCHAR(40) NULL");
 @$conn->query("ALTER TABLE tokens ADD COLUMN department VARCHAR(40) NULL");
@@ -158,7 +179,7 @@ $alters=[
 ];
 foreach($alters as $sql) @$conn->query($sql);
 
-// Repair passenger profile columns if an older RPTA database already exists.
+// Repair passenger profile columns if an older database already exists.
 // This prevents mysqli prepare() failures when upgrading from an earlier ZIP.
 $profileColumns = [
     'user_id' => 'INT NULL',
@@ -213,41 +234,26 @@ if ($faqCountResult === false) {
 // Seed non-admin demo staff accounts only when they do not already exist.
 $demoHash=password_hash('password', PASSWORD_DEFAULT);
 $users=[
- ['Control Section Administrator','controladmin','control_admin'],
- ['Driving Section Administrator','drivingadmin','driving_admin'],
- ['Accounts Section Administrator','accountsadmin','accounts_admin'],
- ['Content Data Entry','dataentry','data_entry'],
- ['Officer Registration','rpta','officer_registrar']
+ ['Admin Section Administrator','controladmin','control_admin'],
+ ['Operation Section Administrator','drivingadmin','driving_admin'],
+ ['Finance Section Administrator','accountsadmin','accounts_admin'],
+ ['Content Data Entry','dataentry','data_entry']
 ];
 $stmt=$conn->prepare("INSERT IGNORE INTO users(full_name,username,password_hash,role) VALUES(?,?,?,?)");
-if($stmt){ foreach($users as $u){$seedHash=$u[1]==='rpta'?password_hash('rpta',PASSWORD_DEFAULT):$demoHash;$stmt->bind_param('ssss',$u[0],$u[1],$seedHash,$u[2]);$stmt->execute();} }
+if($stmt){ foreach($users as $u){$stmt->bind_param('ssss',$u[0],$u[1],$demoHash,$u[2]);$stmt->execute();} }
 else { error_log('Could not prepare demo user seeding: '.$conn->error); }
-$rptaLookup=$conn->prepare('SELECT role FROM users WHERE username=? LIMIT 1');
-$rptaUsername='rpta';
-if (!$rptaLookup) {
-    error_log('Could not prepare officer registration lookup: '.$conn->error);
+$departmentAccountNameUpdates=[
+    ['Admin Section Administrator','controladmin','Control Section Administrator'],
+    ['Operation Section Administrator','drivingadmin','Driving Section Administrator'],
+    ['Finance Section Administrator','accountsadmin','Accounts Section Administrator']
+];
+$departmentNameUpdate=$conn->prepare('UPDATE users SET full_name=? WHERE username=? AND full_name=?');
+if(!$departmentNameUpdate){
+    error_log('Could not prepare department account name migration: '.$conn->error);
 } else {
-    $rptaLookup->bind_param('s',$rptaUsername);
-    if (!$rptaLookup->execute()) {
-        error_log('Could not look up officer registration account: '.$rptaLookup->error);
-    } else {
-        $rptaResult=$rptaLookup->get_result();
-        if (!$rptaResult) {
-            error_log('Could not read officer registration account: '.$rptaLookup->error);
-        } else {
-            $rptaAccount=$rptaResult->fetch_assoc();
-            if($rptaAccount && $rptaAccount['role']!=='officer_registrar'){
-                $repairHash=password_hash('rpta',PASSWORD_DEFAULT);
-                $repair=$conn->prepare("UPDATE users SET full_name='Officer Registration',password_hash=?,role='officer_registrar' WHERE username=?");
-                if (!$repair) {
-                    error_log('Could not prepare officer registration account repair: '.$conn->error);
-                } else {
-                    $repair->bind_param('ss',$repairHash,$rptaUsername);
-                    if (!$repair->execute()) {
-                        error_log('Could not repair officer registration account: '.$repair->error);
-                    }
-                }
-            }
+    foreach($departmentAccountNameUpdates as $nameUpdate){
+        if(!$departmentNameUpdate->bind_param('sss',$nameUpdate[0],$nameUpdate[1],$nameUpdate[2])||!$departmentNameUpdate->execute()){
+            error_log('Could not update a legacy department account name: '.$departmentNameUpdate->error);
         }
     }
 }

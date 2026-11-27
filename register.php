@@ -34,7 +34,7 @@ $displayClientTypes=lang()==='ta'?$clientTypeTamil:(lang()==='si'?$clientTypeSin
 $registrationLabel=['si'=>'ලියාපදිංචி','en'=>'Registration','ta'=>'பதிவு'][lang()];
 $busTypes=['bus_owner','bus_driver','bus_conductor'];
 $profile=[]; $err=''; $ok=''; $formValues=[]; $permitRecord=null;
-$departments=['control'=>'Control Section','driving'=>'Driving Section','accounts'=>'Account Section'];
+$departments=['control'=>'Admin Section','driving'=>'Operation Section','accounts'=>'Finance Section'];
 if($authenticated){
   $s=$conn->prepare('SELECT u.full_name,u.username,p.* FROM users u LEFT JOIN passenger_profiles p ON p.user_id=u.id WHERE u.id=? LIMIT 1');
   $s->bind_param('i',$uid); $s->execute(); $profile=$s->get_result()->fetch_assoc() ?: [];

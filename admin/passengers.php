@@ -80,7 +80,7 @@ $title='Clients/Add Client';
 include '../includes/header.php';
 ?>
 <div class="page">
-	<div class="section-title"><div><h2><?=h($department?ucfirst($department).' Section ':'')?>Clients/Add Client</h2><p class="muted">Browse clients by account type.</p></div><a class="secondary-btn" href="../dashboard.php">← Dashboard</a></div>
+	<div class="section-title"><div><h2><?=h($department?department_label($department).' Section ':'')?>Clients/Add Client</h2><p class="muted">Browse clients by account type.</p></div><a class="secondary-btn" href="../dashboard.php">← Dashboard</a></div>
 	<?php if(isset($_GET['created'])):?><div class="notice success" role="status">Client account created successfully.</div><?php endif;?>
 	<?php if($error):?><div class="notice danger" role="alert"><?=h($error)?></div><?php endif;?>
 	<nav class="client-type-cards" aria-label="Filter clients by type">

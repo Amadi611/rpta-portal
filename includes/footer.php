@@ -40,13 +40,13 @@
 <button id="chatFab" class="chatfab" aria-label="Chat with Assistant">💬</button>
 <div id="chatBox" class="chatbox">
 	<div class="chat-head">
-		<div><b>Chat with RPTA Assistant</b><small>SPRPTA chatbot</small></div>
+		<div><b>Chat with SPRPTA Assistant</b><small>SPRPTA chatbot</small></div>
 		<button id="chatClose" aria-label="Close chat">×</button>
 	</div>
 	<div class="chat-inner">
 		<div class="quick-title">Quick questions / ඉක්මන් ප්‍රශ්න</div>
 		<div id="quickQuestions" class="quick-grid"></div>
-		<div id="chatBody" class="chat-body" style="overflow-y:scroll;scrollbar-width:thin;scrollbar-color:#8e1937 #f4e5ea"><div class="bubble bot">ආයුබෝවන්! RPTA සේවා, Token, ලේඛන, බස් මාර්ග හෝ පැමිණිලි ගැන අහන්න. / Hello! Ask about RPTA services, tokens, documents, routes or complaints.</div></div>
+		<div id="chatBody" class="chat-body" style="overflow-y:scroll;scrollbar-width:thin;scrollbar-color:#8e1937 #f4e5ea"><div class="bubble bot">ආයුබෝවන්! SPRPTA සේවා, Token, ලේඛන, බස් මාර්ග හෝ පැමිණිලි ගැන අහන්න. / Hello! Ask about SPRPTA services, tokens, documents, routes or complaints.</div></div>
 		<div id="chatDocs" class="chat-docs"></div>
 		<div class="chat-end"><button id="endChat" class="soft-btn">⭐ End chat &amp; feedback / අවසන් කර Feedback</button></div>
 		<div id="feedbackPanel" class="feedback-box" style="display:none">

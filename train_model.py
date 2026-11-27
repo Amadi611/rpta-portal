@@ -1,5 +1,5 @@
 """
-Train the RPTA ML chatbot.
+Train the SPRPTA ML chatbot.
 
 Dataset:
     data/faqs.json

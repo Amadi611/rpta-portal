@@ -41,7 +41,7 @@ $serviceHref=role()==='passenger'?'token.php':(logged_in()?'dashboard.php':'logi
           <a class="home-button home-button-primary" href="<?=role()==='passenger'?'token.php':'dashboard.php'?>"><?=role()==='passenger'?'Request a service token':'Open dashboard'?></a>
         <?php else:?>
           <a class="home-button home-button-primary" href="register.php">Register as a Client</a>
-          <a class="home-button home-button-secondary" href="login.php">Login</a>
+          <a class="home-button home-button-secondary" href="feedback.php">Feedback</a>
         <?php endif;?>
       </div>
       <div class="home-contact"><span>General Contact</span><a href="tel:<?=h(CONTACT_PHONE)?>"><?=h(CONTACT_PHONE)?></a></div>

@@ -53,7 +53,7 @@
 .admin-dashboard-sidebar{grid-column:2;grid-row:1;min-height:540px;padding:22px 18px;background:#111;color:#f1f0ef}
 .admin-sidebar-header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:36px}
 .admin-sidebar-brand{display:inline-flex;align-items:center;gap:8px;color:#e7e4e1;font-size:13px;font-weight:700;letter-spacing:.04em}
-.admin-sidebar-brand>span{display:grid;width:25px;height:25px;place-items:center;background:var(--maroon);color:#fff;font-size:11px}
+.admin-sidebar-brand>span{display:grid;width:auto;min-width:25px;height:25px;padding:0 6px;place-items:center;background:var(--maroon);color:#fff;font-size:11px}
 .admin-sidebar-menu-label{color:#d8d5d2;font-size:12px}
 .admin-sidebar-menu-label span{color:#d2ad61}
 .admin-dashboard-sidebar nav{display:flex;flex-direction:column}
