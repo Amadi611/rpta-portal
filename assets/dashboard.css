@@ -1170,6 +1170,25 @@
 	font-weight: 800;
 }
 
+.department-task-status-form {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	min-width: 150px;
+}
+
+.department-task-status-form select {
+	min-width: 0;
+	flex: 1 1 auto;
+	padding: 7px;
+}
+
+.department-task-status-form button {
+	flex: 0 0 auto;
+	padding: 8px 10px;
+	white-space: nowrap;
+}
+
 .dashboard-page[class*="dashboard-page--"] .section-documents-card {
 	--documents-accent: var(--section-accent);
 	--documents-border: var(--section-border);

@@ -1,1 +1,29 @@
 body.tokens-page main{min-height:0}
+.tokens-page .token-table-toolbar{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:0 0 12px}
+.tokens-page .token-table-toolbar>div{display:grid;gap:5px}
+.tokens-page .token-table-toolbar>div:first-child{width:min(100%,420px)}
+.tokens-page .token-table-toolbar label{font-size:12px;font-weight:600}
+.tokens-page .token-table-toolbar input,.tokens-page .token-table-toolbar select{min-height:38px;padding:8px 10px;border:1px solid var(--border,#d8dee8);border-radius:8px;background:var(--surface,#fff);color:var(--text,#1d2735);font:inherit}
+.tokens-page .token-table-toolbar input:focus,.tokens-page .token-table-toolbar select:focus{outline:2px solid var(--primary,#2874a6);outline-offset:1px}
+.tokens-page .token-table-pagination{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}
+.tokens-page .token-table-pagination p{margin:0;color:var(--muted);font-size:13px}
+.tokens-page .token-table-pagination>div{display:flex;align-items:center;gap:10px;font-size:13px}
+.tokens-page .token-table-pagination button:disabled{opacity:.5;cursor:not-allowed}
+.tokens-page .token-records-table{width:100%;min-width:100%;table-layout:fixed}
+.tokens-page .token-records-table th,.tokens-page .token-records-table td{padding:8px 7px;font-size:11px;overflow-wrap:anywhere}
+.tokens-page .token-records-table th[aria-sort]{white-space:normal}
+.tokens-page .token-sort-button{display:inline;padding:0;border:0;background:transparent;color:inherit;font:inherit;font-weight:700;text-align:left;cursor:pointer}
+.tokens-page .token-sort-button::after{content:"";display:inline-block;margin-left:5px;border-right:4px solid transparent;border-bottom:5px solid currentColor;border-left:4px solid transparent;opacity:.35;vertical-align:middle}
+.tokens-page .token-records-table th[aria-sort="descending"] .token-sort-button::after{transform:rotate(180deg);opacity:1}
+.tokens-page .token-records-table th[aria-sort="ascending"] .token-sort-button::after{opacity:1}
+.tokens-page .token-records-table .badge{white-space:nowrap;overflow-wrap:normal}
+.tokens-page .token-records-table tr[hidden],.tokens-page .notice[hidden]{display:none!important}
+.tokens-page .token-records-table small{display:block;margin-top:3px;color:var(--muted);font-size:10px}
+.tokens-page .token-pdf-link{display:block;margin-top:3px;font-size:10px}
+.tokens-page .token-records-table .token-status-form{min-width:0;gap:5px}
+.tokens-page .token-status-controls{display:grid;gap:5px}
+.tokens-page .token-status-controls select{min-width:0;padding:7px;font-size:11px}
+.tokens-page .token-status-controls .soft-btn{padding:8px;font-size:11px}
+.tokens-page .token-records-table textarea{min-width:0;min-height:62px;padding:7px;font-size:11px}
+@media(max-width:900px){.tokens-page .token-records-table{min-width:900px}}
+@media(max-width:600px){.tokens-page .token-table-toolbar{align-items:stretch;flex-direction:column}.tokens-page .token-table-toolbar>div:first-child{width:100%}.tokens-page .token-table-pagination{align-items:flex-start;flex-direction:column}}

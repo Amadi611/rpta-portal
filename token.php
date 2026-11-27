@@ -62,17 +62,18 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
  $validTime=preg_match('/^(?:[01]\d|2[0-3]):[0-5]\d$/D',$time)===1;
  if(!$full||!$nic||!$phone||!isset($departments[$postedDepartment])||!$service||!in_array($service,array_column($taskOptions,0),true)||!$validDate||!$validTime) $err='Please fill in your name, NIC and phone, then select a section, task, preferred date and time. / කරුණාකර ඔබගේ නම, ජාතික හැඳුනුම්පත් අංකය සහ දුරකථන අංකය ඇතුළත් කර අංශය, කාර්යය, කැමති දිනය සහ වේලාව තෝරන්න.';
  else {
-  $slotLockName='rpta_slot_'.substr(hash('sha256',$date.'|'.$time),0,48);
-  $slotLockStmt=$conn->prepare('SELECT GET_LOCK(?,5) AS lock_acquired');
-  if(!$slotLockStmt){
-   error_log('Could not prepare token slot lock: '.$conn->error);
+  // Serialize slot checks and daily sequence assignment to prevent concurrent duplicates.
+  $generationLockName='rpta_token_generation';
+  $generationLockStmt=$conn->prepare('SELECT GET_LOCK(?,5) AS lock_acquired');
+  if(!$generationLockStmt){
+   error_log('Could not prepare token generation lock: '.$conn->error);
    $err='Could not check time availability. Please try again.';
-  } elseif(!$slotLockStmt->bind_param('s',$slotLockName)||!$slotLockStmt->execute()){
-   error_log('Could not acquire token slot lock: '.$slotLockStmt->error);
+  } elseif(!$generationLockStmt->bind_param('s',$generationLockName)||!$generationLockStmt->execute()){
+   error_log('Could not acquire token generation lock: '.$generationLockStmt->error);
    $err='Could not check time availability. Please try again.';
   } else {
-   $slotLockResult=$slotLockStmt->get_result()->fetch_assoc();
-   if((int)($slotLockResult['lock_acquired']??0)!==1){
+   $generationLockResult=$generationLockStmt->get_result()->fetch_assoc();
+   if((int)($generationLockResult['lock_acquired']??0)!==1){
     $err='Could not confirm time availability. Please try again.';
    } else {
     $slotCheck=$conn->prepare("SELECT id FROM tokens WHERE preferred_date=? AND preferred_time=? AND COALESCE(status,'pending')<>'cancelled' LIMIT 1");
@@ -86,30 +87,59 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
      $slotConflict=true;
      $err=$slotConflictMessage;
     } else {
-     $no='SPRPTA-'.date('Ymd').'-'.strtoupper(substr(bin2hex(random_bytes(4)),0,6));
-     $s=$conn->prepare("INSERT INTO tokens(token_no,user_id,full_name,nic,phone,service_type,department,preferred_date,preferred_time,status) VALUES(?,?,?,?,?,?,?,?,?,'pending')");
-     if(!$s){
-      error_log('Could not prepare token creation: '.$conn->error);
-      $err='Could not save the token. Please try again. / ටෝකනය සුරැකීමට නොහැකි විය. නැවත උත්සාහ කරන්න.';
-     } elseif(!$s->bind_param('sisssssss',$no,$uid,$full,$nic,$phone,$service,$selectedDepartment,$date,$time)||!$s->execute()){
-      error_log('Could not create token: '.$s->error);
-      $err='Could not save the token. Please try again. / ටෝකනය සුරැකීමට නොහැකි විය. නැවත උත්සාහ කරන්න.';
+     $issueInfoResult=$conn->query("SELECT DATE_FORMAT(NOW(),'%Y/%m/%d') AS issue_date,DATE(NOW()) AS issue_day,NOW() AS issued_at");
+     if(!$issueInfoResult){
+      error_log('Could not determine token issue date: '.$conn->error);
+      $err='Could not issue a token right now. Please try again.';
      } else {
-      $createdNo=$no;
-      $q=$conn->prepare('SELECT * FROM tokens WHERE token_no=? AND user_id=? LIMIT 1');
-      $q->bind_param('si',$createdNo,$uid);
-      $q->execute();
-      $created=$q->get_result()->fetch_assoc();
+      $issueInfo=$issueInfoResult->fetch_assoc();
+      if(!$issueInfo){
+       error_log('Token issue date query returned no result.');
+       $err='Could not issue a token right now. Please try again.';
+      } else {
+       $countStmt=$conn->prepare('SELECT COUNT(*) AS daily_count FROM tokens WHERE created_at>=? AND created_at<DATE_ADD(?,INTERVAL 1 DAY)');
+       $issueDay=$issueInfo['issue_day'];
+       if(!$countStmt){
+        error_log('Could not prepare daily token count: '.$conn->error);
+        $err='Could not issue a token right now. Please try again.';
+       } elseif(!$countStmt->bind_param('ss',$issueDay,$issueDay)||!$countStmt->execute()){
+        error_log('Could not count tokens issued today: '.$countStmt->error);
+        $err='Could not issue a token right now. Please try again.';
+       } else {
+        $countResult=$countStmt->get_result()->fetch_assoc();
+        if(!$countResult){
+         error_log('Daily token count query returned no result.');
+         $err='Could not issue a token right now. Please try again.';
+        } else {
+         $no=$issueInfo['issue_date'].' '.((int)$countResult['daily_count']+1);
+         $issuedAt=$issueInfo['issued_at'];
+         $s=$conn->prepare("INSERT INTO tokens(token_no,user_id,full_name,nic,phone,service_type,department,preferred_date,preferred_time,status,created_at) VALUES(?,?,?,?,?,?,?,?,?,'pending',?)");
+         if(!$s){
+          error_log('Could not prepare token creation: '.$conn->error);
+          $err='Could not save the token. Please try again. / ටෝකනය සුරැකීමට නොහැකි විය. නැවත උත්සාහ කරන්න.';
+         } elseif(!$s->bind_param('sissssssss',$no,$uid,$full,$nic,$phone,$service,$selectedDepartment,$date,$time,$issuedAt)||!$s->execute()){
+          error_log('Could not create token: '.$s->error);
+          $err='Could not save the token. Please try again. / ටෝකනය සුරැකීමට නොහැකි විය. නැවත උත්සාහ කරන්න.';
+         } else {
+          $createdNo=$no;
+          $q=$conn->prepare('SELECT * FROM tokens WHERE token_no=? AND user_id=? LIMIT 1');
+          $q->bind_param('si',$createdNo,$uid);
+          $q->execute();
+          $created=$q->get_result()->fetch_assoc();
+         }
+        }
+       }
+      }
      }
     }
-    $slotReleaseStmt=$conn->prepare('SELECT RELEASE_LOCK(?)');
-    if(!$slotReleaseStmt||!$slotReleaseStmt->bind_param('s',$slotLockName)||!$slotReleaseStmt->execute()){
-     error_log('Could not release token slot lock: '.$conn->error);
+    $generationReleaseStmt=$conn->prepare('SELECT RELEASE_LOCK(?)');
+    if(!$generationReleaseStmt||!$generationReleaseStmt->bind_param('s',$generationLockName)||!$generationReleaseStmt->execute()){
+     error_log('Could not release token generation lock: '.$conn->error);
     } else {
-     $slotReleaseResult=$slotReleaseStmt->get_result();
-     $slotReleaseRow=$slotReleaseResult?$slotReleaseResult->fetch_row():null;
-     if(!$slotReleaseRow||(int)$slotReleaseRow[0]!==1){
-      error_log('Token slot lock was not released cleanly: '.$slotReleaseStmt->error);
+     $generationReleaseResult=$generationReleaseStmt->get_result();
+     $generationReleaseRow=$generationReleaseResult?$generationReleaseResult->fetch_row():null;
+     if(!$generationReleaseRow||(int)$generationReleaseRow[0]!==1){
+      error_log('Token generation lock was not released cleanly: '.$generationReleaseStmt->error);
      }
     }
    }

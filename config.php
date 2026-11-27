@@ -108,7 +108,7 @@ $tables = [
 "CREATE TABLE IF NOT EXISTS feedback(id INT AUTO_INCREMENT PRIMARY KEY,chat_session_id INT NULL,user_id INT NULL,token_id INT NULL,rating TINYINT NOT NULL,note VARCHAR(500) NULL,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP) ENGINE=InnoDB",
 "CREATE TABLE IF NOT EXISTS client_notifications(id INT AUTO_INCREMENT PRIMARY KEY,user_id INT NOT NULL,token_id INT NOT NULL,message VARCHAR(255) NULL,is_read TINYINT(1) NOT NULL DEFAULT 0,notification_type VARCHAR(40) NOT NULL DEFAULT 'task_completed',created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,UNIQUE KEY uq_client_notifications_token_type(token_id,notification_type),KEY idx_client_notifications_user_created(user_id,created_at)) ENGINE=InnoDB",
 "CREATE TABLE IF NOT EXISTS complaints(id INT AUTO_INCREMENT PRIMARY KEY,user_id INT NULL,category VARCHAR(80) NOT NULL,bus_number VARCHAR(40) NULL,route VARCHAR(160) NULL,service_date DATE NULL,service_time TIME NULL,location VARCHAR(200) NULL,contact_phone VARCHAR(30) NOT NULL,contact_email VARCHAR(120) NULL,description TEXT NOT NULL,status ENUM('received','reviewing','resolved') NOT NULL DEFAULT 'received',created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP) ENGINE=InnoDB",
-"CREATE TABLE IF NOT EXISTS tokens(id INT AUTO_INCREMENT PRIMARY KEY,token_no VARCHAR(40) UNIQUE NOT NULL,user_id INT NULL,full_name VARCHAR(120) NOT NULL,nic VARCHAR(30) NOT NULL,phone VARCHAR(30) NOT NULL,email VARCHAR(120) NULL,address VARCHAR(255) NULL,district VARCHAR(80) NULL,bus_number VARCHAR(40) NULL,route VARCHAR(160) NULL,vehicle_type VARCHAR(80) NULL,vehicle_no VARCHAR(40) NULL,bus_stand VARCHAR(160) NULL,service_type VARCHAR(160) NOT NULL,department VARCHAR(40) NULL,preferred_date DATE NOT NULL,preferred_time VARCHAR(20) NOT NULL,purpose VARCHAR(255) NULL,additional_details TEXT NULL,status ENUM('pending','issued','completed','cancelled') DEFAULT 'pending',created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP) ENGINE=InnoDB",
+"CREATE TABLE IF NOT EXISTS tokens(id INT AUTO_INCREMENT PRIMARY KEY,token_no VARCHAR(40) UNIQUE NOT NULL,user_id INT NULL,full_name VARCHAR(120) NOT NULL,nic VARCHAR(30) NOT NULL,phone VARCHAR(30) NOT NULL,email VARCHAR(120) NULL,address VARCHAR(255) NULL,district VARCHAR(80) NULL,bus_number VARCHAR(40) NULL,route VARCHAR(160) NULL,vehicle_type VARCHAR(80) NULL,vehicle_no VARCHAR(40) NULL,bus_stand VARCHAR(160) NULL,service_type VARCHAR(160) NOT NULL,department VARCHAR(40) NULL,preferred_date DATE NOT NULL,preferred_time VARCHAR(20) NOT NULL,purpose VARCHAR(255) NULL,additional_details TEXT NULL,status ENUM('pending','issued','completed','cancelled') DEFAULT 'pending',status_comment TEXT NULL,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP) ENGINE=InnoDB",
 "CREATE TABLE IF NOT EXISTS documents(id INT AUTO_INCREMENT PRIMARY KEY,title_en VARCHAR(200) NOT NULL,title_si VARCHAR(200) NOT NULL,file_name VARCHAR(255) NOT NULL,file_path VARCHAR(255) NOT NULL,active TINYINT(1) DEFAULT 1,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP) ENGINE=InnoDB",
 "CREATE TABLE IF NOT EXISTS events(id INT AUTO_INCREMENT PRIMARY KEY,title VARCHAR(180) NOT NULL,description TEXT NULL,event_date DATE NULL,image_path VARCHAR(255) NOT NULL,active TINYINT(1) NOT NULL DEFAULT 1,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP) ENGINE=InnoDB",
 "CREATE TABLE IF NOT EXISTS faqs(id INT AUTO_INCREMENT PRIMARY KEY,intent VARCHAR(100) NOT NULL,question TEXT NOT NULL,answer TEXT NOT NULL,language ENUM('en','si') NOT NULL,active TINYINT(1) DEFAULT 1,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP) ENGINE=InnoDB"
@@ -120,6 +120,27 @@ if(!$notificationTypeColumn){
     error_log('Could not inspect client_notifications schema: '.$conn->error);
 } elseif($notificationTypeColumn->num_rows===0 && !$conn->query("ALTER TABLE client_notifications ADD COLUMN notification_type VARCHAR(40) NOT NULL DEFAULT 'task_completed'")){
     error_log('Could not add client_notifications.notification_type: '.$conn->error);
+}
+
+$notificationMessageColumn=$conn->query("SHOW COLUMNS FROM client_notifications LIKE 'message'");
+if(!$notificationMessageColumn){
+    error_log('Could not inspect client_notifications.message schema: '.$conn->error);
+} elseif($notificationMessageColumn->num_rows===0 && !$conn->query("ALTER TABLE client_notifications ADD COLUMN message VARCHAR(255) NULL AFTER token_id")){
+    error_log('Could not add client_notifications.message: '.$conn->error);
+}
+
+$notificationReadColumn=$conn->query("SHOW COLUMNS FROM client_notifications LIKE 'is_read'");
+if(!$notificationReadColumn){
+    error_log('Could not inspect client_notifications.is_read schema: '.$conn->error);
+} elseif($notificationReadColumn->num_rows===0 && !$conn->query("ALTER TABLE client_notifications ADD COLUMN is_read TINYINT(1) NOT NULL DEFAULT 0 AFTER message")){
+    error_log('Could not add client_notifications.is_read: '.$conn->error);
+}
+
+$tokenStatusCommentColumn=$conn->query("SHOW COLUMNS FROM tokens LIKE 'status_comment'");
+if(!$tokenStatusCommentColumn){
+    error_log('Could not inspect tokens.status_comment schema: '.$conn->error);
+} elseif($tokenStatusCommentColumn->num_rows===0 && !$conn->query("ALTER TABLE tokens ADD COLUMN status_comment TEXT NULL AFTER status")){
+    error_log('Could not add tokens.status_comment: '.$conn->error);
 }
 
 $legacyRegistrarRows=$conn->query("SELECT id FROM users WHERE role='officer_registrar'");

@@ -15,6 +15,7 @@ if($r==='passenger' && isset($_SESSION['client_registration_success'])){
 }
 $showStaffNavigation=is_staff();
 $department=staff_department();
+$canUpdateStatus=in_array($r,['control_admin','driving_admin','accounts_admin'],true);
 $departmentName=$department!==null?department_label($department):null;
 $uid=(int)$_SESSION['user']['id'];
 $tokenSql=$r==='passenger'?'SELECT COUNT(*) c FROM tokens WHERE user_id=?':($department!==null?'SELECT COUNT(*) c FROM tokens WHERE department=?':'SELECT COUNT(*) c FROM tokens');
@@ -45,6 +46,12 @@ $canViewAdminReports=in_array($r,['admin','super_admin'],true);
 $canViewDashboardCharts=in_array($r,['admin','super_admin','data_entry'],true);
 $monthlyTokenLabels=[];
 $monthlyTokenCounts=[];
+$chartMonthNames=[
+	'en'=>['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+	'si'=>['ජන','පෙබ','මාර්','අප්‍රේ','මැයි','ජූනි','ජූලි','අගෝ','සැප්','ඔක්','නොවැ','දෙසැ'],
+	'ta'=>['ஜன','பிப்','மார்','ஏப்','மே','ஜூன்','ஜூலை','ஆக','செப்','அக்','நவ','டிச']
+];
+$chartMonthNames=$chartMonthNames[lang()]??$chartMonthNames['si'];
 $feedbackStatusCounts=['Resolved'=>0,'Pending'=>0,'In Progress'=>0];
 $chartDataError=false;
 if($canViewDashboardCharts){
@@ -55,7 +62,7 @@ if($canViewDashboardCharts){
 	for($monthOffset=5;$monthOffset>=0;$monthOffset--){
 		$month=$currentMonth->modify('-'.$monthOffset.' months');
 		$monthKey=$month->format('Y-m');
-		$monthlyTokenLabels[]=$month->format('M Y');
+		$monthlyTokenLabels[]=$chartMonthNames[(int)$month->format('n')-1].' '.$month->format('Y');
 		$monthlyCountsByKey[$monthKey]=0;
 	}
 
@@ -145,13 +152,14 @@ completionPopup?.addEventListener('click',event=>{if(event.target===completionPo
 if(completionPopup?.showModal)completionPopup.showModal();
 </script>
 <?php endif;?>
-<div class="page dashboard-page<?=$r==='passenger'?' dashboard-page--client':($department!==null?' dashboard-page--'.h($department):'')?>"><div class="section-title"><div><span class="badge"><?=$r==='passenger'?'CLIENT / සේවාලාභියා':h(strtoupper(str_replace('_',' ',$r)))?></span><h2><?=h($title)?></h2><p class="muted"><?=$r==='admin'?'Welcome, '.h($name).'.':'Welcome, '.h($name).'. / සාදරයෙන් පිළිගනිමු, '.h($name).'.'?></p></div><div class="dashboard-title-actions"><?php if(can_register_officers()):?><a class="primary-btn" href="officer_register.php">Officer Registration</a><?php endif;?><a class="danger-btn logout-btn" href="logout.php">Logout / පිටවීම</a></div></div>
+<div class="page dashboard-page<?=$r==='passenger'?' dashboard-page--client':($department!==null?' dashboard-page--'.h($department):'')?>"><div class="section-title"><div><span class="badge"><?=$r==='passenger'?'CLIENT / සේවාලාභියා':($department!==null?h($departmentName):h(strtoupper(str_replace('_',' ',$r))))?></span><h2><?=h($title)?></h2><p class="muted">Welcome, <?=h($name)?>. / සාදරයෙන් පිළිගනිමු, <?=h($name)?>.</p></div><div class="dashboard-title-actions"><?php if(can_register_officers()):?><a class="primary-btn" href="officer_register.php">Officer Registration</a><?php endif;?><a class="danger-btn logout-btn" href="logout.php">Logout / පිටවීම</a></div></div>
 <?php if(isset($_GET['officer_created'])):?><div class="notice success" role="status">Officer account created successfully.</div><?php endif;?>
+<?php if($canUpdateStatus && isset($_GET['task_updated']) && $_GET['task_updated']==='1'):?><div class="notice success" role="status">Task status saved.</div><?php endif;?>
 <?php if($notificationError!==''):?><div class="notice danger" role="alert"><?=h($notificationError)?></div><?php endif;?>
 <?php foreach($completionNotifications as $notification):?><div class="notice success" role="status"><strong>Task completed / කාර්යය සම්පූර්ණයි:</strong> <?=h($notification['service_type'])?> (<?=h($notification['token_no'])?>). <a class="table-link" href="feedback.php?token=<?=(int)$notification['token_id']?>">Give feedback now / දැන් ප්‍රතිචාර ලබා දෙන්න</a></div><?php endforeach;?>
 <section class="dashboard-welcome" aria-label="Dashboard overview">
 	<div class="dashboard-welcome-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5v8a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 19.5z"/><path d="M9 21v-7h6v7"/></svg></div>
-	<div><span class="dashboard-welcome-label"><?=$r==='passenger'?'YOUR SPRPTA WORKSPACE / ඔබගේ SPRPTA සේවා පුවරුව':'YOUR SPRPTA WORKSPACE'?></span><h3><?= $r==='passenger'?'Your transport services, all in one place / ඔබගේ සියලු ප්‍රවාහන සේවා එකම ස්ථානයක':($department!==null?$departmentName.' section overview':'Authority management overview')?></h3><p><?php if($r==='passenger'):?>Track service requests, view updates, and share feedback from your dashboard. / ඔබගේ සේවා ඉල්ලීම් සහ යාවත්කාලීන තොරතුරු බලමින් ප්‍රතිචාර ලබා දෙන්න.<?php elseif($department!==null):?>Review section requests, keep client records up to date, and follow task progress.<?php elseif($r==='data_entry'):?>Manage authority records and keep transport service information current.<?php else:?>Use your dashboard shortcuts to oversee service requests, accounts, and authority operations.<?php endif;?></p></div>
+	<div><span class="dashboard-welcome-label"><?=$r==='passenger'?'YOUR SPRPTA WORKSPACE / ඔබගේ SPRPTA සේවා පුවරුව':'YOUR SPRPTA WORKSPACE'?></span><h3><?= $r==='passenger'?'Your transport services, all in one place / ඔබගේ සියලු ප්‍රවාහන සේවා එකම ස්ථානයක':($department!==null?$departmentName.' section overview':'Authority management overview')?></h3><p><?php if($r==='passenger'):?>Track service requests, view updates, and share feedback from your dashboard. / ඔබගේ සේවා ඉල්ලීම් සහ යාවත්කාලීන තොරතුරු බලමින් ප්‍රතිචාර ලබා දෙන්න.	<?php elseif($department!==null):?>Review section requests, keep client records up to date, and follow task progress.<?php elseif($r==='data_entry'):?>Manage authority records and keep transport service information current.<?php else:?>Use your dashboard shortcuts to oversee service requests, accounts, and authority operations.<?php endif;?></p></div>
 </section>
 <?php if($clientRegistrationNotice!==''):?><div class="notice success" role="status"><?=h($clientRegistrationNotice)?></div><?php endif;?>
 <?php if($showStaffNavigation):?>
@@ -199,7 +207,7 @@ if(completionPopup?.showModal)completionPopup.showModal();
 <?php endif;?>
 <?php if($r==='passenger'):?>
 <section class="card client-status-card" aria-labelledby="client-status-title">
-	<h3 id="client-status-title">My Tasks / My Status / මගේ කාර්යයන් / මගේ තත්ත්වය</h3>
+	<h3 id="client-status-title">My Tasks / මගේ කාර්යයන්</h3>
 	<div class="client-status-counts" aria-label="Filter tasks by status / තත්ත්වය අනුව කාර්යයන් වෙන් කරන්න">
 		<button class="client-status-filter client-status-filter-pending" type="button" data-status-filter="pending" aria-pressed="false" <?=$clientPendingCount===0?'disabled':''?>>
 			<span>Pending / In progress / පොරොත්තුවෙන් / ක්‍රියාත්මකයි</span><strong><?=$clientPendingCount?></strong>
@@ -275,6 +283,18 @@ if(completionPopup?.showModal)completionPopup.showModal();
 	const monthlyCounts = <?=json_encode($monthlyTokenCounts,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_AMP|JSON_HEX_QUOT)?>;
 	const feedbackLabels = <?=json_encode(array_keys($feedbackStatusCounts),JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_AMP|JSON_HEX_QUOT)?>;
 	const feedbackCounts = <?=json_encode(array_values($feedbackStatusCounts),JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_AMP|JSON_HEX_QUOT)?>;
+	const chartCopyByLanguage = {
+		en: { clientTokens: 'Client tokens', resolved: 'Resolved', pending: 'Pending', inProgress: 'In progress' },
+		si: { clientTokens: 'සේවාලාභී ටෝකන', resolved: 'විසඳා ඇත', pending: 'පොරොත්තුවෙන්', inProgress: 'ක්‍රියාත්මකයි' },
+		ta: { clientTokens: 'வாடிக்கையாளர் டோக்கன்கள்', resolved: 'தீர்க்கப்பட்டது', pending: 'நிலுவையில்', inProgress: 'செயல்பாட்டில்' }
+	};
+	const chartCopy = chartCopyByLanguage[document.documentElement.lang] || chartCopyByLanguage.si;
+	const localizedFeedbackLabels = {
+		Resolved: chartCopy.resolved,
+		Pending: chartCopy.pending,
+		'In Progress': chartCopy.inProgress
+	};
+	const chartFeedbackLabels = feedbackLabels.map(label => localizedFeedbackLabels[label] || label);
 	const emptyStates = [
 		['monthlyTokensEmpty', monthlyCounts],
 		['feedbackStatusEmpty', feedbackCounts]
@@ -302,7 +322,7 @@ if(completionPopup?.showModal)completionPopup.showModal();
 			data: {
 				labels: monthlyLabels,
 				datasets: [{
-					label: 'Client tokens',
+					label: chartCopy.clientTokens,
 					data: monthlyCounts,
 					borderColor: '#16834a',
 					backgroundColor: 'rgba(22, 131, 74, 0.12)',
@@ -331,7 +351,7 @@ if(completionPopup?.showModal)completionPopup.showModal();
 		new Chart(feedbackCanvas, {
 			type: 'doughnut',
 			data: {
-				labels: feedbackLabels,
+				labels: chartFeedbackLabels,
 				datasets: [{
 					data: feedbackCounts,
 					backgroundColor: ['#16834a', '#e3a72f', '#3d8b72'],
@@ -351,7 +371,50 @@ if(completionPopup?.showModal)completionPopup.showModal();
 })();
 </script>
 <?php endif;?>
-<?php if($department!==null):$taskQuery=$conn->prepare('SELECT token_no,full_name,service_type,preferred_date,status FROM tokens WHERE department=? ORDER BY id DESC LIMIT 8');$taskQuery->bind_param('s',$department);$taskQuery->execute();$departmentTasksRows=$taskQuery->get_result();?><div class="card department-dashboard department-task-card"><h3><?=h($departmentName)?> Section Tasks</h3><div class="table-wrap"><table class="table"><thead><tr><th>Token</th><th>Client</th><th>Task</th><th>Date</th><th>Status</th></tr></thead><tbody><?php while($task=$departmentTasksRows->fetch_assoc()):?><tr><td><?=h($task['token_no'])?></td><td><?=h($task['full_name'])?></td><td><?=h($task['service_type'])?></td><td><?=h($task['preferred_date'])?></td><td><?=h($task['status']==='completed'?'Completed':'Pending')?></td></tr><?php endwhile;?></tbody></table></div><a class="table-link" href="admin/tokens.php">Open section task manager</a></div><?php $customerQuery=$conn->prepare('SELECT u.full_name,p.customer_type,p.nic,p.phone FROM users u JOIN passenger_profiles p ON p.user_id=u.id WHERE p.department=? ORDER BY u.id DESC LIMIT 8');$customerQuery->bind_param('s',$department);$customerQuery->execute();$sectionClients=$customerQuery->get_result();?><div class="card department-dashboard department-client-card"><h3><?=h($departmentName)?> Section Clients</h3><div class="table-wrap"><table class="table"><thead><tr><th>Name</th><th>Client type</th><th>NIC</th><th>Phone</th></tr></thead><tbody><?php while($customer=$sectionClients->fetch_assoc()):?><tr><td><?=h($customer['full_name'])?></td><td><?=h($customer['customer_type'])?></td><td><?=h($customer['nic'])?></td><td><?=h($customer['phone'])?></td></tr><?php endwhile;?></tbody></table></div><a class="table-link" href="admin/passengers.php">Open section customer records</a></div><?php endif;?>
+<?php if($department!==null):
+	$taskQuery=$conn->prepare('SELECT id,token_no,full_name,service_type,created_at,preferred_date,preferred_time,status,status_comment FROM tokens WHERE department=? ORDER BY id DESC LIMIT 8');
+	$taskQuery->bind_param('s',$department);
+	$taskQuery->execute();
+	$departmentTasksRows=$taskQuery->get_result();
+?>
+<div class="card department-dashboard department-task-card">
+	<h3><?=h($departmentName)?> Section Tasks</h3>
+	<div class="table-wrap"><table class="table">
+		<thead><tr><th>Token</th><th>Client</th><th>Task</th><th>Token issued at</th><th>Appointment date</th><th>Appointment time</th><th>Status</th><?php if($canUpdateStatus):?><th>Update</th><?php endif;?><th>Officer comment</th></tr></thead>
+		<tbody><?php while($task=$departmentTasksRows->fetch_assoc()):$taskIssuedAt=$task['created_at']?date('Y-m-d H:i',strtotime($task['created_at'])):'—';$taskStatusFormId='dashboard-task-status-'.(int)$task['id'];?>
+			<tr>
+				<td><?=h($task['token_no'])?></td><td><?=h($task['full_name'])?></td><td><?=h($task['service_type'])?></td>
+				<td><?=h($taskIssuedAt)?></td><td><?=h($task['preferred_date'])?></td><td><?=h($task['preferred_time'])?></td>
+				<td><?=h($task['status']==='completed'?'Completed':'Pending')?></td>
+				<?php if($canUpdateStatus):?><td><form id="<?=h($taskStatusFormId)?>" class="department-task-status-form" method="post" action="admin/tokens.php">
+					<input type="hidden" name="token_id" value="<?=(int)$task['id']?>">
+					<input type="hidden" name="return_to" value="dashboard">
+					<select name="status" aria-label="Task status">
+						<option value="pending" <?=$task['status']!=='completed'?'selected':''?>>Pending</option>
+						<option value="completed" <?=$task['status']==='completed'?'selected':''?>>Completed</option>
+					</select>
+					<button class="soft-btn" type="submit">Save</button>
+				</form></td><?php endif;?>
+				<td data-user-content><?=trim((string)($task['status_comment']??''))!==''?nl2br(h($task['status_comment'])):'—'?></td>
+			</tr>
+		<?php endwhile;?></tbody>
+	</table></div>
+	<a class="table-link" href="admin/tokens.php">Open section task manager</a>
+</div>
+<?php
+	$customerQuery=$conn->prepare('SELECT u.full_name,p.customer_type,p.nic,p.phone FROM users u JOIN passenger_profiles p ON p.user_id=u.id WHERE p.department=? ORDER BY u.id DESC LIMIT 8');
+	$customerQuery->bind_param('s',$department);
+	$customerQuery->execute();
+	$sectionClients=$customerQuery->get_result();
+?>
+<div class="card department-dashboard department-client-card">
+	<h3><?=h($departmentName)?> Section Clients</h3>
+	<div class="table-wrap"><table class="table"><thead><tr><th>Name</th><th>Client type</th><th>NIC</th><th>Phone</th></tr></thead><tbody>
+		<?php while($customer=$sectionClients->fetch_assoc()):?><tr><td><?=h($customer['full_name'])?></td><td><?=h($customer['customer_type'])?></td><td><?=h($customer['nic'])?></td><td><?=h($customer['phone'])?></td></tr><?php endwhile;?>
+	</tbody></table></div>
+	<a class="table-link" href="admin/passengers.php">Open section customer records</a>
+</div>
+<?php endif;?>
 <?php if($showStaffNavigation):?></div></div><?php endif;?>
 <section class="access-card" aria-labelledby="access-card-title">
 	<div class="access-card-icon" aria-hidden="true">
@@ -359,7 +422,7 @@ if(completionPopup?.showModal)completionPopup.showModal();
 	</div>
 	<div class="access-card-content">
 		<div class="access-card-heading">
-				<div><span class="access-card-eyebrow"><?=$r==='passenger'?'YOUR WORKSPACE / ඔබගේ සේවා පුවරුව':'YOUR WORKSPACE'?></span><h3 id="access-card-title">Access <span>/ ප්‍රවේශය</span></h3></div>
+				<div><span class="access-card-eyebrow"><?=$r==='passenger'?'YOUR WORKSPACE / ඔබගේ සේවා පුවරුව':'YOUR WORKSPACE'?></span><h3 id="access-card-title">Access</h3></div>
 				<span class="access-card-role"><?=$r==='passenger'?'CLIENT / සේවාලාභියා':h(strtoupper(str_replace('_',' ',$r)))?></span>
 		</div>
 		<p><?php if($r==='super_admin'):?>Full system access: token records, feedback, passengers, officer accounts, data entry, FAQ/AI knowledge and documents.<?php elseif($r==='admin'):?>Administrative access: token records, passenger and officer accounts, feedback and documents.<?php elseif($r==='data_entry'):?>Data Entry access: enter, edit and delete operational data, passenger and officer records, vehicles, bus stands, services and FAQ knowledge.<?php elseif($department!==null):?><?=h($departmentName)?> section access: review assigned token requests, manage client and officer records, and view documents.<?php else:?>Client access: registration, token requests, documents, officer directory and SPRPTA support. / සේවාලාභී ප්‍රවේශය: ලියාපදිංචිය, ටෝකන් ඉල්ලීම්, ලිපි ලේඛන, නිලධාරී නාමාවලිය සහ SPRPTA සහාය.<?php endif;?></p>
